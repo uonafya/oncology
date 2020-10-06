@@ -9,11 +9,11 @@
 	</parent>
 
 	<groupId>org.openmrs.module</groupId>
-	<artifactId>cancerapp</artifactId>
+	<artifactId>oncologyapp</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Cancerapp</name>
-	<description>KenyaEMR patient queue app</description>
+	<name>Oncologyapp</name>
+	<description>KenyaEMR oncology app</description>
 
 	<url>https://wiki.openmrs.org/x/FQ4z</url>
 
