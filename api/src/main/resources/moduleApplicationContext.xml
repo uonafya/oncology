@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Beans to add to the current Application context definition -->
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
@@ -20,8 +23,17 @@
   		    http://www.springframework.org/schema/util
   		    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-	<context:component-scan base-package="org.openmrs.module.oncologyapp" />
-	<bean class="org.openmrs.ui.framework.StandardModuleUiConfiguration">
-		<property name="moduleId" value="oncologyapp"/>
-	</bean>
+    <context:component-scan base-package="org.openmrs.module.oncologyapp" />
+
+    <bean id="oncologyapp.app.oncologyapp" factory-bean="kenyacore.appFactoryBean" factory-method="createInstance">
+        <constructor-arg value="oncologyapp.cancer" />
+        <constructor-arg value="Oncologyapp" />
+        <constructor-arg value="oncologyapp/oncologyappHome.page" />
+        <constructor-arg value="oncologyapp:apps/cancer.png" />
+        <constructor-arg value="2000" />
+    </bean>
+
+    <bean id="oncologyapp.cancer.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
+
+    </bean>
 </beans>
