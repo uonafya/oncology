@@ -20,8 +20,8 @@
   		    http://www.springframework.org/schema/util
   		    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-	<context:component-scan base-package="org.openmrs.module.cancerapp.web.controller" />
+	<context:component-scan base-package="org.openmrs.module.oncologyapp" />
 	<bean class="org.openmrs.ui.framework.StandardModuleUiConfiguration">
-		<property name="moduleId" value="cancerapp"/>
+		<property name="moduleId" value="oncologyapp"/>
 	</bean>
 </beans>
