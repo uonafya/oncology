@@ -27,7 +27,7 @@
 
     <bean id="oncologyapp.app.oncologyapp" factory-bean="kenyacore.appFactoryBean" factory-method="createInstance">
         <constructor-arg value="oncologyapp.cancer" />
-        <constructor-arg value="Oncologyapp" />
+        <constructor-arg value="Oncology" />
         <constructor-arg value="oncologyapp/oncologyappHome.page" />
         <constructor-arg value="oncologyapp:apps/cancer.png" />
         <constructor-arg value="2000" />
