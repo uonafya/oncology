@@ -7,7 +7,7 @@
  * Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS
  * graphic logo is a trademark of OpenMRS Inc.
  */
-package org.openmrs.module.cancerapp.extension.html;
+package org.openmrs.module.oncologyapp.extension.html;
 
 import java.util.HashMap;
 import java.util.Map;

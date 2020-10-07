@@ -7,7 +7,7 @@
  * Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS
  * graphic logo is a trademark of OpenMRS Inc.
  */
-package org.openmrs.module.cancerapp.page.controller;
+package org.openmrs.module.oncologyapp.page.controller;
 
 import org.openmrs.module.kenyaui.annotation.AppPage;
 import org.openmrs.module.oncologyapp.OncologyappConstants;
@@ -15,10 +15,9 @@ import org.openmrs.ui.framework.UiUtils;
 import org.openmrs.ui.framework.page.PageModel;
 
 @AppPage(OncologyappConstants.APP_ONCOLOGY)
-public class OncologySummaryPageController {
+public class OncologyappHomePageController {
 	
 	public void controller(UiUtils ui, PageModel model) {
 		
 	}
-	
 }
