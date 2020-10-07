@@ -9,16 +9,15 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class OncologyEnrollmentSummaryFragmentController {
-
-    public String controller(@FragmentParam("patientProgram") PatientProgram patientProgram,
-                             @FragmentParam(value = "encounter", required = false) Encounter encounter,
-                             @FragmentParam("showClinicalData") boolean showClinicalData,
-                             FragmentModel model) {
-        Map<String, Object> dataPoints = new LinkedHashMap<String, Object>();
-        dataPoints.put("Enrolled", patientProgram.getDateEnrolled());
-        model.put("dataPoints", dataPoints);
-
-        return "view/dataPoints";
-    }
-
-    }
+	
+	public String controller(@FragmentParam("patientProgram") PatientProgram patientProgram,
+	        @FragmentParam(value = "encounter", required = false) Encounter encounter,
+	        @FragmentParam("showClinicalData") boolean showClinicalData, FragmentModel model) {
+		Map<String, Object> dataPoints = new LinkedHashMap<String, Object>();
+		dataPoints.put("Enrolled", patientProgram.getDateEnrolled());
+		model.put("dataPoints", dataPoints);
+		
+		return "view/dataPoints";
+	}
+	
+}

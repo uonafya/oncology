@@ -13,12 +13,16 @@ import java.util.Collection;
 import java.util.Map;
 
 public class InOncologyProgramCalculation extends AbstractPatientCalculation {
-
-    /**
-     * @see org.openmrs.calculation.patient.PatientCalculation#evaluate(java.util.Collection, java.util.Map, org.openmrs.calculation.patient.PatientCalculationContext)
-     */
-    @Override
-    public CalculationResultMap evaluate(Collection<Integer> cohort, Map<String, Object> params, PatientCalculationContext context) {
-        return passing(Calculations.activeEnrollment(MetadataUtils.existing(Program.class, EhrCommonMetadata._EhrPrograms.ONCOLOGY_PROGRAM), Filters.alive(cohort, context), context));
-    }
+	
+	/**
+	 * @see org.openmrs.calculation.patient.PatientCalculation#evaluate(java.util.Collection,
+	 *      java.util.Map, org.openmrs.calculation.patient.PatientCalculationContext)
+	 */
+	@Override
+	public CalculationResultMap evaluate(Collection<Integer> cohort, Map<String, Object> params,
+	        PatientCalculationContext context) {
+		return passing(Calculations.activeEnrollment(
+		    MetadataUtils.existing(Program.class, EhrCommonMetadata._EhrPrograms.ONCOLOGY_PROGRAM),
+		    Filters.alive(cohort, context), context));
+	}
 }

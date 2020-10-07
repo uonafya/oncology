@@ -23,18 +23,19 @@ import java.util.Set;
  * Calculates whether patients are eligible for the Oncology program
  */
 public class EligibleForOncologyProgramCalculation extends AbstractPatientCalculation {
-
-    @Override
-    public CalculationResultMap evaluate(Collection<Integer> cohort, Map<String, Object> params, PatientCalculationContext context) {
-        CalculationResultMap ret = new CalculationResultMap();
-        Set<Integer> alive = Filters.alive(cohort, context);
-
-        for (int ptId : cohort) {
-            boolean eligible = alive.contains(ptId);
-
-            ret.put(ptId, new BooleanResult(eligible, this));
-        }
-
-        return ret;
-    }
+	
+	@Override
+	public CalculationResultMap evaluate(Collection<Integer> cohort, Map<String, Object> params,
+	        PatientCalculationContext context) {
+		CalculationResultMap ret = new CalculationResultMap();
+		Set<Integer> alive = Filters.alive(cohort, context);
+		
+		for (int ptId : cohort) {
+			boolean eligible = alive.contains(ptId);
+			
+			ret.put(ptId, new BooleanResult(eligible, this));
+		}
+		
+		return ret;
+	}
 }
