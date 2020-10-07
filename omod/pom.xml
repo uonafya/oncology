@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.openmrs.module</groupId>
-		<artifactId>cancerapp</artifactId>
+		<artifactId>oncologyapp</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>cancerapp-omod</artifactId>
+	<artifactId>oncologyapp-omod</artifactId>
 	<packaging>jar</packaging>
-	<name>Cancerapp OMOD</name>
+	<name>Oncologyapp OMOD</name>
 	<description>Omod Cancer patients</description>
 
 	<dependencies>
