@@ -34,6 +34,51 @@
     </bean>
 
     <bean id="oncologyapp.cancer.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
+        <property name="targetUuid" value="" />
+        <property name="apps">
+            <set>
+                <ref bean="oncologyapp.app.oncologyapp" />
+            </set>
+        </property>
+        <property name="icon" value="kenyaui:forms/generic.png" />
+        <property name="htmlform" value="oncologyapp:queue.html" />
+        <property name="order" value="1000" />
+    </bean>
+
+    <!-- ===================== Program ===================== -->
+
+    <bean id="kenyaemr.oncology.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
+        <property name="targetUuid" value="${metadata.program.Oncology}" />
+        <property name="eligibilityCalculation" value="org.openmrs.module.kenyaemr.calculation.library.hiv.EligibleForHivProgramCalculation" />
+        <property name="defaultEnrollmentForm" ref="oncology.form.enrollment" />
+        <property name="defaultCompletionForm" ref="oncology.form.completion" />
+        <property name="patientForms">
+            <set>
+                <ref bean="oncology.form.treatmentPreparation" />
+            </set>
+        </property>
+        <property name="visitForms">
+            <set>
+                <ref bean="kenyaemr.oncology.form.OncologyInitialForm" />
+                <ref bean="kenyaemr.oncology.form.OncologyVisit" />
+
+            </set>
+        </property>
+        <property name="fragments">
+            <map>
+                <entry key="enrollment-summary" value="kenyaemr:program/oncology/oncologyEnrollmentSummary" />
+                <entry key="care-panel" value="kenyaemr:program/oncology/oncologyCarePanel" />
+                <entry key="completion-summary" value="kenyaemr:program/oncology/oncologyCompletionSummary" />
+            </map>
+        </property>
+        <property name="order" value="100" />
+
 
     </bean>
+    <bean id="oncology.form.enrollment" class="org.openmrs.module.kenyacore.form.FormDescriptor"/>
+    <bean id="oncology.form.completion" class="org.openmrs.module.kenyacore.form.FormDescriptor"/>
+    <bean id="oncology.form.treatmentPreparation"/>
+    <bean id="kenyaemr.oncology.form.OncologyInitialForm"/>
+    <bean id="kenyaemr.oncology.form.OncologyVisit"/>
+
 </beans>
