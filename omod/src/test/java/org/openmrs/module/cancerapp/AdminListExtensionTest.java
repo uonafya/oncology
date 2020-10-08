@@ -13,7 +13,7 @@ import java.util.Map;
 
 import org.junit.Test;
 import org.openmrs.module.Extension;
-import org.openmrs.module.cancerapp.extension.html.AdminList;
+import org.openmrs.module.oncologyapp.extension.html.AdminList;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
