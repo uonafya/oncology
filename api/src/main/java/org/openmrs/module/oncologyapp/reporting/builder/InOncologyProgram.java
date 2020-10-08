@@ -7,10 +7,11 @@ import org.openmrs.module.reporting.dataset.definition.PatientDataSetDefinition;
 import org.springframework.stereotype.Component;
 
 @Component
-@Builds({"oncologyapp.cancer.report.inProgram"})
+@Builds({ "oncologyapp.cancer.report.inProgram" })
 public class InOncologyProgram extends CalculationReportBuilder {
-    @Override
-    protected void addColumns(CohortReportDescriptor report, PatientDataSetDefinition dsd) {
-        addStandardColumns(report, dsd);
-    }
+	
+	@Override
+	protected void addColumns(CohortReportDescriptor report, PatientDataSetDefinition dsd) {
+		addStandardColumns(report, dsd);
+	}
 }
