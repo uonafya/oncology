@@ -16,7 +16,7 @@ public class OncologyappConstants {
 	 */
 	public static final String MODULE_ID = "oncologyapp";
 	
-	public static final String APP_PATIENT_QUEUE = MODULE_ID + ".queue";
+	public static final String APP_ONCOLOGY = MODULE_ID + ".cancer";
 	
 	public static final String APP_PATIENT_OPD = MODULE_ID + ".opd";
 	
