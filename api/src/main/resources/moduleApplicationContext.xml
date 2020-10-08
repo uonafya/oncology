@@ -34,33 +34,31 @@
     </bean>
 
     <bean id="oncologyapp.cancer.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
+        <property name="targetUuid" value="64d6b82c-08a9-11eb-b236-077a7c74158b" />
+        <property name="eligibilityCalculation" value="org.openmrs.module.oncologyapp.calculation.EligibleForOncologyProgramCalculation" />
+        <property name="defaultEnrollmentForm" ref="oncologyapp.cancer.form.enrollment" />
+        <property name="defaultCompletionForm" ref="oncologyapp.cancer.form.discontinue" />
 
-    </bean><bean id="kenyaemr.hiv.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
-    <property name="targetUuid" value="64d6b82c-08a9-11eb-b236-077a7c74158b" />
-    <property name="eligibilityCalculation" value="org.openmrs.module.oncologyapp.calculation.EligibleForOncologyProgramCalculation" />
-    <property name="defaultEnrollmentForm" ref="oncologyapp.cancer.form.enrollment" />
-    <property name="defaultCompletionForm" ref="oncologyapp.cancer.form.discontinue" />
+        <property name="visitForms">
+            <set>
+                <ref bean="oncologyapp.cancer.form.followup" />
 
-    <property name="visitForms">
-        <set>
-            <ref bean="oncologyapp.cancer.form.followup" />
+            </set>
+        </property>
+        <property name="reports">
+            <set>
+                <ref bean="oncologyapp.cancer.report.inProgram" />
 
-        </set>
-    </property>
-    <property name="reports">
-        <set>
-            <ref bean="oncologyapp.cancer.report.inProgram" />
-
-        </set>
-    </property>
-    <property name="fragments">
-        <map>
-            <entry key="enrollment-summary" value="oncologyapp:oncologyEnrollmentSummary" />
-            <entry key="care-panel" value="oncologyapp:oncologyCarePanel" />
-            <entry key="completion-summary" value="oncologyapp:oncologyCompletionSummary" />
-        </map>
-    </property>
-    <property name="order" value="1000" />
+            </set>
+        </property>
+        <property name="fragments">
+            <map>
+                <entry key="enrollment-summary" value="oncologyapp:oncologyEnrollmentSummary" />
+                <entry key="care-panel" value="oncologyapp:oncologyCarePanel" />
+                <entry key="completion-summary" value="oncologyapp:oncologyCompletionSummary" />
+            </map>
+        </property>
+        <property name="order" value="1000" />
 </bean>
 
     <bean id="oncologyapp.cancer.form.enrollment" class="org.openmrs.module.kenyacore.form.FormDescriptor">
