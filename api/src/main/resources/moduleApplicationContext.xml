@@ -27,7 +27,7 @@
 
     <bean id="oncologyapp.app.oncologyapp" factory-bean="kenyacore.appFactoryBean" factory-method="createInstance">
         <constructor-arg value="oncologyapp.cancer" />
-        <constructor-arg value="Oncologyapp" />
+        <constructor-arg value="Oncology" />
         <constructor-arg value="oncologyapp/oncologyappHome.page" />
         <constructor-arg value="oncologyapp:apps/cancer.png" />
         <constructor-arg value="2000" />
@@ -35,5 +35,70 @@
 
     <bean id="oncologyapp.cancer.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
 
+    </bean><bean id="kenyaemr.hiv.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
+    <property name="targetUuid" value="64d6b82c-08a9-11eb-b236-077a7c74158b" />
+    <property name="eligibilityCalculation" value="org.openmrs.module.oncologyapp.calculation.EligibleForOncologyProgramCalculation" />
+    <property name="defaultEnrollmentForm" ref="oncologyapp.cancer.form.enrollment" />
+    <property name="defaultCompletionForm" ref="oncologyapp.cancer.form.discontinue" />
+
+    <property name="visitForms">
+        <set>
+            <ref bean="oncologyapp.cancer.form.followup" />
+
+        </set>
+    </property>
+    <property name="reports">
+        <set>
+            <ref bean="oncologyapp.cancer.report.inProgram" />
+
+        </set>
+    </property>
+    <property name="fragments">
+        <map>
+            <entry key="enrollment-summary" value="oncologyapp:oncologyEnrollmentSummary" />
+            <entry key="care-panel" value="oncologyapp:oncologyCarePanel" />
+            <entry key="completion-summary" value="oncologyapp:oncologyCompletionSummary" />
+        </map>
+    </property>
+    <property name="order" value="1000" />
+</bean>
+
+    <bean id="oncologyapp.cancer.form.enrollment" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+        <property name="targetUuid" value="4b19bf6a-08cc-11eb-ad40-63f9910aca7b" />
+        <property name="apps">
+            <set>
+                <ref bean="oncologyapp.app.oncologyapp" />
+            </set>
+        </property>
+        <property name="icon" value="kenyaui:forms/generic.png" />
+        <property name="htmlform" value="oncologyapp:oncologyEnrollment.html" />
+    </bean>
+
+    <bean id="oncologyapp.cancer.form.discontinue" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+        <property name="targetUuid" value="67b0c4de-08cc-11eb-ae4d-c756d1210d5c" />
+        <property name="apps">
+            <set>
+                <ref bean="oncologyapp.app.oncologyapp" />
+            </set>
+        </property>
+        <property name="icon" value="kenyaui:forms/generic.png" />
+        <property name="htmlform" value="oncologyapp:oncologyDiscontinue.html" />
+    </bean>
+    <bean id="oncologyapp.cancer.form.followup" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+        <property name="targetUuid" value="884df5d6-08cc-11eb-a31e-27b10c64a0a7" />
+        <property name="apps">
+            <set>
+                <ref bean="oncologyapp.app.oncologyapp" />
+            </set>
+        </property>
+        <property name="icon" value="kenyaui:forms/generic.png" />
+        <property name="htmlform" value="oncologyapp:oncologyFollowup.html" />
+    </bean>
+
+    <bean id="oncologyapp.cancer.report.inProgram" class="org.openmrs.module.kenyacore.report.CalculationReportDescriptor">
+        <property name="targetUuid" value="7f1c010c-08d0-11eb-9e55-a7fb8b2b1319" />
+        <property name="name" value="Patients in Oncology program" />
+        <property name="calculation" value="org.openmrs.module.oncologyapp.calculation.InOncologyProgramCalculation" />
+        <property name="apps"><set><ref bean="kenyaemr.app.reports" /></set></property>
     </bean>
 </beans>
