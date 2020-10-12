@@ -93,7 +93,7 @@
         <property name="htmlform" value="oncologyapp:oncologyFollowup.html" />
     </bean>
     <bean id="oncologyapp.cancer.form.screening" class="org.openmrs.module.kenyacore.form.FormDescriptor">
-        <property name="targetUuid" value="9a92cd5c-0a25-11eb-895a-0fa82be2df22" />
+        <property name="targetUuid" value="be5c5602-0a1d-11eb-9e20-37d2e56925ee" />
         <property name="apps">
             <set>
                 <ref bean="oncologyapp.app.oncologyapp" />
@@ -117,7 +117,6 @@
         <property name="commonVisitForms">
             <set>
                 <ref bean="oncologyapp.cancer.form.screening" />
-                <ref bean="oncologyapp.cancer.form.followup" />
             </set>
         </property>
     </bean>
