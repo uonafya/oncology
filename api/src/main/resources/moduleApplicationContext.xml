@@ -119,5 +119,23 @@
                 <ref bean="oncologyapp.cancer.form.screening" />
             </set>
         </property>
+        <property name="commonPatientForms">
+            <set>
+                <ref bean="oncologyapp.form.cancerFamilyHistory" />
+            </set>
+        </property>
+    </bean>
+
+    <bean id="oncologyapp.form.cancerFamilyHistory" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+        <property name="targetUuid" value="dd0e4f3c-0e24-11eb-aa70-bb2cf351b19b" />
+        <property name="apps">
+            <set>
+                <ref bean="oncologyapp.app.oncologyapp" />
+            </set>
+        </property>
+
+        <property name="icon" value="kenyaui:forms/family_history.png" />
+        <property name="htmlform" value="oncologyapp:cancerFamilyHistory.html" />
+        <property name="order" value="100020" />
     </bean>
 </beans>

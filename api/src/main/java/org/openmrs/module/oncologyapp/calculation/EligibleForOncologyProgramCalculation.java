@@ -36,7 +36,8 @@ public class EligibleForOncologyProgramCalculation extends AbstractPatientCalcul
 	public CalculationResultMap evaluate(Collection<Integer> cohort, Map<String, Object> params,
 	        PatientCalculationContext context) {
 		CalculationResultMap ret = new CalculationResultMap();
-		EncounterType screeningEncounterType = MetadataUtils.existing(EncounterType.class, EhrCommonMetadata._EhrEncounterTypes.ONCOLOGY_SCREENING);
+		EncounterType screeningEncounterType = MetadataUtils.existing(EncounterType.class,
+		    EhrCommonMetadata._EhrEncounterTypes.ONCOLOGY_SCREENING);
 		Set<Integer> alive = Filters.alive(cohort, context);
 		CalculationResultMap screeningEncounterMap = Calculations.allEncounters(screeningEncounterType, cohort, context);
 		
@@ -44,7 +45,7 @@ public class EligibleForOncologyProgramCalculation extends AbstractPatientCalcul
 			boolean eligible = false;
 			ListResult listResult = (ListResult) screeningEncounterMap.get(ptId);
 			List<Encounter> screening = CalculationUtils.extractResultValues(listResult);
-			if(screening.size() > 0 && alive.contains(ptId) ) {
+			if (screening.size() > 0 && alive.contains(ptId)) {
 				eligible = true;
 			}
 			
