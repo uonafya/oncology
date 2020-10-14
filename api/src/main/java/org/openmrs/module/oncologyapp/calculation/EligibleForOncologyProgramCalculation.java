@@ -9,13 +9,21 @@
  */
 package org.openmrs.module.oncologyapp.calculation;
 
+import org.openmrs.Encounter;
+import org.openmrs.EncounterType;
 import org.openmrs.calculation.patient.PatientCalculationContext;
 import org.openmrs.calculation.result.CalculationResultMap;
+import org.openmrs.calculation.result.ListResult;
+import org.openmrs.module.ehrconfigs.metadata.EhrCommonMetadata;
 import org.openmrs.module.kenyacore.calculation.AbstractPatientCalculation;
 import org.openmrs.module.kenyacore.calculation.BooleanResult;
+import org.openmrs.module.kenyacore.calculation.CalculationUtils;
+import org.openmrs.module.kenyacore.calculation.Calculations;
 import org.openmrs.module.kenyacore.calculation.Filters;
+import org.openmrs.module.metadatadeploy.MetadataUtils;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -28,10 +36,18 @@ public class EligibleForOncologyProgramCalculation extends AbstractPatientCalcul
 	public CalculationResultMap evaluate(Collection<Integer> cohort, Map<String, Object> params,
 	        PatientCalculationContext context) {
 		CalculationResultMap ret = new CalculationResultMap();
+		EncounterType screeningEncounterType = MetadataUtils.existing(EncounterType.class,
+		    EhrCommonMetadata._EhrEncounterTypes.ONCOLOGY_SCREENING);
 		Set<Integer> alive = Filters.alive(cohort, context);
+		CalculationResultMap screeningEncounterMap = Calculations.allEncounters(screeningEncounterType, cohort, context);
 		
 		for (int ptId : cohort) {
-			boolean eligible = alive.contains(ptId);
+			boolean eligible = false;
+			ListResult listResult = (ListResult) screeningEncounterMap.get(ptId);
+			List<Encounter> screening = CalculationUtils.extractResultValues(listResult);
+			if (screening.size() > 0 && alive.contains(ptId)) {
+				eligible = true;
+			}
 			
 			ret.put(ptId, new BooleanResult(eligible, this));
 		}
