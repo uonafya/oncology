@@ -30,9 +30,49 @@
         </table>
     </div>
     <div class="ke-form-content">
-        <fieldset>
+        <table id="table" width="100%">
+        <thead>
+        <tr>
+            <th align="left">Religion</th>
+            <th align="left">Employment status</th>
+            <th align="left">Health Insurance</th>
+        </tr>
+        </thead>
+            <tbody>
+            <repeat>
+                <template>
+                    <obsgroup groupingConceptId="160593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
+                        <tr>
+                            <td>
+                                <obs class="Religion" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="Christianity,Muslim,Hindu"
+                                     style="radio"/>
+                            </td>
 
-        </fieldset>
+                            <td>
+                                <obs class="Employment-status" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="Full-time,Part-time,Unemployed,Retired" style="radio"/>
+
+                            </td>
+
+                            <td>
+                                <obs class="Health-Insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="NHIF,Other,None" style="radio"/>
+
+                            </td>
+
+                        </tr>
+
+                    </obsgroup>
+                </template>
+                <render n="1" concept=" "/>
+            </repeat>
+            </tbody>
+        <enrollInProgram programId="64d6b82c-08a9-11eb-b236-077a7c74158b" />
+        </table>
     </div>
     <div class="ke-form-footer">
         <submit/>
