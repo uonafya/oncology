@@ -85,47 +85,35 @@
         </table>
     </div>
     <div class="ke-form-content">
-        <table id="table" width="100%">
-        <thead>
-        <tr>
-            <th align="left">Religion</th>
-            <th align="left">Employment status</th>
-            <th align="left">Health Insurance</th>
-        </tr>
-        </thead>
-            <tbody>
-            <repeat>
-                <template>
-                    <obsgroup groupingConceptId="160593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
-                        <tr>
-                            <td>
-                                <obs class="Religion" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerLabels="Christianity,Muslim,Hindu"
-                                     style="radio"/>
-                            </td>
+        <table>
+            <tr>
+                <th align="left">Religion</th> <td>
+                <obs class="Religion" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="Christianity,Muslim,Hindu"
+                     style="radio"/>
+            </td>
+            </tr>
+            <tr>
+                <th>Employment status</th>  <td>
+                <obs class="Employment-status" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="Full-time,Part-time,Unemployed,Retired" style="radio"/>
 
-                            <td>
-                                <obs class="Employment-status" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerLabels="Full-time,Part-time,Unemployed,Retired" style="radio"/>
-
-                            </td>
-
-                            <td>
-                                <obs class="Health-Insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerLabels="NHIF,Other,None" style="radio"/>
-                            </td>
-                        </tr>
-
-                    </obsgroup>
-                </template>
-                <render n="1" concept=" "/>
-            </repeat>
-            </tbody>
+            </td>
+            </tr>
+            <tr>
+            <th align="left">Health Insurance</th> <td>
+                <obs class="Health-Insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="NHIF,Other,None" style="radio"/>
+            </td>
+            </tr>
+        </table>
+        <table>
         <enrollInProgram programId="64d6b82c-08a9-11eb-b236-077a7c74158b" />
         </table>
+        <fieldset>
         <table>
         <tr>
             <td class = "header"> <strong>Do you smoke cigarettes?</strong> </td>
@@ -165,34 +153,61 @@
             <tr>
                 <td class="header"><strong>Previous Cancer Treatment</strong></td>
                 <td class="data">
-                    <obs class="Previous Cancer Treatment" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="Chemotherapy,Radiotherapy" style="radio"/>
+                          answerLabels="Chemotherapy,Radiotherapy" style="checkbox"/>
                 </td>
             </tr>
 
             <tr>
-                <td class="header"><strong>If female</strong></td>
+                <td class="header"><strong>If Female</strong></td>
                 <td class="data">
-                    <obs class="If female" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="Parity,LNMP Date" style="..."/>
+                         answerLabels="Parity,LNMP Date" style="checkbox"/>
                 </td>
-
             </tr>
         </table>
+        </fieldset>
+        <fieldset>
         <table>
 
             <tr>
                 <td class="header"><strong>Common symptoms</strong></td>
                 <td class="data">
                     <obs class="Common symptoms" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answeConcepIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="Dyspepsia,Blood in stool,Yellow eyes,Blood in urine,Nose bleeding,Difficulty in swallowing,Weight loss,Easy fatigability,Abnormal vaginal bleeding,Changing/enlarging skin moles,Chronic skin ulcers,Lumps/swellings,Chronic cough,Persistent headaches,Changing bowel habits,Post-coital bleeding"
-
-                    style="radio"/>
+                         answerLabels="Dyspepsia,
+                         Blood in stool,
+                         Yellow eyes,
+                         Blood in urine,
+                         Nose bleeding,
+                         Difficulty in swallowing,
+                         Weight loss,
+                         Easy fatigability,
+                         Abnormal vaginal bleeding,
+                         Changing/enlarging skin moles,
+                         Chronic skin ulcers,
+                         Lumps/swellings,
+                         Chronic cough,
+                         Persistent headaches,
+                         Changing bowel habits,
+                         Post-coital bleeding"
+                    style="checkbox"/>
                 </td>
             </tr>
         </table>
+        </fieldset>
+
+        <fieldset>
+            <table>
+                <tr>
+                    <td class="header"><strong>Screening</strong></td>
+                    <td class="header" colspan="3">Visit Type</td><td rowspan="2"><div> Initial Screening</div></td>
+                </tr>
+
+            </table>
+
+        </fieldset>
 
     </div>
     <div class="ke-form-footer">
