@@ -13,10 +13,65 @@
 -->
 <htmlform>
     <script type="text/javascript">
-
-
-
     </script>
+    <style>
+        .section {
+            border: 1px solid $headerColor;
+            padding: 2px;
+            text-align: left;
+            margin-bottom: 1em;
+        }
+        .sectionHeader {
+            background-color: $headerColor;
+            color: $fontOnHeaderColor;
+            display: block;
+            padding: 2px;
+            font-weight: bold;
+        }
+        table.baseline-aligned td {
+            vertical-align: baseline;
+        }
+        table.moh406 {
+            border-collapse: collapse;
+            background-color: #FBFAE1;
+        }
+        table.oncology > tbody > tr > td, table.oncology > tbody > tr > th {
+            border: 1px solid black;
+            vertical-align: baseline;
+            padding: 4px;
+            text-align: left;
+
+
+        }
+        td.header {
+            border: 1px solid black;
+            background-color: #7FA99B;
+            width: 7%;
+        }
+        td.data {
+            border: 1px solid black;
+            text-align: left;
+        }
+        #rotate_text
+        {
+            id: rot_text;
+            width:130px;
+            height:100px;
+            -ms-transform:rotate(270deg); /* IE 9 */
+            -moz-transform:rotate(270deg); /* Firefox */
+            -webkit-transform:rotate(270deg); /* Safari and Chrome */
+            -o-transform:rotate(270deg); /* Opera */
+        }
+        .tooltip{
+            margin:8px;
+            padding:8px;
+            border:1px solid blue;
+            background-color:yellow;
+            position: absolute;
+            z-index: 2;
+        }
+    </style>
+
     <div class="ke-form-header">
         <table style="width: 100%">
             <tr>
@@ -30,35 +85,103 @@
         </table>
     </div>
     <div class="ke-form-content">
-        <fieldset>
-            <div class="ke-form-content">
+        <table>
+            <tr>
+                <th align="left">Religion</th>
+            </tr>
+            <tr>
+                <th>Employment status</th>
+            </tr>
+                <th align="left">Health Insurance</th>
+            </tr>
+            <tbody>
+            <repeat>
+                <template>
+                    <obsgroup groupingConceptId="160593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
+                        <tr>
+                            <td>
+                                <obs class="Religion" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="Christianity,Muslim,Hindu"
+                                     style="radio"/>
+                            </td>
 
-                <legend>Religion Source</legend>
-                <table>
-                    <tr>
-                        <td>Employment Status</td>
+                            <td>
+                                <obs class="Employment-status" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="Full-time,Part-time,Unemployed,Retired" style="radio"/>
 
-                    </tr>
-                    <tr>
-                        <td>Health Insurance</td>
+                            </td>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><obs id="Smokes Cigarrets" conceptId="159424" answerConceptIds="1065,1066" answerLabels= "1-Yes,2-No" style="radio"/></td>
+                            <td>
+                                <obs class="Health-Insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="NHIF,Other,None" style="radio"/>
+                            </td>
+                        </tr>
 
-                    </tr>
-                </table>
-                <table id="Patient" style="display: inline-block">
-                    <tr>
-                        <td>Facility from: </td>
+                    </obsgroup>
+                </template>
+                <render n="1" concept=" "/>
+            </repeat>
+            </tbody>
+            <enrollInProgram programId="64d6b82c-08a9-11eb-b236-077a7c74158b" />
+        </table>
+        <table>
+            <tr>
+                <td class = "header"> <strong>Do you smoke cigarettes?</strong> </td>
+                <td class="data">
+                    <obs class="Do you smoke cigarettes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="YES,NO,STOPPED" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td class = "header"> <strong>Do you use other forms of Tobacco?</strong></td>
+                <td class="data">
+                    <obs class="Do you use other forms of Tobacco" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="YES,NO,STOPPED" style="radio"/>
+                </td>
+            </tr>
 
-                    </tr>
-                </table>
+            <tr>
+                <td class="header"><strong>Do you take Alcohol?</strong></td>
+                <td class="data">
+                    <obs class="Do you take Alcohol" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="YES,NO,STOPPED" style="radio"/>
+                </td>
+            </tr>
 
-                </div>
-        </fieldset>
-        <enrollInProgram programId="64d6b82c-08a9-11eb-b236-077a7c74158b" />
+            <tr>
+                <td class="header"><strong>HIV Status</strong></td>
+                <td class="data">
+                    <obs class="HIV status" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Positive,Negative,Unknown" style="radio"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="header"><strong>Previous Cancer Treatment</strong></td>
+                <td class="data">
+                    <obs class="Previous Cancer Treatment" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Chemotherapy,Radiotherapy" style="radio"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="header"><strong>If female</strong></td>
+                <td class="data">
+                    <obs class="If female" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Parity,LNMP Date" style="..."/>
+                </td>
+
+            </tr>
+        </table>
     </div>
     <div class="ke-form-footer">
         <submit/>
