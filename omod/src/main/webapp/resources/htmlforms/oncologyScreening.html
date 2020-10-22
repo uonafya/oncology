@@ -13,10 +13,65 @@
 -->
 <htmlform>
     <script type="text/javascript">
-
-
-
     </script>
+    <style type="text/css">
+        .section {
+            border: 1px solid $headerColor;
+            padding: 2px;
+            text-align: left;
+            margin-bottom: 1em;
+        }
+        .sectionHeader {
+            background-color: $headerColor;
+            color: $fontOnHeaderColor;
+            display: block;
+            padding: 2px;
+            font-weight: bold;
+        }
+        table.baseline-aligned td {
+            vertical-align: baseline;
+        }
+        table.moh406 {
+            border-collapse: collapse;
+            background-color: #FBFAE1;
+        }
+        table.oncology > tbody > tr > td, table.oncology > tbody > tr > th {
+            border: 1px solid black;
+            vertical-align: baseline;
+            padding: 4px;
+            text-align: left;
+
+
+        }
+        td.header {
+            border: 1px solid black;
+            background-color: #7FA99B;
+            width: 7%;
+        }
+        td.data {
+            border: 1px solid black;
+            text-align: left;
+        }
+        #rotate_text
+        {
+            id: rot_text;
+            width:130px;
+            height:100px;
+            -ms-transform:rotate(270deg); /* IE 9 */
+            -moz-transform:rotate(270deg); /* Firefox */
+            -webkit-transform:rotate(270deg); /* Safari and Chrome */
+            -o-transform:rotate(270deg); /* Opera */
+        }
+        .tooltip{
+            margin:8px;
+            padding:8px;
+            border:1px solid blue;
+            background-color:yellow;
+            position: absolute;
+            z-index: 2;
+        }
+        </style>
+
     <div class="ke-form-header">
         <table style="width: 100%">
             <tr>
@@ -31,8 +86,152 @@
     </div>
     <div class="ke-form-content">
         <fieldset>
+            <legend>Health Insurance</legend>
+            <table>
+                <tr>
+                    <td>
+                        <obs class="Health-Insurance" conceptId="1493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="1917AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="NHIF,Other,None" style="radio"/>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td class = "header">
+                        <strong>Do you smoke cigarettes?</strong>
+                    </td>
+                    <td class="data">
+                        <obs id="Smokes Cigarrets" conceptId="159424"
+                             answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,158939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels= "Yes,No,Stopped" style="radio"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class = "header">
+                        <strong>Do you use other forms of Tobacco?</strong>
+                    </td>
+                    <td class="data">
+                        <obs class="Do you use other forms of Tobacco" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="YES,NO,STOPPED" style="radio"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="header">
+                        <strong>Do you take Alcohol?</strong>
+                    </td>
+                    <td class="data">
+                        <obs class="Do you take Alcohol" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="YES,NO,STOPPED" style="radio"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="header">
+                        <strong>HIV Status</strong>
+                    </td>
+                    <td class="data">
+                        <obs class="HIV status" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Positive,Negative,Unknown" style="radio"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="header">
+                        <strong>Previous Cancer Treatment</strong>
+                    </td>
+                    <td class="data">
+                        <obs class="Previous Cancer Treatment" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Chemotherapy,Radiotherapy" style="radio"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="header"><strong>If female</strong>
+                    </td>
+                    <td class="data">
+                        <obs class="If female" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Parity,LNMP Date" style="..."/>
+                    </td>
+                </tr>
+
+            </table>
+
+            <table>
+
+                <tr>
+                    <td class="header"><strong>Common symptoms</strong></td>
+                    <td class="data">
+                        <obs class="Common symptoms" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answeConcepIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Dyspepsia,Blood in stool,Yellow eyes,Blood in urine,Nose bleeding,Difficulty in swallowing,Weight loss,Easy fatigability,Abnormal vaginal bleeding,Changing/enlarging skin moles,Chronic skin ulcers,Lumps/swellings,Chronic cough,Persistent headaches,Changing bowel habits,Post-coital bleeding"
+
+                             style="radio"/>
+                    </td>
+                </tr>
+            </table>
         </fieldset>
+
+        <fieldset>
+            <legend>Common Symptoms</legend>
+                <table>
+                    <tr id="symptoms">
+                        <td>  Common symptoms: <br/>
+                            <input type="checkbox" id="symptom1" name="Dyspepsia" value="symptom"/><label for="symptom1">Dyspepsia</label><input type="hidden" name="Dyspepsia"/> <br/>
+                            <input type="checkbox" id="symptom2" name="Blood in stool" value="symptom"/><label for="symptom2">Blood in stool</label><input type="hidden" name="Blood in stool"/> <br/>
+                            <input type="checkbox" id="symptom3" name="yellow eyes" value="symptom"/><label for="symptom3">yellow eyes</label><input type="hidden" name="yellow eyes"/> <br/>
+                            <input type="checkbox" id="symptom4" name="Blood in urine" value="symptom"/><label for="symptom4">Blood in urine</label><input type="hidden" name="Blood in urine"/> <br/>
+                            <input type="checkbox" id="symptom5" name="Nose Bleeding" value="symptom"/><label for="symptom5">Nose Bleeding</label><input type="hidden" name="Nose Bleeding"/> <br/>
+                            <input type="checkbox" id="symptom6" name="Difficulty in swallowing" value="symptom"/><label for="symptom6">Difficulty in swallowing</label><input type="hidden" name="Difficulty in swallowing"/> <br/>
+                            <input type="checkbox" id="symptom7" name="Weight loss" value="symptom"/><label for="symptom7">Weight loss</label><input type="hidden" name="Weight loss"/> <br/>
+                            <input type="checkbox" id="symptom8" name="Easy fatigability" value="symptom"/><label for="symptom8">Easy fatigability</label><input type="hidden" name="easy fatigability"/> <br/>
+                            <input type="checkbox" id="symptom9" name="Abnormal vaginal bleeding" value="symptom"/><label for="symptom9">Abnormal vaginal bleeding</label><input type="hidden" name="Abnormal vaginal bleeding"/> <br/>
+                            <input type="checkbox" id="symptom10" name="Changing/enlarging skin moles" value="symptom"/><label for="symptom10">Changing/enlarging skin moles</label><input type="hidden" name="Changing/enlarging skin moles"/> <br/>
+                            <input type="checkbox" id="symptom11" name="Chronic skin ulcers" value="symptom"/><label for="symptom11">Chronic skin ulcers</label><input type="hidden" name="Chronic skin ulcers"/> <br/>
+                            <input type="checkbox" id="symptom12" name="Lumps/swellings" value="symptom"/><label for="symptom12">Lumps/swellings</label><input type="hidden" name="Lumps/swellings"/> <br/>
+                            <input type="checkbox" id="symptom13" name="Chronic cough" value="symptom"/><label for="symptom13">Chronic cough</label><input type="hidden" name="Chronic cough"/> <br/>
+                            <input type="checkbox" id="symptom14" name="Persistent headaches" value="symptom"/><label for="symptom14">Persistent headaches</label><input type="hidden" name="Persistent headaches"/> <br/>
+                            <input type="checkbox" id="symptom15" name="Changing bowel habits" value="symptom"/><label for="symptom15">Changing bowel habits</label><input type="hidden" name="Changing bowel habits"/> <br/>
+                            <input type="checkbox" id="symptom16" name="Post-coital bleeding" value="symptom"/><label for="symptom16">Post-coital bleeding</label><input type="hidden" name="Post-coital bleeding"/> <br/>
+                        </td>
+                    </tr>
+                </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Screening</legend>
+            <table>
+                <tr>
+                    <td class="header">Visit type</td>
+                    <td class="data">
+                        <obs class="visit type" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Initial screening,Repeat screening, Post-Treatment screening" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cancer:
+                        <span id="type" class="obs-field cancer">
+                            <select>
+                            <option value="" selected="true"></option>
+                            <option value="0000">Cervical cancer</option>
+                            <option value="0000">Breast cancer</option>
+                            <option value="0000">Colorectal</option>
+                            <option value="0000">Retinoblastoma</option>
+                            <option value="0000">prostate</option>
+                            <option value="0000">Oral cancer</option>
+                            <option value="5622">Other</option>
+                            </select> <span class="error field-error" style="display: none" id="00"></span></span>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
     </div>
     <div class="ke-form-footer">
         <submit/>
