@@ -72,6 +72,14 @@
         }
     </style>
 
+    <fieldset>
+    <div>
+      <table style="width: 100%" >
+          <td align="center"><strong>INITIAL ENCOUNTER FORM</strong></td>
+      </table>
+    </div>
+    </fieldset>
+
     <div class="ke-form-header">
         <table style="width: 100%">
             <tr>
@@ -87,102 +95,184 @@
     <div class="ke-form-content">
         <table>
             <tr>
-                <th align="left">Religion</th>
+                <th align="left">Religion</th> <td>
+                <obs class="Religion" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="Christianity,Muslim,Hindu"
+                     style="radio"/>
+            </td>
             </tr>
             <tr>
-                <th>Employment status</th>
+                <th>Employment status</th>  <td>
+                <obs class="Employment-status" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="Full-time,Part-time,Unemployed,Retired" style="radio"/>
+
+            </td>
             </tr>
-                <th align="left">Health Insurance</th>
+            <tr>
+                <th align="left">Health Insurance</th> <td>
+                <obs class="Health-Insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="NHIF,Other,None" style="radio"/>
+            </td>
             </tr>
-        </table>>
-            <tbody>
-            <repeat>
-                <template>
-                    <obsgroup groupingConceptId="160593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
-                        <tr>
-                            <td>
-                                <obs class="Religion" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerLabels="Christianity,Muslim,Hindu"
-                                     style="radio"/>
-                            </td>
-
-                            <td>
-                                <obs class="Employment-status" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerLabels="Full-time,Part-time,Unemployed,Retired" style="radio"/>
-
-                            </td>
-
-                            <td>
-                                <obs class="Health-Insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerLabels="NHIF,Other,None" style="radio"/>
-                            </td>
-                        </tr>
-
-                    </obsgroup>
-                </template>
-                <render n="1" concept=" "/>
-            </repeat>
-            </tbody>
-            <enrollInProgram programId="64d6b82c-08a9-11eb-b236-077a7c74158b" />
         </table>
         <table>
-            <tr>
-                <td class = "header"> <strong>Do you smoke cigarettes?</strong> </td>
-                <td class="data">
-                    <obs class="Do you smoke cigarettes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="YES,NO,STOPPED" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td class = "header"> <strong>Do you use other forms of Tobacco?</strong></td>
-                <td class="data">
-                    <obs class="Do you use other forms of Tobacco" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="YES,NO,STOPPED" style="radio"/>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="header"><strong>Do you take Alcohol?</strong></td>
-                <td class="data">
-                    <obs class="Do you take Alcohol" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="YES,NO,STOPPED" style="radio"/>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="header"><strong>HIV Status</strong></td>
-                <td class="data">
-                    <obs class="HIV status" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="Positive,Negative,Unknown" style="radio"/>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="header"><strong>Previous Cancer Treatment</strong></td>
-                <td class="data">
-                    <obs input="checkbox" class="Previous Cancer Treatment" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="Chemotherapy,Radiotherapy"/>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="header"><strong>If female</strong></td>
-                <td class="data">
-                    <obs class="If female" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="Parity,LNMP Date" style="textbox"/>
-                </td>
-            </tr>
-
+            <enrollInProgram programId="64d6b82c-08a9-11eb-b236-077a7c74158b" />
         </table>
+        <fieldset>
+            <table>
+                <tr>
+                    <td class = "header"> <strong>Do you smoke cigarettes?</strong> </td>
+                    <td class="data">
+                        <obs class="Do you smoke cigarettes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="YES,NO,STOPPED" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class = "header"> <strong>Do you use other forms of Tobacco?</strong></td>
+                    <td class="data">
+                        <obs class="Do you use other forms of Tobacco" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="YES,NO,STOPPED" style="radio"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="header"><strong>Do you take Alcohol?</strong></td>
+                    <td class="data">
+                        <obs class="Do you take Alcohol" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="YES,NO,STOPPED" style="radio"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="header"><strong>HIV Status</strong></td>
+                    <td class="data">
+                        <obs class="HIV status" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Positive,Negative,Unknown" style="radio"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="header"><strong>If Female</strong></td>
+                    <td class="data">
+                        <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Parity,LNMP Date" style="checkbox"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="header"><strong>Ever Screened For Cancer</strong></td>
+                    <td class="data">
+                        <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Chemotherapy,Radiotherapy" style="checkbox"/>
+                    </td>
+                </tr>
+
+            </table>
+        </fieldset>
+        <fieldset>
+        </fieldset>
+        <fieldset>
+            <table>
+
+                <tr>
+                    <td class="header"><strong>Pallitative Care Linkage</strong></td>
+                    <td class="data">Date of Linkage Date</td>
+                    <td class ="data">Center Patient Linked to:</td>
+                    <td class="data">Pain control (drop down of medications)</td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+        </fieldset>
+        <fieldset>
+            <table>
+                <tr>
+                    <td class="header"><strong>Are you currently breastfeeding an infant?</strong></td>
+                    <td class="data">
+                        <obs class="Are you currently breastfeeding an infant" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="YES,NO,N/A" style="radio"/>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <div>
+                <table style="width: 100%" >
+                    <td align="center"><strong>PAST MEDICAL HISTORY</strong></td>
+                </table>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <tr>
+                <th align="left"><strong> you currently being treated for any of the following illnesses?</strong>
+                </th> <td>
+                <obs class="illnesses" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="HIV /AIDS,Cardiovascular diseases,Cancer,Febrile illness,Other"
+                     style="radio"/>
+            </td>
+            </tr>
+        </fieldset>
+        <fieldset>
+            <tr>
+                <th align="left"><strong> If Female,</strong>
+                </th> <td> LMP Date:</td>
+
+            </tr>
+        </fieldset>
+
+        <fieldset>
+            <tr>
+                <th align="left"><strong> What Medication Allergies Do You Have?</strong>
+                </th> <td>
+                <obs class="Allergies" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="Penicillin,Sulfa,Other  (specify),None"
+                     style="radio"/>
+            </td>
+            </tr>
+        </fieldset>
+
+        <fieldset>
+            <tr>
+                <th align="left"><strong>Are you currently taking any of the following medications?</strong>
+                </th> <td>
+                <obs class="Medications" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="Antibiotics,Chemotherapy,Opioid Analgesics,Non-Opioid Analgesics"
+                     style="radio"/>
+            </td>
+            </tr>
+        </fieldset>
+
+        <fieldset>
+            <div>
+                <table style="width: 100%" >
+                    <td align="center"><strong>PHYSICAL EXAMINATION</strong></td>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset>
+            <table>
+            <tr>
+                <td class="header">Vitals:</td>
+                 <td class="data"> Systolic Blood Pressure / Diastolic Blood Pressure</td><td class="data">Pulse beats/min</td><td class="data">Breathing Rate</td><td class="data">Temperature [o C]</td><td class="data">Weight (kg)</td><td class="data">Height (cm)</td>
+                <td class="data">BSA (m2)</td> <td class="data">Blood Oxygen Saturation(%)</td>
+
+            </tr>
+            </table>
+        </fieldset>
     </div>
     <div class="ke-form-footer">
         <submit/>
