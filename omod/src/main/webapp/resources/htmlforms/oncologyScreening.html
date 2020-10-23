@@ -226,14 +226,214 @@
                             <option value="0000">prostate</option>
                             <option value="0000">Oral cancer</option>
                             <option value="5622">Other</option>
-                            </select> <span class="error field-error" style="display: none" id="00"></span></span>
+                            </select><span class="error field-error" style="display: none" id="0000"></span></span>
                     </td>
                 </tr>
             </table>
+
+            <table>
+               <thead>
+               <tr>
+                   <th>Screen test</th>
+                   <th>Findings</th>
+                   <th>Treatment/action</th>
+               </tr>
+               </thead>
+                <tbody>
+                <tr>
+                    <td>HPV (Age>30 years)</td>
+                    <td><obs class="HPV" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Positive,Negative" style="radio"/>
+                    </td>
+                    <td><obs class="HPV" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio"/></td>
+                </tr>
+                <tr>
+                    <td>VIA/VILI</td>
+                    <td><obs class="VIA/VILI" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Positive,Negative,suspicious for cancer" style="radio"/>
+                    </td>
+                    <td><obs class="VIA/VILI" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
+                             answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio"/></td>
+                </tr>
+                <tr>
+                    <td>Pap smear</td>
+                    <td><obs class="Papsmear" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664"
+                             answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>CBE</td>
+                    <td><obs class="CBE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Normal,Abnormal" style="radio"/>
+                    </td>
+                    <td><obs class="CBE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Negative result,Referred for imaging" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ultrasound</td>
+                    <td><obs class="Ultrasound" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777,777,777,777"
+                             answerLabels="BIRADS 0: Need additional imaging evaluation,BIRADS 1: Negative,BIRADS 2: Benign finding,BIRADS 3: Probably benign (follow-up in 6 months),BIRADS 4: Suspicious abnormality,BIRADS 5: Highly suggestive of malignancy,BIRADS 6: Biopsy-proven carcinoma" style="radio"/>
+                    </td>
+                    <td><obs class="Ultrasound" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Negative result,Referred for further evaluatio" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mammography</td>
+                    <td><obs class="Mammography" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777,777,777,777"
+                             answerLabels="BIRADS 0: Need additional imaging evaluation,BIRADS 1: Negative,BIRADS 2: Benign finding,BIRADS 3: Probably benign (follow-up in 6 months),BIRADS 4: Suspicious abnormality,BIRADS 5: Highly suggestive of malignancy,BIRADS 6: Biopsy-proven carcinoma" style="radio"/>
+                    </td>
+                    <td><obs class="Mammography" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Negative result,Referred for further evaluatio" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>FOBT</td>
+                    <td><obs class="FOBT" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Negative,Positive" style="radio"/>
+                    </td>
+                    <td><obs class="FOBT" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Negative findings,Referred for colonoscopy" style="radio"/></td>
+                </tr>
+                <tr>
+                    <td>Colonoscopy</td>
+                    <td><obs class="Colonoscopy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777"
+                             answerLabels="No abnormality,Polyps,Cancer,Other abnormalities" style="radio"/>
+                    </td>
+                    <td><obs class="Colonoscopy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777"
+                             answerLabels="Counseled on Negative findings,Polypectomy,Referred for further management" style="radio"/></td>
+                </tr>
+                <tr>
+                    <td>EUA</td>
+                    <td><obs class="EUA" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Normal,Abnormal" style="radio"/>
+                    </td>
+                    <td><obs class="EUA" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Retinoblastoma gene (RB1 gene) testing</td>
+                    <td><obs class="RB1 gene" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Positive,Negative" style="radio"/>
+                    </td>
+                    <td><obs class="RB1 gene" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DRE</td>
+                    <td><obs class="DRE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777"
+                             answerLabels="Normal,Enlarged,Hard/lumpy" style="radio"/>
+                    </td>
+                    <td><obs class="DRE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PSA testing</td>
+                    <td><obs class="PSA testing" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="4 - 10ng/ml,>10ng/ml" style="radio"/>
+                    </td>
+                    <td><obs class="PSA testing" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TRUS biopsy</td>
+                    <td><obs class="TRUS biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777"
+                             answerLabels="Benign,Inflammation (acute/chronic),Prostatic intraepithelial neoplasia (PIN),Adenocarcinoma,Other malignancies" style="radio"/>
+                    </td>
+                    <td><obs class="TRUS biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on the findings,Referred for further evaluation" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Visual</td>
+                    <td><obs class="Visual" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Normal,Abnormal" style="radio"/>
+                    </td>
+                    <td><obs class="Visual" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cytology</td>
+                    <td><obs class="Cytology" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Normal,Abnormal" style="radio"/>
+                    </td>
+                    <td><obs class="Cytology" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Imaging</td>
+                    <td><obs class="Imaging" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Normal,Abnormal" style="radio"/>
+                    </td>
+                    <td><obs class="Imaging" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Biopsy</td>
+                    <td><obs class="Biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Normal,Abnormal" style="radio"/>
+                    </td>
+                    <td><obs class="Biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Screening modality:</td>
+                    <td>Findings: </td>
+                    <td>Action:</td>
+                </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset>
+
         </fieldset>
 
     </div>
     <div class="ke-form-footer">
-        <submit/>
+        <input type="button" class="submitButton" value="Enter Form" onClick="submitHtmlForm()"/>
     </div>
 </htmlform>
