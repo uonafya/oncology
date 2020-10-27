@@ -73,11 +73,11 @@
     </style>
 
     <fieldset>
-    <div>
-      <table style="width: 100%" >
-          <td align="center"><strong>INITIAL ENCOUNTER FORM</strong></td>
-      </table>
-    </div>
+        <div>
+            <table style="width: 100%" >
+                <td align="center"><strong>INITIAL ENCOUNTER FORM</strong></td>
+            </table>
+        </div>
     </fieldset>
 
     <div class="ke-form-header">
@@ -215,13 +215,14 @@
 
         <fieldset>
             <tr>
-                <th align="left"><strong> you currently being treated for any of the following illnesses?</strong>
-                </th> <td>
-                <obs class="illnesses" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerLabels="HIV /AIDS,Cardiovascular diseases,Cancer,Febrile illness,Other"
-                     style="radio"/>
-            </td>
+                <th align="left"><strong> Are you currently being treated for any of the following illnesses?</strong>
+                </th>
+                <td>
+                    <obs class="illnesses" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="HIV /AIDS,Cardiovascular diseases,Cancer,Febrile illness,Other"
+                         style="radio"/>
+                </td>
             </tr>
         </fieldset>
         <fieldset>
@@ -265,14 +266,214 @@
         </fieldset>
         <fieldset>
             <table>
-            <tr>
-                <td class="header">Vitals:</td>
-                 <td class="data"> Systolic Blood Pressure / Diastolic Blood Pressure</td><td class="data">Pulse beats/min</td><td class="data">Breathing Rate</td><td class="data">Temperature [o C]</td><td class="data">Weight (kg)</td><td class="data">Height (cm)</td>
-                <td class="data">BSA (m2)</td> <td class="data">Blood Oxygen Saturation(%)</td>
+                <tr>
+                    <td class="header">Vitals:</td>
+                    <td class="data"> Systolic Blood Pressure / Diastolic Blood Pressure</td><td class="data">Pulse beats/min</td><td class="data">Breathing Rate</td><td class="data">Temperature [o C]</td><td class="data">Weight (kg)</td><td class="data">Height (cm)</td>
+                    <td class="data">BSA (m2)</td> <td class="data">Blood Oxygen Saturation(%)</td>
 
-            </tr>
+                </tr>
             </table>
         </fieldset>
+
+        <fieldset>
+            <tr>
+                <th align="left"><strong>ECOG Performance Index:</strong>
+                </th> <td>
+                <obs class="ECOG Performance Index" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="0 (normal activity),1 (Symptomatic but ambulatory),2 (Debilitated, but bedridden less 50% of day),3 (Debilitated, bedridden more 50% of the day),4 (100% Bedridden)"
+                     style="radio"/>
+            </td>
+            </tr>
+        </fieldset>
+
+        <fieldset>
+            <tr>
+                <th align="left"><strong>General Exam:</strong>
+                </th> <td>
+                <obs class="General Exam" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="Not Done,Normal,Temporal Wasting,Pallor  Comments:"
+                     style="radio"/>
+            </td>
+            </tr>
+        </fieldset>
+
+        <fieldset>
+            <table>
+                <tr>
+                    <th align="left"><strong>HEENT:</strong>
+                    </th> <td>
+                    <obs class="HEENT" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Not Done,Normal"
+                         style="radio"/>
+                </td>
+                </tr>
+                <tr>
+                    <th align="left"><strong>EYES:</strong>
+                    </th> <td>
+                    <obs class="EYES" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Scleral Icterus,Pale Conjunctiva"
+                         style="radio"/>
+                </td>
+                </tr>
+
+                <tr>
+                    <th align="left"><strong>Neck:</strong>
+                    </th> <td>
+                    <obs class="Neck" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Deviated Trachea,Nuchal Rigidity"
+                         style="radio"/>
+                </td>
+                </tr>
+
+                <tr>
+                    <th align="left"><strong>Mouth:</strong>
+                    </th> <td>
+                    <obs class="Mouth" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Thrush,Other lesions"
+                         style="radio"/>
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <tr>
+                <th align="left"><strong>Heart:</strong>
+                </th> <td>
+                <obs class="Heart" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="Not Done,Normal,Evidence for Enlargement,RV Lift,LV Lift,Abnormal Sounds,S3,Pericardial Rub,Murmurs,Systolic Ejection,Holosystolic,Diastolic Descrescendo,Diastolic Rumble"
+                     style="radio"/>
+            </td>
+            </tr>
+        </fieldset>
+        <fieldset>
+            <tr>
+                <th align="left"><strong>Abdomen:</strong>
+                </th> <td>
+                <obs class="Abdomen" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="Not Done,Normal,Evidence for Enlargement,Mass,Ascites,Hepatomegaly () cm below costal margin,Splenomegaly()cm below costal margin,Tender to Palpation, Abdominal Tenderness Location,RUQ,RLQ,LUQ,LLQ,Epigastric,Suprapubic"
+                     style="radio"/>
+            </td>
+            </tr>
+        </fieldset>
+        <fieldset>
+            <tr>
+                <th align="left"><strong>Abdomen:</strong>
+                </th> <td>
+                <obs class="Abdomen" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="Not Done,Normal,Evidence for Enlargement,Mass,Ascites,Hepatomegaly () cm below costal margin,Splenomegaly()cm below costal margin,Tender to Palpation, Abdominal Tenderness Location,RUQ,RLQ,LUQ,LLQ,Epigastric,Suprapubic"
+                     style="radio"/>
+            </td>
+            </tr>
+        </fieldset>
+        <fieldset>
+            <tr>
+                <th align="left"><strong>Genitourinary:</strong>
+                </th> <td>
+                <obs class="Geniutourinary" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="No Complaints,Dysuria,Increased Urine Volume,Increased Urine Urgency,Reduced Urine Volume"
+                     style="radio"/>
+            </td>
+            </tr>
+        </fieldset>
+        <fieldset>
+            <table>
+                <tr>
+                    <th align="left"><strong>Musculoskeletal:</strong>
+                    </th> <td>
+                    <obs class="Musculoskeletal" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="No Complaints,Edema of Legs,Leg Ulcers,Pain Duration,Days,Weeks,Months" style="radio"/>
+                </td>
+                </tr>
+                <tr>
+                    <th align="left">Location</th>
+                    <td>
+                        <obs class="Location" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Neck,RUE,LUE,RLE,LLE,Back,Chest,Buttocks" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="left">Notes</th>
+                    <td>
+                        <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="radio"/>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <tr>
+                <th align="left"><strong>Extremities:</strong>
+                </th> <td>
+                <obs class="Extremities:" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                     answerLabels="No Done,Normal,Edema,Leg Ulcers,Cellulitis,Kaposi's sarcoma,Mass" style="radio"/>
+            </td>
+            </tr>
+        </fieldset>
+        <fieldset>
+            <tr>
+                <th align="left">LYMPH NODE EXAM FINDINGS</th>
+                <td>
+                    <obs class="Extremities:" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Not Done,Normal,Submandibular,Supraclavicular,Cervical,Axillary,Inguinal,Generalized Lympadenopathy,Other,Normal (1115),Not Done" style="radio"/>
+                </td>
+            </tr>
+        </fieldset>
+        <fieldset>
+            <table>
+                <tr>
+                    <th align="left"><strong>Skin exam findings</strong></th>
+                </tr>
+
+                <tr>
+                    <th align="left">Please enter details of each skin exam finding:</th>
+                    <td>
+                        <obs class="Skin findings:" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Not Done,Normal,Mass,Abnormally warm" style="radio"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th align="left">Body Part with this skin finding:</th>
+                    <td>
+                        <obs class="skin findings:" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Face,Neck,Arm,Leg,Chest,Back,Abdomen,Genitals,Buttocks" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="left">Side of body with skin finding</th>
+                    <td>
+                        <obs class="skin findings:" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Right,Left,Not Applicable" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="left">Measurement (bi-directional) _____cm X  _____cm</th>
+                    <td>
+                        <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="textbox"/>
+                    </td>
+                </tr>
+
+            </table>
+        </fieldset>
+
+
     </div>
     <div class="ke-form-footer">
         <submit/>
