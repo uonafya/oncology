@@ -206,11 +206,11 @@
         </fieldset>
 
         <fieldset>
-            <div>
+
                 <table style="width: 100%" >
                     <td align="center"><strong>PAST MEDICAL HISTORY</strong></td>
                 </table>
-            </div>
+
         </fieldset>
 
         <fieldset>
@@ -502,51 +502,51 @@
 
         <fieldset>
             <table>
-            <tr>
-                <th align="left"><strong>Complete Blood Count </strong></th>
-            </tr>
-            <tr>
-                <th align="left">Hematocrit____%</th>
-                <td>
-                    <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="textbox"/> <td align="left">Test Date:
+                <tr>
+                    <th align="left"><strong>Complete Blood Count </strong></th>
+                </tr>
+                <tr>
+                    <th align="left">Hematocrit____%</th>
+                    <td>
+                        <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="textbox"/> <td align="left">Test Date:
                     <encounterDate id="Test-date" showTime="true"/></td>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="left">Hemoglobin ____g/dL</th>
+                    <td>
+                        <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="textbox"/> <td align="left">Test Date:
+                    <encounterDate id="Test-date" showTime="true"/>
                 </td>
-            </tr>
-            <tr>
-                <th align="left">Hemoglobin ____g/dL</th>
-                <td>
-                    <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="textbox"/> <td align="left">Test Date:
-                <encounterDate id="Test-date" showTime="true"/>
-            </td>
-                </td>
-            </tr>
-            <tr>
-                <th align="left">Mean corpuscular volume ___fL</th>
-                <td>
-                    <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
-                </td>
-            </tr>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="left">Mean corpuscular volume ___fL</th>
+                    <td>
+                        <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                    </td>
+                </tr>
 
-            <tr>
-                <th align="left">Platelets count ___10^3/µL</th>
-                <td>
-                    <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
-                </td>
-            </tr>
+                <tr>
+                    <th align="left">Platelets count ___10^3/µL</th>
+                    <td>
+                        <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                    </td>
+                </tr>
 
-            <tr>
-                <th align="left">Absolute neutrophil count, automated _10^3/µL</th>
-                <td>
-                    <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
-                </td>
-            </tr>
+                <tr>
+                    <th align="left">Absolute neutrophil count, automated _10^3/µL</th>
+                    <td>
+                        <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                    </td>
+                </tr>
 
-            <tr>
-                <th align="left">Retic count__%</th>
-                <td>
-                    <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
-                </td>
-            </tr>
+                <tr>
+                    <th align="left">Retic count__%</th>
+                    <td>
+                        <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                    </td>
+                </tr>
             </table>
         </fieldset>
 
@@ -702,7 +702,7 @@
             <tr>
                 <th align="left"><strong>Echo Study</strong></th>
                 <td>
-                     <td align="left">Test Date: <encounterDate id="Test-date" showTime="true"/></td>
+                <td align="left">Test Date: <encounterDate id="Test-date" showTime="true"/></td>
                 </td>
             </tr>
             <tr>
@@ -714,7 +714,165 @@
             </tr>
         </fieldset>
 
+        <fieldset>
+            <table>
+                <tr>
+                    <th align="left">Chest X-Ray(12)</th>
+                    <td>
+                    <td align="left">Test Date: <encounterDate id="Test-date" showTime="true"/></td>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="left">Reported by</th>
+                    <td>Provider:<encounterProvider default="currentUser" role="Provider" style="dropdown" id="provider"/></td>
+                </tr>
+            </table>
+            <fieldset>
+                <table>
+                    <tr>
+                        <td>Results</td>
+                    </tr>
+                    <thead>
+                    <tr>
+                        <th>Radiologist</th>
+                        <th>Medical/Clinical Officer</th>
+                        <th>Patient</th>
+                    </tr>
+                    </thead>
+                    <table>
+                        <tr>
+                            <td>code</td>
+                        </tr>
+                        <tr>
+                            <td><obs class="code" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="0=Normal,1=Pleural Effusion,2=Infiltrate,3=milliary,4=Diffuse abn/non-milliary,5=Cavitary,6=Cardiomegaly,7=other abnormality" style="..."/>
+                            </td>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                            <td>code</td>
+                        </tr>
+                        <tr>
+                            <td><obs class="code" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="0=Normal,1=Pleural Effusion,2=Infiltrate,3=milliary,4=Diffuse abn/non-milliary,5=Cavitary,6=Cardiomegaly,7=other abnormality" style="..."/>
+                            </td>
+                        </tr>
+                        <tr>
+                        </tr>
+
+                    </table>
+                    <table>
+
+                        <tr>
+                            <td>code</td>
+                        </tr>
+                        <tr>
+                            <td><obs class="code" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="0=Normal,1=Pleural Effusion,2=Infiltrate,3=milliary,4=Diffuse abn/non-milliary,5=Cavitary,6=Cardiomegaly,7=other abnormality" style="..."/>
+                            </td>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </table>
+
+                </table>
+                <table>
+                    <tr>
+                        <th align="left">X-Ray Type:</th>
+                        <td>
+                            <obs class="XRay_type" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                        <td>
+                            <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                        <td align="left">Date: <encounterDate id="Test-date" showTime="true"/></td>
+
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset/>
+        </fieldset>
+        <fieldset/>
+        <table>
+            <tr>
+                <th align="left">CT Head  Test date:</th>
+                <td>
+                <td><encounterDate id="Test-date" showTime="true"/></td>
+                </td>
+                <td>
+                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                </td>
+            </tr>
+            <tr>
+                <th align="left">CT Abdomen  Test date:</th> <td><encounterDate id="Test-date" showTime="true"/></td>
+                <td>
+                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                </td>
+            </tr>
+            <tr>
+                <th align="left">CT Chest  Test date:</th> <td><encounterDate id="Test-date" showTime="true"/></td>
+
+                <td><obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/></td>
+
+            </tr>
+        </table>
+        </fieldset>
+
+        <fieldset/>
+        <table>
+            <tr>
+                <th align="left">Ultra Sound –</th>
+
+            </tr>
+            <tr>
+                <th align="left">RENAL   Test date:</th>
+                </td>
+                <td><encounterDate id="Test-date" showTime="true"/></td>
+                </td>
+                <td>
+                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                </td>
+            </tr>
+            <tr>
+                <th align="left">HEPATIC  Test date:</th>
+                </td>
+                <td><encounterDate id="Test-date" showTime="true"/></td>
+                </td>
+                <td>
+                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                </td>
+            </tr>
+            <tr>
+                <th align="left">OBSTETRIC  Test date:</th>
+                </td>
+                <td><encounterDate id="Test-date" showTime="true"/></td>
+                </td>
+                <td>
+                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                <td>
+            </tr>
+            <tr>
+                <th align="left">ABDOMEN Test date:</th>
+                <td><encounterDate id="Test-date" showTime="true"/></td>
+                <td>
+                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                </td>
+            </tr>
+            <tr>
+                <th align="left">Other Tests(Radiology)</th>
+                <td><obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/><td>
+            </tr>
+        </table>
+        </fieldset>
+
+        </fieldset>
+
     </div>
+
     <div class="ke-form-footer">
         <submit/>
     </div>
