@@ -165,22 +165,23 @@
 
             <table>
 
-                <tr>
+                <tr id="symptoms">
                     <td class="header"><strong>Common symptoms</strong></td>
                     <td class="data">
-                        <obs class="Common symptoms" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answeConcepIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Dyspepsia,Blood in stool,Yellow eyes,Blood in urine,Nose bleeding,Difficulty in swallowing,Weight loss,Easy fatigability,Abnormal vaginal bleeding,Changing/enlarging skin moles,Chronic skin ulcers,Lumps/swellings,Chronic cough,Persistent headaches,Changing bowel habits,Post-coital bleeding"
+                        <obs class="Common symptoms" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answeConcepIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Dyspepsia,Weight loss,Chronic cough,Blood in stool,Easy fatigability,Persistent headaches,Yellow eyes,Abnormal vaginal bleeding,Changing bowel habits,Blood in urine,Changing/enlarging skin moles,Post-coital bleeding,Nose bleeding,Chronic skin ulcers,Difficulty in swallowing,Lumps/swellings"
 
-                             style="radio"/>
+                             style="checkbox"/>
                     </td>
                 </tr>
             </table>
         </fieldset>
 
-        <fieldset>
+        <!--fieldset>
             <legend>Common Symptoms</legend>
                 <table>
-                    <tr id="symptoms">
+                    <tr >
                         <td>  Common symptoms: <br/>
                             <input type="checkbox" id="symptom1" name="Dyspepsia" value="symptom"/><label for="symptom1">Dyspepsia</label><input type="hidden" name="Dyspepsia"/> <br/>
                             <input type="checkbox" id="symptom2" name="Blood in stool" value="symptom"/><label for="symptom2">Blood in stool</label><input type="hidden" name="Blood in stool"/> <br/>
@@ -201,7 +202,7 @@
                         </td>
                     </tr>
                 </table>
-        </fieldset>
+        </fieldset-->
 
         <fieldset>
             <legend>Screening</legend>
@@ -219,13 +220,13 @@
                         <span id="type" class="obs-field cancer">
                             <select>
                             <option value="" selected="true"></option>
-                            <option value="0000">Cervical cancer</option>
-                            <option value="0000">Breast cancer</option>
-                            <option value="0000">Colorectal</option>
-                            <option value="0000">Retinoblastoma</option>
-                            <option value="0000">prostate</option>
-                            <option value="0000">Oral cancer</option>
-                            <option value="5622">Other</option>
+                            <option value="151185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Cervical cancer</option>
+                            <option value="116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Breast cancer</option>
+                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Colorectal</option>
+                            <option value="127527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Retinoblastoma</option>
+                            <option value="163464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">prostate</option>
+                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Oral cancer</option>
+                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Other</option>
                             </select><span class="error field-error" style="display: none" id="0000"></span></span>
                     </td>
                 </tr>
@@ -257,13 +258,13 @@
                              answerLabels="Positive,Negative,suspicious for cancer" style="radio"/>
                     </td>
                     <td><obs class="VIA/VILI" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio"/></td>
                 </tr>
                 <tr>
                     <td>Pap smear</td>
                     <td><obs class="Papsmear" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
                     </td>
                     <td></td>
@@ -282,7 +283,7 @@
                 <tr>
                     <td>Ultrasound</td>
                     <td><obs class="Ultrasound" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777,777,777,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="BIRADS 0: Need additional imaging evaluation,BIRADS 1: Negative,BIRADS 2: Benign finding,BIRADS 3: Probably benign (follow-up in 6 months),BIRADS 4: Suspicious abnormality,BIRADS 5: Highly suggestive of malignancy,BIRADS 6: Biopsy-proven carcinoma" style="radio"/>
                     </td>
                     <td><obs class="Ultrasound" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -293,7 +294,7 @@
                 <tr>
                     <td>Mammography</td>
                     <td><obs class="Mammography" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777,777,777,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="BIRADS 0: Need additional imaging evaluation,BIRADS 1: Negative,BIRADS 2: Benign finding,BIRADS 3: Probably benign (follow-up in 6 months),BIRADS 4: Suspicious abnormality,BIRADS 5: Highly suggestive of malignancy,BIRADS 6: Biopsy-proven carcinoma" style="radio"/>
                     </td>
                     <td><obs class="Mammography" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -314,11 +315,11 @@
                 <tr>
                     <td>Colonoscopy</td>
                     <td><obs class="Colonoscopy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="No abnormality,Polyps,Cancer,Other abnormalities" style="radio"/>
                     </td>
                     <td><obs class="Colonoscopy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Counseled on Negative findings,Polypectomy,Referred for further management" style="radio"/></td>
                 </tr>
                 <tr>
@@ -346,7 +347,7 @@
                 <tr>
                     <td>DRE</td>
                     <td><obs class="DRE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Normal,Enlarged,Hard/lumpy" style="radio"/>
                     </td>
                     <td><obs class="DRE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -368,7 +369,7 @@
                 <tr>
                     <td>TRUS biopsy</td>
                     <td><obs class="TRUS biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Benign,Inflammation (acute/chronic),Prostatic intraepithelial neoplasia (PIN),Adenocarcinoma,Other malignancies" style="radio"/>
                     </td>
                     <td><obs class="TRUS biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -421,9 +422,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Screening modality:</td>
-                    <td>Findings: </td>
-                    <td>Action:</td>
+                    <td>Screening modality:<input type="text" name="inputbox" value=""></td>
+                    <td>Findings:<input type="text" name="inputbox" value=""> </td>
+                    <td>Action:<input type="text" name="inputbox" value=""></td>
                 </tr>
                 </tbody>
             </table>
