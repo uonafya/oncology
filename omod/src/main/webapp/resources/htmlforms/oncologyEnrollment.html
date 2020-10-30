@@ -1,15 +1,15 @@
 <!--
-  ~ The contents of this file are subject to the OpenMRS Public License
-  ~ Version 1.0 (the "License"); you may not use this file except in
-  ~ compliance with the License. You may obtain a copy of the License at
-  ~ http://license.openmrs.org
-  ~
-  ~ Software distributed under the License is distributed on an "AS IS"
-  ~ basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
-  ~ License for the specific language governing rights and limitations
-  ~ under the License.
-  ~
-  ~ Copyright (C) OpenMRS, LLC.  All Rights Reserved.
+~ The contents of this file are subject to the OpenMRS Public License
+~ Version 1.0 (the "License"); you may not use this file except in
+~ compliance with the License. You may obtain a copy of the License at
+~ http://license.openmrs.org
+~
+~ Software distributed under the License is distributed on an "AS IS"
+~ basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+~ License for the specific language governing rights and limitations
+~ under the License.
+~
+~ Copyright (C) OpenMRS, LLC.  All Rights Reserved.
 -->
 <htmlform>
     <script type="text/javascript">
@@ -71,13 +71,12 @@
             z-index: 2;
         }
     </style>
-
     <fieldset>
-        <div>
-            <table style="width: 100%" >
-                <td align="center"><strong>INITIAL ENCOUNTER FORM</strong></td>
-            </table>
-        </div>
+
+        <table style="width: 100%" >
+            <td align="center"><strong>INITIAL ENCOUNTER FORM</strong></td>
+        </table>
+
     </fieldset>
 
     <div class="ke-form-header">
@@ -207,9 +206,9 @@
 
         <fieldset>
 
-                <table style="width: 100%" >
-                    <td align="center"><strong>PAST MEDICAL HISTORY</strong></td>
-                </table>
+            <table style="width: 100%" >
+                <td align="center"><strong>PAST MEDICAL HISTORY</strong></td>
+            </table>
 
         </fieldset>
 
@@ -258,11 +257,11 @@
         </fieldset>
 
         <fieldset>
-            <div>
-                <table style="width: 100%" >
-                    <td align="center"><strong>PHYSICAL EXAMINATION</strong></td>
-                </table>
-            </div>
+
+            <table style="width: 100%" >
+                <td align="center"><strong>PHYSICAL EXAMINATION</strong></td>
+            </table>
+
         </fieldset>
         <fieldset>
             <table>
@@ -493,11 +492,11 @@
         </fieldset>
 
         <fieldset>
-            <div>
-                <table style="width: 100%" >
-                    <td align="center"><strong>LAB RESULTS</strong></td>
-                </table>
-            </div>
+
+            <table style="width: 100%" >
+                <td align="center"><strong>LAB RESULTS</strong></td>
+            </table>
+
         </fieldset>
 
         <fieldset>
@@ -775,8 +774,7 @@
                                      answerLabels="0=Normal,1=Pleural Effusion,2=Infiltrate,3=milliary,4=Diffuse abn/non-milliary,5=Cavitary,6=Cardiomegaly,7=other abnormality" style="..."/>
                             </td>
                         </tr>
-                        <tr>
-                        </tr>
+
                     </table>
 
                 </table>
@@ -795,9 +793,7 @@
                 </table>
             </fieldset>
             <fieldset/>
-        </fieldset>
-        <fieldset/>
-        <table>
+           <table>
             <tr>
                 <th align="left">CT Head  Test date:</th>
                 <td>
@@ -819,60 +815,45 @@
                 <td><obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/></td>
 
             </tr>
-        </table>
-        </fieldset>
-
-        <fieldset/>
-        <table>
+            </table>
+           <table>
             <tr>
-                <th align="left">Ultra Sound –</th>
+                <th align="left">Ultra Sound </th>
 
             </tr>
             <tr>
                 <th align="left">RENAL   Test date:</th>
-                </td>
+
                 <td><encounterDate id="Test-date" showTime="true"/></td>
-                </td>
-                <td>
-                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
-                </td>
+
+                <td><obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/></td>
+
             </tr>
             <tr>
-                <th align="left">HEPATIC  Test date:</th>
-                </td>
-                <td><encounterDate id="Test-date" showTime="true"/></td>
-                </td>
-                <td>
-                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
-                </td>
+                <th align="left">HEPATIC  Test date:</th> <td><encounterDate id="Test-date" showTime="true"/></td>
+                <td><obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/></td>
             </tr>
             <tr>
                 <th align="left">OBSTETRIC  Test date:</th>
-                </td>
-                <td><encounterDate id="Test-date" showTime="true"/></td>
-                </td>
-                <td>
-                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
-                <td>
-            </tr>
-            <tr>
-                <th align="left">ABDOMEN Test date:</th>
-                <td><encounterDate id="Test-date" showTime="true"/></td>
-                <td>
-                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
-                </td>
-            </tr>
-            <tr>
-                <th align="left">Other Tests(Radiology)</th>
-                <td><obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/><td>
-            </tr>
-        </table>
-        </fieldset>
 
+                <td><encounterDate id="Test-date" showTime="true"/></td>
+
+                <td>
+                    <obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                </td>
+            </tr>
+            <tr>
+                <th align="left">ABDOMEN Test date:</th><td><encounterDate id="Test-date" showTime="true"/></td>
+
+                <td><obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/></td>
+            </tr>
+            <tr>
+                <th align="left">Other Tests(Radiology)</th><td><obs class="Result" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/></td>
+            </tr>
+            </table>
         </fieldset>
 
     </div>
-
     <div class="ke-form-footer">
         <submit/>
     </div>
