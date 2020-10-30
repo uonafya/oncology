@@ -31,8 +31,258 @@
     </div>
     <div class="ke-form-content">
         <fieldset>
+            <table style="width: 100%" >
+                <td align="center"><strong>FOLLOW-UP VISITS FORM</strong></td>
+            </table>
+        </fieldset>
+        <fieldset>
+        <fieldset>
+            <table style="width: 100%" >
+                <td align="left"><strong>HISTORY</strong></td>
+            </table>
+        </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left"><strong>What is the reason for your current visit?</strong></th>
+
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Scheduled Clinic,Symptoms" style="radio"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left"><strong>Medical history</strong></th>
+
+                    </tr>
+                    <tr>
+                        <th align="left">Have you been hospitalized since last visit?</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Yes,No" style="radio"/>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <th align="left">Hospitalization Location:
+                        </th>
+                        <td>
+                            <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" type="autocomplete"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Hospitalization Diagnosis
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Details of Hospitalization
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left">No. of febrile illnesses since last clinic visit
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left">No. of packed red blood cells transfused since last clinic visit: ___
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left">No. of packed red blood cells transfused since last clinic visit: ___
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left">Please list all surgeries you have had since last visit________
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left"><strong>Medical history</strong></th>
+
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <th align="left">Drug Name:
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <th align="left">Reason for Use:
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Date Started
+                        </th>
+                        <td>
+                            <encounterDate id="Test-date" showTime="false"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th align="left">Date Stopped
+                        </th>
+                        <td>
+                            <encounterDate id="Test-date" showTime="false"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Dose (mg)
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Frequency/Cycles:
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Reason for Stop / Change:</th>
+
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Toxicity,Completed,Patient Refusal,Regimen Failure,Health Issues,Other" style="..."/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table style="width: 100%" >
+                    <td align="center"><strong>REVIEW OF SYSTEMS</strong></td>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left">General:</th>
+
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="No Complaints,Fevers,Pain,Fatigue,Jaundice,Weight Loss,Night Sweats" style="..."/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left">Self reported pain score: (0-10) Notes:</th>
+                        <td>
+                        <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                </table>
+                <tr>
+                    <th align="left">Where is the location of your pain?</th>
+
+                    <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="No Complaints,Fevers,Pain,Fatigue,Jaundice,Weight Loss,Night Sweats" style="..."/>
+                    </td>
+                </tr>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left">HEENT:
+                        </th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="No Complaints,Hearing Difficulties,Swallowing Difficulties,Vision Difficulties" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Notes:</th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left">Cardiopulmonary: </th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="No Complaints" style="radio"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Cough: </th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="days,weeks,months" style="radio"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Quality of cough: </th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="blood,white,purulent,other" style="radio"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">S0B: </th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="days,weeks,months,at rest,on exertion" style="radio"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
 
         </fieldset>
+
     </div>
     <div class="ke-form-footer">
         <submit/>
