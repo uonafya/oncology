@@ -516,6 +516,61 @@
                 </td>
                 </tr>
             </fieldset>
+            <fieldset>
+                <table>
+                <tr>
+                    <th align="left"><strong>PLAN:</strong>
+                    </th>
+                </tr>
+                <tr>
+                    <th align="left"><strong>TEST ORDERED</strong></th>
+                </tr>
+                    <tr>
+                        <th> What tests will be ordered for the patient?</th>
+                        <td>
+                            <obs class="Tests" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="None,Complete Blood Count,SGPT/ALT,SGOT / AST,Creatinine,CT Scan,Chest X-ray,Ultrasound,Echo,Other (specify)" style="radio"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left"><strong>Current stage </strong></th>
+                    </tr>
+                    <tr>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Stage I,Stage II,Stage III,Stage IV,Unknown" style="radio"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <tr>
+                        <th align="left"><strong>TREATMENT PLAN:</strong>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th align="left"><strong>Pre-Treatment BSA:</strong></th>
+                    </tr>
+                    <tr>
+                        <td>
+                        <!--calculate BSA (TO BE COMPUTED USING HEIGHT AND WEIGHT)-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left"><strong>TREATMENT PLAN:</strong> </th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Chemotherapy,Radiation Therapy,Surgery" style="radio"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
 
         </fieldset>
 
