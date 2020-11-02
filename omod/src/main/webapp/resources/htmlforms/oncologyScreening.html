@@ -95,7 +95,9 @@
                              answerLabels="NHIF,Other,None" style="radio"/>
                     </td>
                 </tr>
+            </table>
 
+            <table>
                 <tr>
                     <td class = "header">
                         <strong>Do you smoke cigarettes?</strong>
@@ -162,13 +164,14 @@
                 </tr>
 
             </table>
+        </fieldset>
 
+        <fieldset>
             <table>
-
-                <tr id="symptoms">
+                <tr id="common_symptoms">
                     <td class="header"><strong>Common symptoms</strong></td>
                     <td class="data">
-                        <obs class="Common symptoms" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                        <obs class="Coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answeConcepIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Dyspepsia,Weight loss,Chronic cough,Blood in stool,Easy fatigability,Persistent headaches,Yellow eyes,Abnormal vaginal bleeding,Changing bowel habits,Blood in urine,Changing/enlarging skin moles,Post-coital bleeding,Nose bleeding,Chronic skin ulcers,Difficulty in swallowing,Lumps/swellings"
 
@@ -177,32 +180,6 @@
                 </tr>
             </table>
         </fieldset>
-
-        <!--fieldset>
-            <legend>Common Symptoms</legend>
-                <table>
-                    <tr >
-                        <td>  Common symptoms: <br/>
-                            <input type="checkbox" id="symptom1" name="Dyspepsia" value="symptom"/><label for="symptom1">Dyspepsia</label><input type="hidden" name="Dyspepsia"/> <br/>
-                            <input type="checkbox" id="symptom2" name="Blood in stool" value="symptom"/><label for="symptom2">Blood in stool</label><input type="hidden" name="Blood in stool"/> <br/>
-                            <input type="checkbox" id="symptom3" name="yellow eyes" value="symptom"/><label for="symptom3">yellow eyes</label><input type="hidden" name="yellow eyes"/> <br/>
-                            <input type="checkbox" id="symptom4" name="Blood in urine" value="symptom"/><label for="symptom4">Blood in urine</label><input type="hidden" name="Blood in urine"/> <br/>
-                            <input type="checkbox" id="symptom5" name="Nose Bleeding" value="symptom"/><label for="symptom5">Nose Bleeding</label><input type="hidden" name="Nose Bleeding"/> <br/>
-                            <input type="checkbox" id="symptom6" name="Difficulty in swallowing" value="symptom"/><label for="symptom6">Difficulty in swallowing</label><input type="hidden" name="Difficulty in swallowing"/> <br/>
-                            <input type="checkbox" id="symptom7" name="Weight loss" value="symptom"/><label for="symptom7">Weight loss</label><input type="hidden" name="Weight loss"/> <br/>
-                            <input type="checkbox" id="symptom8" name="Easy fatigability" value="symptom"/><label for="symptom8">Easy fatigability</label><input type="hidden" name="easy fatigability"/> <br/>
-                            <input type="checkbox" id="symptom9" name="Abnormal vaginal bleeding" value="symptom"/><label for="symptom9">Abnormal vaginal bleeding</label><input type="hidden" name="Abnormal vaginal bleeding"/> <br/>
-                            <input type="checkbox" id="symptom10" name="Changing/enlarging skin moles" value="symptom"/><label for="symptom10">Changing/enlarging skin moles</label><input type="hidden" name="Changing/enlarging skin moles"/> <br/>
-                            <input type="checkbox" id="symptom11" name="Chronic skin ulcers" value="symptom"/><label for="symptom11">Chronic skin ulcers</label><input type="hidden" name="Chronic skin ulcers"/> <br/>
-                            <input type="checkbox" id="symptom12" name="Lumps/swellings" value="symptom"/><label for="symptom12">Lumps/swellings</label><input type="hidden" name="Lumps/swellings"/> <br/>
-                            <input type="checkbox" id="symptom13" name="Chronic cough" value="symptom"/><label for="symptom13">Chronic cough</label><input type="hidden" name="Chronic cough"/> <br/>
-                            <input type="checkbox" id="symptom14" name="Persistent headaches" value="symptom"/><label for="symptom14">Persistent headaches</label><input type="hidden" name="Persistent headaches"/> <br/>
-                            <input type="checkbox" id="symptom15" name="Changing bowel habits" value="symptom"/><label for="symptom15">Changing bowel habits</label><input type="hidden" name="Changing bowel habits"/> <br/>
-                            <input type="checkbox" id="symptom16" name="Post-coital bleeding" value="symptom"/><label for="symptom16">Post-coital bleeding</label><input type="hidden" name="Post-coital bleeding"/> <br/>
-                        </td>
-                    </tr>
-                </table>
-        </fieldset-->
 
         <fieldset>
             <legend>Screening</legend>
@@ -422,19 +399,18 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Screening modality:<input type="text" name="inputbox" value=""></td>
-                    <td>Findings:<input type="text" name="inputbox" value=""> </td>
-                    <td>Action:<input type="text" name="inputbox" value=""></td>
+                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Screening modality:" style=""/></td>
+                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Findings:"  style=""/> </td>
+                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Action:"  style=""/> </td>
                 </tr>
                 </tbody>
             </table>
         </fieldset>
-        <fieldset>
 
-        </fieldset>
 
     </div>
     <div class="ke-form-footer">
         <input type="button" class="submitButton" value="Enter Form" onClick="submitHtmlForm()"/>
     </div>
 </htmlform>
+
