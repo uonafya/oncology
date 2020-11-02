@@ -571,6 +571,178 @@
                     </tr>
                 </table>
             </fieldset>
+            <fieldset>
+                <table style="width: 100%" >
+                    <td align="left"><strong>CHEMOTHERAPY</strong></td>
+                </table>
+                <table>
+                    <tr>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Start,Change Regimen,Stop Regimen,Continue Regimen" style="radio"/>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th align="left">If Start Regimen:</th> <!-- Javascript to impliment this -->
+                    </tr>
+                    <tr>
+                        <th align="left">Drug Name:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Drug Names" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Chemotherapy Regimen:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Chemotherapy Regimens" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Chemotherapy intent:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Curative,Adjuvantor,Neo Adjuvant,Disease or Symptom control" style="radio"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Cycle Number:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Text Box" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">Start Date:
+                            <encounterDate id="encounter-date" showTime="false"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Route:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="PO,IV" style="radio"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Dose (mg)
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/><!--this can be calculated based on Body surface area, and dose mg/m2 and dose reduction-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">If Change Regimen:</th> <!-- Javascript to implement this -->
+                    </tr>
+                    <tr>
+                        <th align="left">Pick from list of existing drugs from patient reported :</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Drop Down or Checkboxes of existing drugs" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Enter Dose Reduction % - calculate new dose:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="New Dose Reduction Calculation" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Chemotherapy intent:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Curative,Adjuvantor,Neo Adjuvant,Disease or Symptom control" style="radio"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Cycle Number:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Text Box" style="..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">Start Date:
+                            <encounterDate id="encounter-date" showTime="false"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Route:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="PO,IV" style="radio"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Dose Reduction(mg)
+                        </th>
+                        <td>
+                            <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="..."/><!--this can be calculated based on Body surface area, and dose mg/m2 and dose reduction-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">Reason for Change:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Toxicity,Completed,Patient Refusal,Regimen Failure,Health Issues,Other" style="radio"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th align="left">If Stop Regimen:</th> <!-- Javascript to impliment this --></tr>
+                    <tr>
+                        <th align="left">Reason for Stop:</th>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Completion,Toxicity,Progression" style="radio"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table style="width: 100%" >
+                    <td align="left"><strong>Referrals (check all that apply)</strong></td>
+                    <tr>
+                    <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="None,Hospice/Palliative,Surgery,AMPATH CENTER,Radiology,Pathology,Radiation Therapy,Physiotherapy,Other Specify" style="radio"/>
+                    </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table style="width: 100%" >
+                    <td align="left"><strong>General notes</strong></td>
+                    <tr>
+                        <td><obs class="coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Text Box" style="..."/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                <tr>
+                    <th align="left">Provider1#:</th>
+                    <td>Provider:<encounterProvider default="currentUser" role="Provider" style="dropdown" id="provider"/></td>
+                </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table style="width: 100%">
+                    <tr>
+                        <th align="centre"><strong>Clinic Return Date:</strong>
+                        </th>
+                        <td>
+                            <encounterDate id="Test-date" showTime="false"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
 
         </fieldset>
 
