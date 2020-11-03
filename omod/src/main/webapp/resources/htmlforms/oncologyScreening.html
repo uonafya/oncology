@@ -12,8 +12,6 @@
   ~ Copyright (C) OpenMRS, LLC.  All Rights Reserved.
 -->
 <htmlform>
-    <script type="text/javascript">
-    </script>
     <style type="text/css">
         .section {
             border: 1px solid $headerColor;
@@ -86,9 +84,11 @@
     </div>
     <div class="ke-form-content">
         <fieldset>
-            <legend>Health Insurance</legend>
             <table>
                 <tr>
+                    <td class = "header">
+                        <strong>Health Insurance</strong>
+                    </td>
                     <td>
                         <obs class="Health-Insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="1917AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -96,7 +96,8 @@
                     </td>
                 </tr>
             </table>
-
+        </fieldset>
+        <fieldset>
             <table>
                 <tr>
                     <td class = "header">
@@ -131,7 +132,8 @@
                     </td>
                 </tr>
 
-                <tr>
+                <trduncantowers
+
                     <td class="header">
                         <strong>HIV Status</strong>
                     </td>
@@ -195,7 +197,7 @@
                 <tr>
                     <td>Cancer:
                         <span id="type" class="obs-field cancer">
-                            <select>
+                            <select id="cancer_type_select">
                             <option value="" selected="true"></option>
                             <option value="151185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Cervical cancer</option>
                             <option value="116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Breast cancer</option>
@@ -218,34 +220,40 @@
                </tr>
                </thead>
                 <tbody>
-                <tr>
-                    <td>HPV (Age>30 years)</td>
-                    <td><obs class="HPV" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Positive,Negative" style="radio"/>
-                    </td>
-                    <td><obs class="HPV" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio"/></td>
-                </tr>
-                <tr>
-                    <td>VIA/VILI</td>
-                    <td><obs class="VIA/VILI" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Positive,Negative,suspicious for cancer" style="radio"/>
-                    </td>
-                    <td><obs class="VIA/VILI" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio"/></td>
-                </tr>
-                <tr>
-                    <td>Pap smear</td>
-                    <td><obs class="Papsmear" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
-                    </td>
-                    <td></td>
-                </tr>
+                <!-- Start cervical cancer-->
+
+                    <tr id="cervical_cancer">
+                        <td>HPV (Age>30 years)</td>
+                        <td><obs class="HPV" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Positive,Negative" style="radio"/>
+                        </td>
+                        <td><obs class="HPV" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio"/></td>
+                    </tr>
+                    <tr>
+                        <td>VIA/VILI</td>
+                        <td><obs class="VIA/VILI" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Positive,Negative,suspicious for cancer" style="radio"/>
+                        </td>
+                        <td><obs class="VIA/VILI" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio"/></td>
+                    </tr>
+                    <tr>
+                        <td>Pap smear</td>
+                        <td><obs class="Papsmear" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                 answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                <!-- end cervical cancer-->
+
+                <!-- Start breast cancer-->
                 <tr>
                     <td>CBE</td>
                     <td><obs class="CBE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -279,6 +287,9 @@
                              answerLabels="Counseled on Negative result,Referred for further evaluatio" style="radio"/>
                     </td>
                 </tr>
+                <!-- end breast cancer-->
+
+                <!-- Start Colorectal cancer-->
                 <tr>
                     <td>FOBT</td>
                     <td><obs class="FOBT" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -299,6 +310,10 @@
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Counseled on Negative findings,Polypectomy,Referred for further management" style="radio"/></td>
                 </tr>
+                <!-- Start Colorectal cancer-->
+
+
+                <!-- Start Retinoblastoma cancer-->
                 <tr>
                     <td>EUA</td>
                     <td><obs class="EUA" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -321,6 +336,9 @@
                              answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
+                <!-- end Retinoblastoma cancer-->
+
+                <!-- Start Prostate cancer-->
                 <tr>
                     <td>DRE</td>
                     <td><obs class="DRE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -354,6 +372,9 @@
                              answerLabels="Counseled on the findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
+                <!-- End Prostate cancer-->
+
+                <!-- Start Oral cancer-->
                 <tr>
                     <td>Visual</td>
                     <td><obs class="Visual" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -398,6 +419,8 @@
                              answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
+                <!-- end Oral cancer-->
+
                 <tr>
                     <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Screening modality:" style=""/></td>
                     <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Findings:"  style=""/> </td>
@@ -412,5 +435,21 @@
     <div class="ke-form-footer">
         <input type="button" class="submitButton" value="Enter Form" onClick="submitHtmlForm()"/>
     </div>
+
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+
+        <script >
+            //On ready
+            $('#cancer_type_select').change(function(event){
+                let clicked = event.target.value;
+                if(clicked=='151185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'){
+                    $('#cervical_cancer').hide();
+                }
+            });
+        </script>
+
 </htmlform>
 
