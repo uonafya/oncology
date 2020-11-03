@@ -219,14 +219,13 @@
                     <td>Cancer:
                         <span id="type" class="obs-field cancer">
                             <select id="cancer_type_select">
-                            <option value="" selected="true"></option>
-                            <option value="151185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Cervical cancer</option>
-                            <option value="116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Breast cancer</option>
-                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Colorectal</option>
-                            <option value="127527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Retinoblastoma</option>
-                            <option value="163464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">prostate</option>
-                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Oral cancer</option>
-                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Other</option>
+                            <option value="151185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="cev_can" selected="selected">Cervical cancer</option>
+                            <option value="116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="brt_can">Breast cancer</option>
+                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="crt_can">Colorectal</option>
+                            <option value="127527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="rtb_can">Retinoblastoma</option>
+                            <option value="163464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="prt_can">prostate</option>
+                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="orl_can">Oral cancer</option>
+                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="otr_can">Other</option>
                             </select><span class="error field-error" style="display: none" id="0000"></span></span>
                     </td>
                 </tr>
@@ -243,7 +242,7 @@
                 <tbody>
                 <!-- Start cervical cancer-->
 
-                    <tr id="cervical_cancer">
+                    <tr class="cev_can">
                         <td>HPV (Age>30 years)</td>
                         <td><obs class="HPV" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -253,7 +252,7 @@
                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                  answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio"/></td>
                     </tr>
-                    <tr>
+                    <tr class="cev_can">
                         <td>VIA/VILI</td>
                         <td><obs class="VIA/VILI" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -263,7 +262,7 @@
                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                  answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio"/></td>
                     </tr>
-                    <tr>
+                    <tr class="cev_can">
                         <td>Pap smear</td>
                         <td><obs class="Papsmear" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -275,7 +274,7 @@
                 <!-- end cervical cancer-->
 
                 <!-- Start breast cancer-->
-                <tr>
+                <tr class="brt_can">
                     <td>CBE</td>
                     <td><obs class="CBE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -286,7 +285,7 @@
                              answerLabels="Counseled on Negative result,Referred for imaging" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="brt_can">
                     <td>Ultrasound</td>
                     <td><obs class="Ultrasound" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -297,7 +296,7 @@
                              answerLabels="Counseled on Negative result,Referred for further evaluatio" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="brt_can">
                     <td>Mammography</td>
                     <td><obs class="Mammography" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -311,7 +310,7 @@
                 <!-- end breast cancer-->
 
                 <!-- Start Colorectal cancer-->
-                <tr>
+                <tr class="crt_can">
                     <td>FOBT</td>
                     <td><obs class="FOBT" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -321,7 +320,7 @@
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Counseled on Negative findings,Referred for colonoscopy" style="radio"/></td>
                 </tr>
-                <tr>
+                <tr class="crt_can">
                     <td>Colonoscopy</td>
                     <td><obs class="Colonoscopy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -335,7 +334,7 @@
 
 
                 <!-- Start Retinoblastoma cancer-->
-                <tr>
+                <tr class="rtb_can">
                     <td>EUA</td>
                     <td><obs class="EUA" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -346,7 +345,7 @@
                              answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="rtb_can">
                     <td>Retinoblastoma gene (RB1 gene) testing</td>
                     <td><obs class="RB1 gene" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -360,7 +359,7 @@
                 <!-- end Retinoblastoma cancer-->
 
                 <!-- Start Prostate cancer-->
-                <tr>
+                <tr class="prt_can">
                     <td>DRE</td>
                     <td><obs class="DRE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -371,7 +370,7 @@
                              answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="prt_can" >
                     <td>PSA testing</td>
                     <td><obs class="PSA testing" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -382,7 +381,7 @@
                              answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="prt_can">
                     <td>TRUS biopsy</td>
                     <td><obs class="TRUS biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -396,7 +395,7 @@
                 <!-- End Prostate cancer-->
 
                 <!-- Start Oral cancer-->
-                <tr>
+                <tr class="orl_can" >
                     <td>Visual</td>
                     <td><obs class="Visual" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -407,7 +406,7 @@
                              answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="orl_can" >
                     <td>Cytology</td>
                     <td><obs class="Cytology" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -418,7 +417,7 @@
                              answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="orl_can" >
                     <td>Imaging</td>
                     <td><obs class="Imaging" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -429,7 +428,7 @@
                              answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="orl_can" >
                     <td>Biopsy</td>
                     <td><obs class="Biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -464,12 +463,26 @@
 
         <script >
             //On ready
-            $('#cancer_type_select').change(function(event){
-                let clicked = event.target.value;
-                if(clicked=='151185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'){
-                    $('#cervical_cancer').hide();
-                }
+            $(function (){
+                toggleVisibleElements("cev_can");
             });
+
+            $('#cancer_type_select').change(function(event){
+
+                let clicked = event.target.value;
+                let selectedItem = $('#cancer_type_select option:selected').attr('id');
+                console.log("debug working "+selectedItem);
+                toggleVisibleElements(selectedItem);
+            });
+
+            function toggleVisibleElements(elementToShow){
+                let elements = ['brt_can','crt_can','rtb_can','prt_can','orl_can','otr_can','cev_can'];
+                for(let x=0 ; x< elements.length; x++){
+
+                    if(elements[x]!=elementToShow) $("."+elements[x]).hide();
+                }
+                $("."+elementToShow).show();
+            }
         </script>
 
 </htmlform>
