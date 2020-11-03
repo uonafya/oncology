@@ -456,12 +456,7 @@
         <input type="button" class="submitButton" value="Enter Form" onClick="submitHtmlForm()"/>
     </div>
 
-    <script
-            src="https://code.jquery.com/jquery-1.12.4.min.js"
-            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-            crossorigin="anonymous"></script>
-
-        <script >
+        <script type="text/javascript">
             //On ready
             $(function (){
                 toggleVisibleElements("cev_can");
@@ -471,13 +466,13 @@
 
                 let clicked = event.target.value;
                 let selectedItem = $('#cancer_type_select option:selected').attr('id');
-                console.log("debug working "+selectedItem);
+
                 toggleVisibleElements(selectedItem);
             });
 
             function toggleVisibleElements(elementToShow){
                 let elements = ['brt_can','crt_can','rtb_can','prt_can','orl_can','otr_can','cev_can'];
-                for(let x=0 ; x< elements.length; x++){
+                for(let x=0 ; x &lt; elements.length; x++){
 
                     if(elements[x]!=elementToShow) $("."+elements[x]).hide();
                 }
