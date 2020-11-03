@@ -12,6 +12,8 @@
   ~ Copyright (C) OpenMRS, LLC.  All Rights Reserved.
 -->
 <htmlform>
+    <script type="text/javascript">
+    </script>
     <style type="text/css">
         .section {
             border: 1px solid $headerColor;
@@ -84,19 +86,18 @@
     </div>
     <div class="ke-form-content">
         <fieldset>
+            <legend>Health Insurance</legend>
             <table>
                 <tr>
-                    <td class = "header">
-                        <strong>Health Insurance</strong>
-                    </td>
                     <td>
-                        <obs class="Health-Insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                        <obs class="health_insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="1917AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="NHIF,Other,None" style="radio"/>
                     </td>
                 </tr>
             </table>
         </fieldset>
+
         <fieldset>
             <table>
                 <tr>
@@ -104,7 +105,7 @@
                         <strong>Do you smoke cigarettes?</strong>
                     </td>
                     <td class="data">
-                        <obs id="Smokes Cigarrets" conceptId="159424"
+                        <obs id="Smokes Cigarrets" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,158939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels= "Yes,No,Stopped" style="radio"/>
                     </td>
@@ -132,8 +133,7 @@
                     </td>
                 </tr>
 
-                <trduncantowers
-
+                <tr>
                     <td class="header">
                         <strong>HIV Status</strong>
                     </td>
@@ -164,21 +164,42 @@
                              answerLabels="Parity,LNMP Date" style="..."/>
                     </td>
                 </tr>
-
             </table>
         </fieldset>
 
         <fieldset>
             <table>
                 <tr id="common_symptoms">
-                    <td class="header"><strong>Common symptoms</strong></td>
-                    <td class="data">
-                        <obs class="Coded" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answeConcepIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Dyspepsia,Weight loss,Chronic cough,Blood in stool,Easy fatigability,Persistent headaches,Yellow eyes,Abnormal vaginal bleeding,Changing bowel habits,Blood in urine,Changing/enlarging skin moles,Post-coital bleeding,Nose bleeding,Chronic skin ulcers,Difficulty in swallowing,Lumps/swellings"
+                    <td class="header" rowspan="6"><strong>Common symptoms</strong></td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Dyspepsia"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Weight loss"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Chronic cough"  style="checkbox"/> </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Blood in stool"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Easy fatigability"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Persistent headaches"  style="checkbox"/> </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Yellow eyes"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Abnormal vaginal bleeding"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Changing bowel habits"  style="checkbox"/> </td>
+                </tr>
 
-                             style="checkbox"/>
-                    </td>
+                <tr>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Blood in urine"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Changing/enlarging skin moles"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Post-coital bleeding"  style="checkbox"/> </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Nose bleeding"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Chronic skin ulcers"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="____________"  style="checkbox"/> </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Difficulty in swallowing"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Lumps/Swellings"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="___________ "  style="checkbox"/> </td>
                 </tr>
             </table>
         </fieldset>
@@ -422,9 +443,9 @@
                 <!-- end Oral cancer-->
 
                 <tr>
-                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Screening modality:" style=""/></td>
-                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Findings:"  style=""/> </td>
-                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Action:"  style=""/> </td>
+                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Screening modality:" style="textarea"/></td>
+                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Findings:"  style="textarea"/> </td>
+                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Action:"  style="textarea"/> </td>
                 </tr>
                 </tbody>
             </table>
