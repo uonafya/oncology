@@ -45,7 +45,7 @@
         }
         td.header {
             border: 1px solid black;
-            background-color: #7FA99B;
+            background-color: #CCD1D1;
             width: 7%;
         }
         td.data {
@@ -95,10 +95,7 @@
         <table>
             <tr>
                 <th align="left">Religion</th> <td>
-                <obs class="Religion" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerLabels="Christianity,Muslim,Hindu"
-                     style="radio"/>
+                <obs class="Notes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="textbox"/>
             </td>
             </tr>
             <tr>
@@ -158,11 +155,11 @@
                 </tr>
 
                 <tr>
-                    <td class="header"><strong>If Female</strong></td>
-                    <td class="data">
-                        <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Parity,LNMP Date" style="checkbox"/>
+                    <td class="header"><strong>Female</strong></td>
+                    <td>
+                        <includeIf velocityTest="($patient.gender == 'F') &amp;&amp; ($patient.age &gt; 10)">
+                            LMP  <obs id="lmp-date" conceptId="1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" allowFutureDates="false" />
+                        </includeIf>
                     </td>
                 </tr>
                 <tr>

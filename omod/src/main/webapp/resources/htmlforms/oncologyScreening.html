@@ -45,7 +45,7 @@
         }
         td.header {
             border: 1px solid black;
-            background-color: #7FA99B;
+            background-color: #CCD1D1;
             width: 7%;
         }
         td.data {
@@ -90,12 +90,16 @@
             <table>
                 <tr>
                     <td>
-                        <obs class="Health-Insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                        <obs class="health_insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="1917AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="NHIF,Other,None" style="radio"/>
                     </td>
                 </tr>
+            </table>
+        </fieldset>
 
+        <fieldset>
+            <table>
                 <tr>
                     <td class = "header">
                         <strong>Do you smoke cigarettes?</strong>
@@ -152,53 +156,50 @@
                 </tr>
 
                 <tr>
-                    <td class="header"><strong>If female</strong>
+                    <td class="header"><strong>female</strong>
                     </td>
-                    <td class="data">
-                        <obs class="If female" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Parity,LNMP Date" style="..."/>
-                    </td>
-                </tr>
-
-            </table>
-
-            <table>
-
-                <tr>
-                    <td class="header"><strong>Common symptoms</strong></td>
-                    <td class="data">
-                        <obs class="Common symptoms" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answeConcepIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Dyspepsia,Blood in stool,Yellow eyes,Blood in urine,Nose bleeding,Difficulty in swallowing,Weight loss,Easy fatigability,Abnormal vaginal bleeding,Changing/enlarging skin moles,Chronic skin ulcers,Lumps/swellings,Chronic cough,Persistent headaches,Changing bowel habits,Post-coital bleeding"
-
-                             style="radio"/>
+                    <td>
+                        <includeIf velocityTest="($patient.gender == 'F') &amp;&amp; ($patient.age &gt; 10)">
+                            LMP  <obs id="lmp-date" conceptId="1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" allowFutureDates="false" />
+                        </includeIf>
                     </td>
                 </tr>
             </table>
         </fieldset>
 
         <fieldset>
-            <legend>Common Symptoms</legend>
             <table>
-                <tr id="symptoms">
-                    <td>  Common symptoms: <br/>
-                        <input type="checkbox" id="symptom1" name="Dyspepsia" value="symptom"/><label for="symptom1">Dyspepsia</label><input type="hidden" name="Dyspepsia"/> <br/>
-                        <input type="checkbox" id="symptom2" name="Blood in stool" value="symptom"/><label for="symptom2">Blood in stool</label><input type="hidden" name="Blood in stool"/> <br/>
-                        <input type="checkbox" id="symptom3" name="yellow eyes" value="symptom"/><label for="symptom3">yellow eyes</label><input type="hidden" name="yellow eyes"/> <br/>
-                        <input type="checkbox" id="symptom4" name="Blood in urine" value="symptom"/><label for="symptom4">Blood in urine</label><input type="hidden" name="Blood in urine"/> <br/>
-                        <input type="checkbox" id="symptom5" name="Nose Bleeding" value="symptom"/><label for="symptom5">Nose Bleeding</label><input type="hidden" name="Nose Bleeding"/> <br/>
-                        <input type="checkbox" id="symptom6" name="Difficulty in swallowing" value="symptom"/><label for="symptom6">Difficulty in swallowing</label><input type="hidden" name="Difficulty in swallowing"/> <br/>
-                        <input type="checkbox" id="symptom7" name="Weight loss" value="symptom"/><label for="symptom7">Weight loss</label><input type="hidden" name="Weight loss"/> <br/>
-                        <input type="checkbox" id="symptom8" name="Easy fatigability" value="symptom"/><label for="symptom8">Easy fatigability</label><input type="hidden" name="easy fatigability"/> <br/>
-                        <input type="checkbox" id="symptom9" name="Abnormal vaginal bleeding" value="symptom"/><label for="symptom9">Abnormal vaginal bleeding</label><input type="hidden" name="Abnormal vaginal bleeding"/> <br/>
-                        <input type="checkbox" id="symptom10" name="Changing/enlarging skin moles" value="symptom"/><label for="symptom10">Changing/enlarging skin moles</label><input type="hidden" name="Changing/enlarging skin moles"/> <br/>
-                        <input type="checkbox" id="symptom11" name="Chronic skin ulcers" value="symptom"/><label for="symptom11">Chronic skin ulcers</label><input type="hidden" name="Chronic skin ulcers"/> <br/>
-                        <input type="checkbox" id="symptom12" name="Lumps/swellings" value="symptom"/><label for="symptom12">Lumps/swellings</label><input type="hidden" name="Lumps/swellings"/> <br/>
-                        <input type="checkbox" id="symptom13" name="Chronic cough" value="symptom"/><label for="symptom13">Chronic cough</label><input type="hidden" name="Chronic cough"/> <br/>
-                        <input type="checkbox" id="symptom14" name="Persistent headaches" value="symptom"/><label for="symptom14">Persistent headaches</label><input type="hidden" name="Persistent headaches"/> <br/>
-                        <input type="checkbox" id="symptom15" name="Changing bowel habits" value="symptom"/><label for="symptom15">Changing bowel habits</label><input type="hidden" name="Changing bowel habits"/> <br/>
-                        <input type="checkbox" id="symptom16" name="Post-coital bleeding" value="symptom"/><label for="symptom16">Post-coital bleeding</label><input type="hidden" name="Post-coital bleeding"/> <br/>
-                    </td>
+                <tr id="common_symptoms">
+                    <td class="header" rowspan="6"><strong>Common symptoms</strong></td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Dyspepsia"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Weight loss"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Chronic cough"  style="checkbox"/> </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Blood in stool"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Easy fatigability"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Persistent headaches"  style="checkbox"/> </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Yellow eyes"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Abnormal vaginal bleeding"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Changing bowel habits"  style="checkbox"/> </td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Blood in urine"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Changing/enlarging skin moles"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Post-coital bleeding"  style="checkbox"/> </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Nose bleeding"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Chronic skin ulcers"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="____________"  style="checkbox"/> </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Difficulty in swallowing"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Lumps/Swellings"  style="checkbox"/> </td>
+                    <td><obs conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="___________ "  style="checkbox"/> </td>
                 </tr>
             </table>
         </fieldset>
@@ -217,15 +218,14 @@
                 <tr>
                     <td>Cancer:
                         <span id="type" class="obs-field cancer">
-                            <select>
-                            <option value="" selected="true"></option>
-                            <option value="0000">Cervical cancer</option>
-                            <option value="0000">Breast cancer</option>
-                            <option value="0000">Colorectal</option>
-                            <option value="0000">Retinoblastoma</option>
-                            <option value="0000">prostate</option>
-                            <option value="0000">Oral cancer</option>
-                            <option value="5622">Other</option>
+                            <select id="cancer_type_select">
+                            <option value="151185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="cev_can" selected="selected">Cervical cancer</option>
+                            <option value="116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="brt_can">Breast cancer</option>
+                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="crt_can">Colorectal</option>
+                            <option value="127527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="rtb_can">Retinoblastoma</option>
+                            <option value="163464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="prt_can">prostate</option>
+                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="orl_can">Oral cancer</option>
+                            <option value="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="otr_can">Other</option>
                             </select><span class="error field-error" style="display: none" id="0000"></span></span>
                     </td>
                 </tr>
@@ -240,7 +240,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <!-- Start cervical cancer-->
+
+                <tr class="cev_can">
                     <td>HPV (Age>30 years)</td>
                     <td><obs class="HPV" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -250,25 +252,29 @@
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio"/></td>
                 </tr>
-                <tr>
+                <tr class="cev_can">
                     <td>VIA/VILI</td>
                     <td><obs class="VIA/VILI" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Positive,Negative,suspicious for cancer" style="radio"/>
                     </td>
                     <td><obs class="VIA/VILI" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio"/></td>
                 </tr>
-                <tr>
+                <tr class="cev_can">
                     <td>Pap smear</td>
                     <td><obs class="Papsmear" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
                     </td>
                     <td></td>
                 </tr>
-                <tr>
+
+                <!-- end cervical cancer-->
+
+                <!-- Start breast cancer-->
+                <tr class="brt_can">
                     <td>CBE</td>
                     <td><obs class="CBE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -279,10 +285,10 @@
                              answerLabels="Counseled on Negative result,Referred for imaging" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="brt_can">
                     <td>Ultrasound</td>
                     <td><obs class="Ultrasound" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777,777,777,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="BIRADS 0: Need additional imaging evaluation,BIRADS 1: Negative,BIRADS 2: Benign finding,BIRADS 3: Probably benign (follow-up in 6 months),BIRADS 4: Suspicious abnormality,BIRADS 5: Highly suggestive of malignancy,BIRADS 6: Biopsy-proven carcinoma" style="radio"/>
                     </td>
                     <td><obs class="Ultrasound" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -290,10 +296,10 @@
                              answerLabels="Counseled on Negative result,Referred for further evaluatio" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="brt_can">
                     <td>Mammography</td>
                     <td><obs class="Mammography" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777,777,777,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="BIRADS 0: Need additional imaging evaluation,BIRADS 1: Negative,BIRADS 2: Benign finding,BIRADS 3: Probably benign (follow-up in 6 months),BIRADS 4: Suspicious abnormality,BIRADS 5: Highly suggestive of malignancy,BIRADS 6: Biopsy-proven carcinoma" style="radio"/>
                     </td>
                     <td><obs class="Mammography" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -301,7 +307,10 @@
                              answerLabels="Counseled on Negative result,Referred for further evaluatio" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <!-- end breast cancer-->
+
+                <!-- Start Colorectal cancer-->
+                <tr class="crt_can">
                     <td>FOBT</td>
                     <td><obs class="FOBT" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -311,17 +320,21 @@
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Counseled on Negative findings,Referred for colonoscopy" style="radio"/></td>
                 </tr>
-                <tr>
+                <tr class="crt_can">
                     <td>Colonoscopy</td>
                     <td><obs class="Colonoscopy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="No abnormality,Polyps,Cancer,Other abnormalities" style="radio"/>
                     </td>
                     <td><obs class="Colonoscopy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Counseled on Negative findings,Polypectomy,Referred for further management" style="radio"/></td>
                 </tr>
-                <tr>
+                <!-- Start Colorectal cancer-->
+
+
+                <!-- Start Retinoblastoma cancer-->
+                <tr class="rtb_can">
                     <td>EUA</td>
                     <td><obs class="EUA" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -332,7 +345,7 @@
                              answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="rtb_can">
                     <td>Retinoblastoma gene (RB1 gene) testing</td>
                     <td><obs class="RB1 gene" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -343,10 +356,13 @@
                              answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <!-- end Retinoblastoma cancer-->
+
+                <!-- Start Prostate cancer-->
+                <tr class="prt_can">
                     <td>DRE</td>
                     <td><obs class="DRE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Normal,Enlarged,Hard/lumpy" style="radio"/>
                     </td>
                     <td><obs class="DRE" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -354,7 +370,7 @@
                              answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="prt_can" >
                     <td>PSA testing</td>
                     <td><obs class="PSA testing" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -365,10 +381,10 @@
                              answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="prt_can">
                     <td>TRUS biopsy</td>
                     <td><obs class="TRUS biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,777,777"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerLabels="Benign,Inflammation (acute/chronic),Prostatic intraepithelial neoplasia (PIN),Adenocarcinoma,Other malignancies" style="radio"/>
                     </td>
                     <td><obs class="TRUS biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -376,7 +392,10 @@
                              answerLabels="Counseled on the findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <!-- End Prostate cancer-->
+
+                <!-- Start Oral cancer-->
+                <tr class="orl_can" >
                     <td>Visual</td>
                     <td><obs class="Visual" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -387,7 +406,7 @@
                              answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="orl_can" >
                     <td>Cytology</td>
                     <td><obs class="Cytology" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -398,7 +417,7 @@
                              answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="orl_can" >
                     <td>Imaging</td>
                     <td><obs class="Imaging" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -409,7 +428,7 @@
                              answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
-                <tr>
+                <tr class="orl_can" >
                     <td>Biopsy</td>
                     <td><obs class="Biopsy" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -420,20 +439,45 @@
                              answerLabels="Counseled on Normal findings,Referred for further evaluation" style="radio"/>
                     </td>
                 </tr>
+                <!-- end Oral cancer-->
+
                 <tr>
-                    <td>Screening modality:</td>
-                    <td>Findings: </td>
-                    <td>Action:</td>
+                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Screening modality:" style="textarea"/></td>
+                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Findings:"  style="textarea"/> </td>
+                    <td><obs class="Notes" conceptId="1198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Action:"  style="textarea"/> </td>
                 </tr>
                 </tbody>
             </table>
         </fieldset>
-        <fieldset>
 
-        </fieldset>
 
     </div>
     <div class="ke-form-footer">
         <input type="button" class="submitButton" value="Enter Form" onClick="submitHtmlForm()"/>
     </div>
+
+    <script type="text/javascript">
+        //On ready
+        $(function (){
+            toggleVisibleElements("cev_can");
+        });
+
+        $('#cancer_type_select').change(function(event){
+
+            let clicked = event.target.value;
+            let selectedItem = $('#cancer_type_select option:selected').attr('id');
+
+            toggleVisibleElements(selectedItem);
+        });
+
+        function toggleVisibleElements(elementToShow){
+            let elements = ['brt_can','crt_can','rtb_can','prt_can','orl_can','otr_can','cev_can'];
+            for(let x=0 ; x &lt; elements.length; x++){
+
+                if(elements[x]!=elementToShow) $("."+elements[x]).hide();
+            }
+            $("."+elementToShow).show();
+        }
+    </script>
+
 </htmlform>
