@@ -49,6 +49,7 @@
         <property name="reports">
             <set>
                 <ref bean="oncologyapp.cancer.report.inProgram"/>
+                <ref bean="oncologyapp.cancer.report.moh745"/>
 
             </set>
         </property>
@@ -119,15 +120,16 @@
             </set>
         </property>
     </bean>
-    <bean id="oncologyapp.cancer.report.moh745" class="org.openmrs.module.kenyacore.report.ReportDescriptor">
+    <bean id="oncologyapp.cancer.report.moh745" class="org.openmrs.module.kenyacore.report.IndicatorReportDescriptor">
         <property name="targetUuid " value="d2b4f20a-27e4-11eb-8270-43cdea9c6fa9"/>
-        <property name="name" value="Cancer screening monthly summary"/>
-        <property name="builder" value="org.openmrs.module.oncologyapp.reporting.builder.Moh745ReportBuilder"/>
+        <property name="name" value="MOH 745 summary report"/>
+        <property name="description" value="MOH Cancer screening monthly summary report"/>
         <property name="apps">
             <set>
                 <ref bean="kenyaemr.app.reports"/>
             </set>
         </property>
+        <property name="template" value="oncology:reports/moh745_template.xls"/>
     </bean>
     <bean id="oncologyapp.config.form" class="org.openmrs.module.kenyacore.form.FormConfiguration">
         <property name="commonVisitForms">
