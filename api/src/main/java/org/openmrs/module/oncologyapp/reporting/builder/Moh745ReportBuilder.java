@@ -17,19 +17,18 @@ import java.util.List;
  * Report builder for moh745 oncology report
  */
 @Component
-@Builds({"oncologyapp.cancer.report.moh745"})
+@Builds({ "oncologyapp.cancer.report.moh745" })
 public class Moh745ReportBuilder extends AbstractReportBuilder {
-    @Override
-    protected List<Parameter> getParameters(ReportDescriptor reportDescriptor) {
-        return Arrays.asList(
-                new Parameter("startDate", "Start Date", Date.class),
-                new Parameter("endDate", "End Date", Date.class),
-                new Parameter("dateBasedReporting", "", String.class)
-        );
-    }
-
-    @Override
-    protected List<Mapped<DataSetDefinition>> buildDataSets(ReportDescriptor reportDescriptor, ReportDefinition reportDefinition) {
-        return null;
-    }
+	
+	@Override
+	protected List<Parameter> getParameters(ReportDescriptor reportDescriptor) {
+		return Arrays.asList(new Parameter("startDate", "Start Date", Date.class), new Parameter("endDate", "End Date",
+		        Date.class), new Parameter("dateBasedReporting", "", String.class));
+	}
+	
+	@Override
+	protected List<Mapped<DataSetDefinition>> buildDataSets(ReportDescriptor reportDescriptor,
+	        ReportDefinition reportDefinition) {
+		return null;
+	}
 }
