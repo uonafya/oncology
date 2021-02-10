@@ -14,50 +14,27 @@
 <htmlform>
     <script type="text/javascript">
     </script>
-        table.baseline-aligned td {
-            vertical-align: baseline;
-        }
-        table.moh406 {
+    <style>
+        table.screening {
             border-collapse: collapse;
-            background-color: #FBFAE1;
+            background-color: #F3F9FF;
         }
-        table.oncology > tbody > tr > td, table.oncology > tbody > tr > th {
+        table.screening > tbody > tr > td, table.screening > tbody > tr > th {
             border: 1px solid black;
             vertical-align: baseline;
-            padding: 4px;
+            padding: 3.6px;
             text-align: left;
+            background-color: #D9F4D3;
+        }
+        .left-table {
+            display: inline-block; border: 1px solid; float: left;
+        }
 
-
-        }
-        td.header {
-            border: 1px solid black;
-            background-color: #7FA99B;
-            width: 7%;
-        }
-        td.data {
-            border: 1px solid black;
-            text-align: left;
-        }
-        #rotate_text
-        {
-            id: rot_text;
-            width:130px;
-            height:100px;
-            -ms-transform:rotate(270deg); /* IE 9 */
-            -moz-transform:rotate(270deg); /* Firefox */
-            -webkit-transform:rotate(270deg); /* Safari and Chrome */
-            -o-transform:rotate(270deg); /* Opera */
-        }
-        .tooltip{
-            margin:8px;
-            padding:8px;
-            border:1px solid blue;
-            background-color:yellow;
-            position: absolute;
-            z-index: 2;
+        .right-table {
+            display: inline-block; border: 1px solid;
         }
         .trbackcolor{
-            background-color: grey;
+            background-color: lightgrey;
         }
     </style>
 
@@ -65,10 +42,10 @@
         <table style="width: 100%" cellspacing="0" cellpadding="0">
             <tr>
                 <td>Date:
-                    <encounterDate id="encounter-date" showTime="true"/>
+                    <encounterDate id="encounter-date" showTime="true" />
                 </td>
                 <td>Enrolled by:
-                    <encounterProvider default="currentUser"/>
+                    <encounterProvider default="currentUser" />
                 </td>
                 <td>Location:
                     <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" type="autocomplete" />
@@ -77,107 +54,112 @@
         </table>
     </div>
     <div class="ke-form-content">
-        <table width="75%" cellpadding="0" cellspacing="0" align="center">
-            <tr>
-                <td>Birth certificate number</td>
-                <td><patient id="bcn" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" /></td>
-            </tr>
-            <tr>
-                <td>Health Insurance</td>
-                <td>
-                    <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="NHIF,Other,None" style="radio" />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="trbackcolor">&nbsp;</td>
-            </tr>
-            <tr>
-                <td>Do you smoke cigarattes</td>
-                <td>
-                    <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="YES,NO,STOPPED" style="radio"/>
-                    Number of years smoked:<input type="text" />
-                    <br />
-                    Number of ciggarattes per day:<input type="text" />
-                </td>
-            </tr>
-            <tr>
-                <td>Do you use other form of tobacco</td>
-                <td>
-                    <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="YES,NO,STOPPED" style="radio" />
-                </td>
-            </tr>
-            <tr>
-                <td>Do you take Alcohol</td>
-                <td>
-                    <obs class="Do you take Alcohol" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="YES,NO,STOPPED" style="radio" />
-                </td>
-            </tr>
-            <tr>
-                <td>HIV Status</td>
-                <td class="data">
-                    <obs class="HIV status" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="Positive,Negative,Unknown" style="radio" />
-                </td>
-            </tr>
-            <tr>
-                <td>Previous Cancer Treatment</td>
-                <td>
-                    <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="Chemotherapy,Radiotherapy" style="checkbox"/>
-                </td>
-            </tr>
-            <includeIf velocityTest="$patient.gender == 'F' ">
-            <tr>
-                <td>If female</td>
-                <td>
-                    Parity:<obs conceptId="1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
-                    <br />
-                    LMP date: <obs id="lmp-date" conceptId="1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
-
-                </td>
-            </tr>
-            </includeIf>
-            <tr>
-                <td colspan="2" class="trbackcolor">&nbsp;</td>
-            </tr>
-
-        </table>
-        <fieldset>
-            <table>
-
+        <table class="screening" width="75%" cellpadding="0" cellspacing="0" align="center">
+            <tdbody>
                 <tr>
-                    <td class="header"><strong>Common symptoms</strong></td>
-                    <td class="data">
-                        <obs class="Common symptoms" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answeConcepIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Dyspepsia,Blood in stool,Yellow eyes,Blood in urine,Nose bleeding,Difficulty in swallowing,Weight loss,Easy fatigability,Abnormal vaginal bleeding,Changing/enlarging skin moles,Chronic skin ulcers,Lumps/swellings,Chronic cough,Persistent headaches,Changing bowel habits,Post-coital bleeding"
-
-                             style="radio"/>
+                    <td>Birth certificate number</td>
+                    <td><patient id="bcn" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" /></td>
+                </tr>
+                <tr>
+                    <td>Health Insurance</td>
+                    <td>
+                        <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="NHIF,Other,None" style="radio" />
                     </td>
                 </tr>
-            </table>
-        </fieldset>
+                <br />
+                <tr>
+                    <td colspan="2" class="trbackcolor">&nbsp;</td>
+                </tr>
+                <br />
+                <tr>
+                    <td>Do you smoke cigarattes</td>
+                    <td>
+                        <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="YES,NO,STOPPED" style="radio"/>
+                        Number of years smoked:<input type="text" />
+                        <br />
+                        Number of ciggarattes per day:<input type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Do you use other form of tobacco</td>
+                    <td>
+                        <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="YES,NO,STOPPED" style="radio" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Do you take Alcohol</td>
+                    <td>
+                        <obs class="Do you take Alcohol" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="YES,NO,STOPPED" style="radio" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>HIV Status</td>
+                    <td>
+                        <obs class="HIV status" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Positive,Negative,Unknown" style="radio" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Previous Cancer Treatment</td>
+                    <td>
+                        <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Chemotherapy,Radiotherapy" style="checkbox"/>
+                    </td>
+                </tr>
+                <includeIf velocityTest="$patient.gender == 'F' ">
+                <tr>
+                    <td>If female</td>
+                    <td>
+                        Parity:<obs conceptId="1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                        <br />
+                        LMP date: <obs id="lmp-date" conceptId="1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
 
+                    </td>
+                </tr>
+                </includeIf>
+                <br />
+                <tr>
+                    <td colspan="2" class="trbackcolor">&nbsp;</td>
+                </tr>
+                <br />
+                <tr>
+                    <td>Common symptoms</td>
+                    <td>
+                        <table>
+                            <tdbody>
+                                <tr>
+                                    <td>
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="111AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Dyspepsia" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="117671AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Blood in stool" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5192AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Yellow eyes" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="163683AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Blood in urine" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="132667AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Nose Bleeding" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5954AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Difficulty in swallowing" style="checkbox" /><br />
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tdbody>
+                        </table>
+                    </td>
+                </tr>
+            </tdbody>
+        </table>
         <fieldset>
             <legend>Common Symptoms</legend>
             <table>
                 <tr id="symptoms">
                     <td>  Common symptoms: <br/>
-                        <input type="checkbox" id="symptom1" name="Dyspepsia" value="symptom"/><label for="symptom1">Dyspepsia</label><input type="hidden" name="Dyspepsia"/> <br/>
-                        <input type="checkbox" id="symptom2" name="Blood in stool" value="symptom"/><label for="symptom2">Blood in stool</label><input type="hidden" name="Blood in stool"/> <br/>
-                        <input type="checkbox" id="symptom3" name="yellow eyes" value="symptom"/><label for="symptom3">yellow eyes</label><input type="hidden" name="yellow eyes"/> <br/>
-                        <input type="checkbox" id="symptom4" name="Blood in urine" value="symptom"/><label for="symptom4">Blood in urine</label><input type="hidden" name="Blood in urine"/> <br/>
-                        <input type="checkbox" id="symptom5" name="Nose Bleeding" value="symptom"/><label for="symptom5">Nose Bleeding</label><input type="hidden" name="Nose Bleeding"/> <br/>
-                        <input type="checkbox" id="symptom6" name="Difficulty in swallowing" value="symptom"/><label for="symptom6">Difficulty in swallowing</label><input type="hidden" name="Difficulty in swallowing"/> <br/>
                         <input type="checkbox" id="symptom7" name="Weight loss" value="symptom"/><label for="symptom7">Weight loss</label><input type="hidden" name="Weight loss"/> <br/>
                         <input type="checkbox" id="symptom8" name="Easy fatigability" value="symptom"/><label for="symptom8">Easy fatigability</label><input type="hidden" name="easy fatigability"/> <br/>
                         <input type="checkbox" id="symptom9" name="Abnormal vaginal bleeding" value="symptom"/><label for="symptom9">Abnormal vaginal bleeding</label><input type="hidden" name="Abnormal vaginal bleeding"/> <br/>

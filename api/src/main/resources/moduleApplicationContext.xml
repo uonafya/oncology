@@ -132,6 +132,7 @@
         <property name="commonVisitForms">
             <set>
                 <ref bean="oncologyapp.cancer.form.screening" />
+                <ref bean="oncologyapp.cancer.form.trauma" />
             </set>
         </property>
         <property name="commonPatientForms">
