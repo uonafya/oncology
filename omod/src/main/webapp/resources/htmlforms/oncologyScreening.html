@@ -15,19 +15,6 @@
     <script type="text/javascript">
     </script>
     <style>
-        .section {
-            border: 1px solid $headerColor;
-            padding: 2px;
-            text-align: left;
-            margin-bottom: 1em;
-        }
-        .sectionHeader {
-            background-color: $headerColor;
-            color: $fontOnHeaderColor;
-            display: block;
-            padding: 2px;
-            font-weight: bold;
-        }
         table.baseline-aligned td {
             vertical-align: baseline;
         }
@@ -70,94 +57,105 @@
             position: absolute;
             z-index: 2;
         }
+        .trbackcolor{
+            background-color: grey;
+        }
     </style>
 
     <div class="ke-form-header">
-        <table style="width: 100%">
+        <table style="width: 100%" cellspacing="0" cellpadding="0">
             <tr>
-                <td align="left">Date:
+                <td>Date:
                     <encounterDate id="encounter-date" showTime="true"/>
                 </td>
-                <td align="right">Location:
+                <td>Enrolled by:
+                    <encounterProvider default="currentUser"/>
+                </td>
+                <td>Location:
                     <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" type="autocomplete"/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="ke-form-content">
-        <table>
+        <table width="75%" cellpadding="0" cellspacing="0" align="center">
             <tr>
-                <th align="left">Religion</th> <td>
-                <obs class="Religion" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerLabels="Christianity,Muslim,Hindu"
-                     style="radio"/>
-            </td>
+                <td>Birth certificate number</td>
+                <td><patient id="bcn" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" /></td>
             </tr>
             <tr>
-                <th>Employment status</th>  <td>
-                <obs class="Employment-status" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerLabels="Full-time,Part-time,Unemployed,Retired" style="radio"/>
-
-            </td>
+                <td>Health Insurance</td>
+                <td>
+                    <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="NHIF,Other,None" style="radio"/>
+                </td>
             </tr>
             <tr>
-            <th align="left">Health Insurance</th> <td>
-                <obs class="Health-Insurance" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerLabels="NHIF,Other,None" style="radio"/>
-            </td>
+                <td colspan="2" class="trbackcolor">&nbsp;</td>
             </tr>
-        </table>
-        <table>
-        <enrollInProgram programId="64d6b82c-08a9-11eb-b236-077a7c74158b" />
-        </table>
-        <fieldset>
-        <table>
-        <tr>
-            <td class = "header"> <strong>Do you smoke cigarettes?</strong> </td>
-            <td class="data">
-                <obs class="Do you smoke cigarettes" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerLabels="YES,NO,STOPPED" style="radio"/>
-            </td>
-        </tr>
-        <tr>
-            <td class = "header"> <strong>Do you use other forms of Tobacco?</strong></td>
-            <td class="data">
-                <obs class="Do you use other forms of Tobacco" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                     answerLabels="YES,NO,STOPPED" style="radio"/>
-            </td>
-        </tr>
-
             <tr>
-                <td class="header"><strong>Do you take Alcohol?</strong></td>
-                <td class="data">
+                <td>Do you smoke cigarattes</td>
+                <td>
+                    <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="YES,NO,STOPPED" style="radio"/>
+                    Number of years smoked:<input type="text" />
+                    <br />
+                    Number of ciggarattes per day:<input type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>Do you use other form of tobacco</td>
+                <td>
+                    <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="YES,NO,STOPPED" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Do you take Alcohol</td>
+                <td>
                     <obs class="Do you take Alcohol" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                          answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                          answerLabels="YES,NO,STOPPED" style="radio"/>
                 </td>
             </tr>
-
             <tr>
-                <td class="header"><strong>HIV Status</strong></td>
+                <td>HIV Status</td>
                 <td class="data">
                     <obs class="HIV status" conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                          answerLabels="Positive,Negative,Unknown" style="radio"/>
                 </td>
             </tr>
-
             <tr>
-                <td class="header"><strong>Previous Cancer Treatment</strong></td>
-                <td class="data">
+                <td>Previous Cancer Treatment</td>
+                <td>
                     <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                          answerLabels="Chemotherapy,Radiotherapy" style="checkbox"/>
+                         answerLabels="Chemotherapy,Radiotherapy" style="checkbox"/>
                 </td>
             </tr>
+            <includeIf velocityTest="$patient.gender == 'F' ">
+            <tr>
+                <td>If female</td>
+                <td>
+                    Parity:<obs conceptId="1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                    <br />
+                    LMP date: <obs id="lmp-date" conceptId="1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+
+                </td>
+            </tr>
+            </includeIf>
+            <tr>
+                <td colspan="2" class="trbackcolor">&nbsp;</td>
+            </tr>
+
+        </table>
+        <fieldset>
+        <table>
+
 
             <tr>
                 <td class="header"><strong>If Female</strong></td>
