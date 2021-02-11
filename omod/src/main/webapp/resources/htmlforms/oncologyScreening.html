@@ -69,7 +69,7 @@
                 </tr>
                 <br />
                 <tr>
-                    <td colspan="2" class="trbackcolor">&nbsp;</td>
+                    <th colspan="2">&nbsp;</th>
                 </tr>
                 <br />
                 <tr>
@@ -130,13 +130,13 @@
                 </includeIf>
                 <br />
                 <tr>
-                    <td colspan="2" class="trbackcolor">&nbsp;</td>
+                    <th colspan="2">&nbsp;</th>
                 </tr>
                 <br />
                 <tr>
                     <td valign="top">Common symptoms</td>
                     <td>
-                        <table>
+                        <table class="screening" style="width: 100%" cellspacing="0" cellpadding="0">
                             <tdbody>
                                 <tr>
                                     <td>
@@ -166,11 +166,11 @@
                         </table>
                     </td>
                 </tr>
-                <tr><td colspan="2" class="trbackcolor">&nbsp;</td></tr>
+                <tr><th colspan="2">&nbsp;</th></tr>
                 <tr>
                     <td valign="top">Screening</td>
                     <td>
-                        <table class="screening">
+                        <table class="screening" style="width: 100%" cellspacing="0" cellpadding="0">
                             <tbody>
                                 <tr>
                                     <td>Visit type</td>
@@ -196,6 +196,38 @@
                                 <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio"/></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>VIA/VILI</td>
+                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerLabels="Positive,Negative,suspicious for cancer" style="radio"/>
+                                </td>
+                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
+                                         answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio"/></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>Pap smear</td>
+                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664"
+                                         answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>Breast</td>
+                                <td>CBE</td>
+                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerLabels="Normal,Abnormal" style="radio"/>
+                                </td>
+                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerLabels="Counseled on Negative result,Referred for imaging" style="radio"/>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
