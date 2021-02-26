@@ -186,6 +186,7 @@
                                 <th>Findings</th>
                                 <th>Treatment/Action</th>
                             </tr>
+                        <includeIf velocityTest="$patient.gender == 'F' ">
                             <tr>
                                 <th rowspan="3">Cervical</th>
                                 <th>HPV (Age>30 years)</th>
@@ -220,6 +221,7 @@
                                 </td>
                                 <td>&nbsp;</td>
                             </tr>
+                        </includeIf>
                             <tr>
                                 <th rowspan="3">Breast</th>
                                 <td>CBE</td>
@@ -306,6 +308,7 @@
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/></td>
                             </tr>
+                         <includeIf velocityTest="$patient.gender == 'M' ">
                             <tr>
                                 <th rowspan="3">Prostate</th>
                                 <th>DRE</th>
@@ -342,6 +345,7 @@
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Counseled on Negative Findings,Referred for further evaluation" style="radio"/></td>
                             </tr>
+                            </includeIf>
                             <tr>
                                 <th rowspan="4">Oral</th>
                                 <th>Visual</th>
