@@ -119,7 +119,7 @@
                 </tr>
                 <includeIf velocityTest="$patient.gender == 'F' ">
                     <tr>
-                        <td>If female</td>
+                        <td>Female Client</td>
                         <td>
                             Parity:<obs conceptId="1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
                             <br />
@@ -224,7 +224,7 @@
                         </includeIf>
                             <tr>
                                 <th rowspan="3">Breast</th>
-                                <td>CBE</td>
+                                <th>CBE</th>
                                 <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Normal,Abnormal" style="radio"/>
@@ -277,6 +277,7 @@
 
                                 <th>Colonoscopy</th>
                                 <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="No abnormality,Polyps,Cancer,Other abnormalities" style="radio"/></td>
                                 <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
