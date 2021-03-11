@@ -55,10 +55,12 @@
     <div class="ke-form-content">
         <table class="screening" width="75%" cellpadding="0" cellspacing="0" align="center">
             <tdbody>
+                <includeIf velocityTest="$patient.age <18 ">
                 <tr>
                     <td>Birth certificate number</td>
                     <td><patient id="bcn" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" required="false" /></td>
                 </tr>
+                </includeIf>
                 <tr>
                     <td>Health Insurance</td>
                     <td>
@@ -68,9 +70,9 @@
                     </td>
                 </tr>
                 <br />
-                <tr>
-                    <th colspan="2">&nbsp;</th>
-                </tr>
+
+                    <th colspan="2">&nbsp;History of Risk Factors</th>
+
                 <br />
                 <tr>
                     <td>Do you smoke cigarattes</td>
@@ -114,7 +116,7 @@
                     <td>
                         <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Chemotherapy,Radiotherapy" style="radio" />
+                             answerLabels="Chemotherapy,Radiotherapy,Hormonal Therapy" style="checkbox" />
                     </td>
                 </tr>
                 <includeIf velocityTest="$patient.gender == 'F' ">
@@ -130,7 +132,7 @@
                 </includeIf>
                 <br />
                 <tr>
-                    <th colspan="2">&nbsp;</th>
+                    <th colspan="2">&nbsp;Common Signs and Symptoms</th>
                 </tr>
                 <br />
                 <tr>
@@ -166,7 +168,7 @@
                         </table>
                     </td>
                 </tr>
-                <tr><th colspan="2">&nbsp;</th></tr>
+                <tr><th colspan="2">&nbsp;Screening</th></tr>
                 <tr>
                     <td valign="top">Screening</td>
                     <td>
@@ -397,7 +399,12 @@
                                 </td>
                             </tr>
                             </tbody>
-                        </table>
+                         </table>
+                        <br />
+                <tr>
+                    <th colspan="2">&nbsp;</th>
+                </tr>
+                <br />
                     </td>
                 </tr>
             </tdbody>
