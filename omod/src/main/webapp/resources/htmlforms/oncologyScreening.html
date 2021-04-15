@@ -191,7 +191,8 @@
                             <includeIf velocityTest="$patient.gender == 'F' ">
                                 <tr>
                                     <th rowspan="3">Cervical</th>
-                                    <th>HPV (Age>30 years)</th>
+                                    <includeIf velocityTest="$patient.age >30 ">
+                                    <th>HPV</th>
                                     <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                              answerLabels="Positive,Negative" style="radio" answerSeparator="" />
@@ -200,6 +201,7 @@
                                              labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
                                              answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                              answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio" /></td>
+                                    </includeIf>
                                 </tr>
                                 <tr>
 
@@ -262,6 +264,7 @@
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Counseled on Negative Findings,Reffered for further evaluation and or management" style="radio"/></td>
                             </tr>
+                            <includeIf velocityTest="$patient.age >40 ">
                             <tr>
                                 <th rowspan="2">Colorectal</th>
                                 <th>FOBT</th>
@@ -287,6 +290,8 @@
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Counseled on Negative findings,Polypectomy,Referred for further management" style="radio"/></td>
                             </tr>
+                            </includeIf>
+                            <includeIf velocityTest="$patient.age <5 ">
                             <tr>
                                 <th rowspan="2">Retinoblastoma</th>
                                 <th>EUA</th>
@@ -311,7 +316,8 @@
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/></td>
                             </tr>
-                            <includeIf velocityTest="$patient.gender == 'M' ">
+                            </includeIf>
+                            <includeIf velocityTest="$patient.gender == 'M' && $patient.age >40">
                                 <tr>
                                     <th rowspan="3">Prostate</th>
                                     <th>DRE</th>
