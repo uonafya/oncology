@@ -47,7 +47,7 @@
         </property>
         <property name="reports">
             <set>
-                <ref bean="oncologyapp.cancer.report.inProgram" />
+                <ref bean="oncologyapp.cancer.report.ever.screened" />
 
             </set>
         </property>
@@ -122,9 +122,9 @@
         <property name="htmlform" value="oncologyapp:oncologyTrauma.html" />
     </bean>
 
-    <bean id="oncologyapp.cancer.report.inProgram" class="org.openmrs.module.kenyacore.report.CalculationReportDescriptor">
+    <bean id="oncologyapp.cancer.report.ever.screened" class="org.openmrs.module.kenyacore.report.CalculationReportDescriptor">
         <property name="targetUuid" value="7f1c010c-08d0-11eb-9e55-a7fb8b2b1319" />
-        <property name="name" value="Patients in Oncology program" />
+        <property name="name" value="Patients ever screened for cancer" />
         <property name="calculation" value="org.openmrs.module.oncologyapp.calculation.InOncologyProgramCalculation" />
         <property name="apps"><set><ref bean="kenyaemr.app.reports" /></set></property>
     </bean>

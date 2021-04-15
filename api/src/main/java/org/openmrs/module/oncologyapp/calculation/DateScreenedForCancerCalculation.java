@@ -4,6 +4,7 @@ import org.openmrs.Encounter;
 import org.openmrs.EncounterType;
 import org.openmrs.calculation.patient.PatientCalculationContext;
 import org.openmrs.calculation.result.CalculationResultMap;
+import org.openmrs.calculation.result.SimpleResult;
 import org.openmrs.module.ehrconfigs.metadata.EhrCommonMetadata;
 import org.openmrs.module.kenyacore.calculation.AbstractPatientCalculation;
 import org.openmrs.module.kenyacore.calculation.BooleanResult;
@@ -12,9 +13,10 @@ import org.openmrs.module.kenyaemr.calculation.EmrCalculationUtils;
 import org.openmrs.module.metadatadeploy.MetadataUtils;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.Map;
 
-public class InOncologyProgramCalculation extends AbstractPatientCalculation {
+public class DateScreenedForCancerCalculation extends AbstractPatientCalculation {
 	
 	/**
 	 * @see org.openmrs.calculation.patient.PatientCalculation#evaluate(java.util.Collection,
@@ -29,14 +31,14 @@ public class InOncologyProgramCalculation extends AbstractPatientCalculation {
 		    MetadataUtils.existing(EncounterType.class, EhrCommonMetadata._EhrEncounterTypes.ONCOLOGY_SCREENING), cohort,
 		    context);
 		for (Integer pId : cohort) {
-			boolean screened = false;
+			Date encounterDate = null;
 			Encounter encounter = EmrCalculationUtils.encounterResultForPatient(lastScreeningEncounter, pId);
 			
 			if (encounter != null) {
-				screened = true;
+				encounterDate = encounter.getEncounterDatetime();
 			}
 			
-			map.put(pId, new BooleanResult(screened, this));
+			map.put(pId, new SimpleResult(encounterDate, this));
 		}
 		return map;
 	}
