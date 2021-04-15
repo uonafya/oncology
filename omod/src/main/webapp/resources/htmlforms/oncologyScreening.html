@@ -56,10 +56,10 @@
         <table class="screening" width="75%" cellpadding="0" cellspacing="0" align="center">
             <tdbody>
                 <includeIf velocityTest="$patient.age <18 ">
-                <tr>
-                    <td>Birth certificate number</td>
-                    <td><patient id="bcn" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" required="false" /></td>
-                </tr>
+                    <tr>
+                        <td>Birth certificate number</td>
+                        <td><patient id="bcn" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" required="false" /></td>
+                    </tr>
                 </includeIf>
                 <tr>
                     <td>Health Insurance</td>
@@ -71,7 +71,7 @@
                 </tr>
                 <br />
 
-                    <th colspan="2">&nbsp;History of Risk Factors</th>
+                <th colspan="2">&nbsp;History of Risk Factors</th>
 
                 <br />
                 <tr>
@@ -188,42 +188,44 @@
                                 <th>Findings</th>
                                 <th>Treatment/Action</th>
                             </tr>
-                        <includeIf velocityTest="$patient.gender == 'F' ">
-                            <tr>
-                                <th rowspan="3">Cervical</th>
-                                <th>HPV (Age>30 years)</th>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerLabels="Positive,Negative" style="radio" answerSeparator="" />
-                                </td>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio" /></td>
-                            </tr>
-                            <tr>
+                            <includeIf velocityTest="$patient.gender == 'F' ">
+                                <tr>
+                                    <th rowspan="3">Cervical</th>
+                                    <includeIf velocityTest="$patient.age >30 ">
+                                    <th>HPV</th>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerLabels="Positive,Negative" style="radio" answerSeparator="" />
+                                    </td>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio" /></td>
+                                    </includeIf>
+                                </tr>
+                                <tr>
 
-                                <th>VIA/VILI</th>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerLabels="Positive,Negative,suspicious for cancer" style="radio" />
-                                </td>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
-                                         answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio" answerSeparator="" /></td>
-                            </tr>
-                            <tr>
+                                    <th>VIA/VILI</th>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerLabels="Positive,Negative,suspicious for cancer" style="radio" />
+                                    </td>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
+                                             answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio" answerSeparator="" /></td>
+                                </tr>
+                                <tr>
 
-                                <th>Pap smear</th>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664"
-                                         answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
-                                </td>
-                                <td>&nbsp;</td>
-                            </tr>
-                        </includeIf>
+                                    <th>Pap smear</th>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664"
+                                             answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </includeIf>
                             <tr>
                                 <th rowspan="3">Breast</th>
                                 <th>CBE</th>
@@ -236,7 +238,7 @@
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Counseled on Negative result,Referred for imaging" style="radio"/>
                                 </td>
-                            </tr>
+                              </tr>
                             <tr>
                                 <th>Ultrasound</th>
                                 <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -262,6 +264,7 @@
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Counseled on Negative Findings,Reffered for further evaluation and or management" style="radio"/></td>
                             </tr>
+                            <includeIf velocityTest="$patient.age >40 ">
                             <tr>
                                 <th rowspan="2">Colorectal</th>
                                 <th>FOBT</th>
@@ -287,6 +290,8 @@
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Counseled on Negative findings,Polypectomy,Referred for further management" style="radio"/></td>
                             </tr>
+                            </includeIf>
+                            <includeIf velocityTest="$patient.age <5 ">
                             <tr>
                                 <th rowspan="2">Retinoblastoma</th>
                                 <th>EUA</th>
@@ -311,43 +316,44 @@
                                          answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio"/></td>
                             </tr>
-                         <includeIf velocityTest="$patient.gender == 'M' ">
-                            <tr>
-                                <th rowspan="3">Prostate</th>
-                                <th>DRE</th>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerLabels="Normal,Enlarged,Hard/lampy" style="radio"/>
-                                </td>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerLabels="Counseled on Negative result,Referred for further evaluation" style="radio"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>PSA testing</th>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerLabels="4 to 10ngml,greater than 10ng/ml" style="radio"/>
-                                </td>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerLabels="Counseled on Negative Findings,Referred for further evaluation" style="radio"/></td>
-                            </tr>
-                            <tr>
-                                <th>TRUS biopsy</th>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerLabels="Benign,Inflammation (acute/chronic),Prostatic intraepithelial neoplasia (PIN),Adenocarcinoma Other malignancies" style="radio"/>
-                                </td>
-                                <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerLabels="Counseled on Negative Findings,Referred for further evaluation" style="radio"/></td>
-                            </tr>
+                            </includeIf>
+                            <includeIf velocityTest="$patient.gender == 'M' && $patient.age >40">
+                                <tr>
+                                    <th rowspan="3">Prostate</th>
+                                    <th>DRE</th>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerLabels="Normal,Enlarged,Hard/lampy" style="radio"/>
+                                    </td>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerLabels="Counseled on Negative result,Referred for further evaluation" style="radio"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>PSA testing</th>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerLabels="4 to 10ngml,greater than 10ng/ml" style="radio"/>
+                                    </td>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerLabels="Counseled on Negative Findings,Referred for further evaluation" style="radio"/></td>
+                                </tr>
+                                <tr>
+                                    <th>TRUS biopsy</th>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerLabels="Benign,Inflammation (acute/chronic),Prostatic intraepithelial neoplasia (PIN),Adenocarcinoma Other malignancies" style="radio"/>
+                                    </td>
+                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             answerLabels="Counseled on Negative Findings,Referred for further evaluation" style="radio"/></td>
+                                </tr>
                             </includeIf>
                             <tr>
                                 <th rowspan="4">Oral</th>
@@ -399,14 +405,31 @@
                                 </td>
                             </tr>
                             </tbody>
-                         </table>
+                        </table>
                         <br />
                 <tr>
                     <th colspan="2">&nbsp;</th>
                 </tr>
                 <br />
-                    </td>
+                            </td>
+                            </tr>
+                <tr>
+                    <th colpan="3">Follow-up Plan</th>
+                    <td>Follow up date: <encounterDate id="encounter-date" showTime="true" /> </td>
                 </tr>
+                <tr>
+                    <th>
+                    <td>Referred: <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                       answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                       answerLabels="No,Yes" style="radio"/> </td>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                    <td>Reason For Referral: <input type="text" /></td>
+                    </th>
+                </tr>
+
             </tdbody>
         </table>
 
