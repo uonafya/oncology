@@ -13,6 +13,10 @@
 -->
 <htmlform>
     <script type="text/javascript">
+        jq(document).ready(function(){
+            jq('#sexual-via :input').prop('disabled', true);
+            jq('#sexual-pap :input').prop('disabled', true);
+        });
     </script>
     <style>
         table.screening {
@@ -190,41 +194,56 @@
                             </tr>
                             <includeIf velocityTest="$patient.gender == 'F' ">
                                 <tr>
-                                    <th rowspan="3">Cervical</th>
+                                    <th rowspan="4">Cervical</th>
                                     <includeIf velocityTest="$patient.age >30 ">
                                         <th>HPV</th>
-                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        <td valign="top"><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  answerLabels="Positive,Negative" style="radio" answerSeparator="" />
                                         </td>
-                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        <td valign="top"><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
                                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio" /></td>
                                     </includeIf>
                                 </tr>
-                                <tr>
+                                <includeIf velocityTest="$patient.age >15 ">
+                                    <tr>
+                                        <td colspan="4">Have you ever had sexual intercourse in the last five years**?
+                                            <obs conceptId="160666AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 answerLabels="Yes,No" style="radio" />
+                                        </td>
+                                    </tr>
 
-                                    <th>VIA/VILI</th>
-                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                             labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                             answerLabels="Positive,Negative,suspicious for cancer" style="radio" />
-                                    </td>
-                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
-                                             answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio" answerSeparator="" /></td>
-                                </tr>
-                                <tr>
+                                    <tr>
+                                        <div id="sexual-via">
 
-                                    <th>Pap smear</th>
-                                    <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                             labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664"
-                                             answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
-                                    </td>
-                                    <td>&nbsp;</td>
-                                </tr>
+                                        <th>VIA/VILI</th>
+                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 answerLabels="Positive,Negative,suspicious for cancer" style="radio" />
+                                        </td>
+                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
+                                                 answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio" answerSeparator="" /></td>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <div id="sexual-pap">
+
+                                        <th>Pap smear</th>
+                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664"
+                                                 answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                        </div>
+                                    </tr>
+
+                                </includeIf>
                             </includeIf>
                             <tr>
                                 <th rowspan="3">Breast</th>
@@ -414,20 +433,18 @@
                 </td>
                 </tr>
                 <tr>
-                    <th colpan="3">Follow-up Plan</th>
+                    <td rowspan="3">Follow-up Plan</td>
                     <td>Follow up date: <encounterDate id="encounter-date" showTime="true" /> </td>
                 </tr>
                 <tr>
-                    <th>
                     <td>Referred: <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                        answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                        answerLabels="No,Yes" style="radio"/> </td>
-                    </th>
                 </tr>
                 <tr>
-                    <th>
-                    <td>Reason For Referral: <input type="text" /></td>
-                    </th>
+                    <td>Reason For Referral: <obs conceptId="1887AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> <br />
+                        Other:<obs conceptId="164359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="20" />
+                    </td>
                 </tr>
 
             </tdbody>
