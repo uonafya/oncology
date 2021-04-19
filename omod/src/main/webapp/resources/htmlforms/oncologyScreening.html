@@ -14,8 +14,10 @@
 <htmlform>
     <script type="text/javascript">
         jq(document).ready(function(){
-            jq('#sexual-via :input').prop('disabled', true);
-            jq('#sexual-pap :input').prop('disabled', true);
+            jq('#sexualActive').children().attr('disabled', 'disabled');
+            jq('#sexActive input:radio').click(function() {
+                alert("The value clicked and value is >> "+getValue('sexActive.value'))
+            });
         });
     </script>
     <style>
@@ -45,7 +47,7 @@
         <table style="width: 100%" cellspacing="0" cellpadding="0">
             <tr>
                 <td>Date:
-                    <encounterDate id="encounter-date" showTime="true" />
+                    <encounterDate id="encounter-date" showTime="false" />
                 </td>
                 <td>Enrolled by:
                     <encounterProvider default="currentUser" />
@@ -197,7 +199,7 @@
                                     <th rowspan="4">Cervical</th>
                                     <includeIf velocityTest="$patient.age >30 ">
                                         <th>HPV</th>
-                                        <td valign="top"><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        <td valign="top"><obs conceptId="159859AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  answerLabels="Positive,Negative" style="radio" answerSeparator="" />
                                         </td>
@@ -212,12 +214,13 @@
                                         <td colspan="4">Have you ever had sexual intercourse in the last five years**?
                                             <obs conceptId="160666AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerLabels="Yes,No" style="radio" />
+                                                 answerLabels="Yes,No" style="radio" id="sexActive" />
                                         </td>
                                     </tr>
 
+                                    <div id="sexualActive">
                                     <tr>
-                                        <div id="sexual-via">
+
 
                                         <th>VIA/VILI</th>
                                         <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -226,22 +229,21 @@
                                                  answerLabels="Positive,Negative,suspicious for cancer" style="radio" />
                                         </td>
                                         <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
                                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
-                                                 answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio" answerSeparator="" /></td>
-                                        </div>
+                                                 answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio" /></td>
                                     </tr>
                                     <tr>
-                                        <div id="sexual-pap">
 
                                         <th>Pap smear</th>
-                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        <td><obs conceptId="885AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
                                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664"
                                                  answerLabels="Normal,Atypical squamous cells of undetermined significance/cannot exclude HSIL(ASCUS/ASC-H),Low grade squamous intraepithelial lesion (LSIL),High grade squamous intraepithelial lesion/carcinoma in situ(HSIL/CIS),Atypical glandular cells of undetermined significance(AGUS),Invasive cancer" style="radio"/>
                                         </td>
                                         <td>&nbsp;</td>
-                                        </div>
                                     </tr>
+                                    </div>
 
                                 </includeIf>
                             </includeIf>
@@ -433,8 +435,8 @@
                 </td>
                 </tr>
                 <tr>
-                    <td rowspan="3">Follow-up Plan</td>
-                    <td>Follow up date: <encounterDate id="encounter-date" showTime="true" /> </td>
+                    <td rowspan="4">Follow-up Plan</td>
+                    <td>Follow up date: <obs conceptId="5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" allowFutureDates="true" /> </td>
                 </tr>
                 <tr>
                     <td>Referred: <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -442,9 +444,14 @@
                                        answerLabels="No,Yes" style="radio"/> </td>
                 </tr>
                 <tr>
-                    <td>Reason For Referral: <obs conceptId="1887AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> <br />
-                        Other:<obs conceptId="164359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="20" />
+                    <td>Reason For Referral: <obs conceptId="1887AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+
                     </td>
+                </tr>
+                <tr>
+                <td>
+                    Other:<obs conceptId="164359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="100" />
+                </td>
                 </tr>
 
             </tdbody>
