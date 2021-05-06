@@ -18,18 +18,42 @@ public class OncologyappConstants {
 	
 	public static final String APP_ONCOLOGY = MODULE_ID + ".cancer";
 	
-	public static final String APP_PATIENT_OPD = MODULE_ID + ".opd";
+	//Concepts to be used in the oncology reports
+	public static final String TYPE_OF_VISIT = "164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
-	public static final String CONCEPT_NAME_TRIAGE = "TRIAGE";
+	//types of cancer
+	public static final String CANCER_TYPE = "161079AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
-	public static final String CONCEPT_NAME_OPD_WARD = "OPD WARD";
+	public static final String CERVICAL_CANCER_TYPE = "116023AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
-	public static final String CONCEPT_NAME_SPECIAL_CLINIC = "SPECIAL CLINIC";
+	public static final String BREAST_CANCER_TYPE = "116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
-	public static final String PROPERTY_ENCOUNTER_TYPE_REGINIT = MODULE_ID + ".encounterType.init";
+	public static final String COLORECTAL_CANCER_TYPE = "133350AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
-	public static final String PROPERTY_ENCOUNTER_TYPE_REVISIT = MODULE_ID + ".encounterType.revisit";
+	public static final String RETINOBLASTOMA_CANCER_TYPE = "127527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
-	public static final String PROPERTY_LOCATION = MODULE_ID + ".location";
+	public static final String PROSTATE_CANCER_TYPE = "146221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	
+	public static final String ORAL_CANCER_TYPE = "115355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	
+	public static final String OTHER_CANCER_TYPE = "";
+	
+	//Cervix cancer types
+	public static final String HPV_TEST = "159859AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	
+	//treatment plans for cancer
+	public static final String CERVICAL_CANCER_TREATMENT = "";
+	
+	public static final String BREAST_CANCER_TREATMENT = "";
+	
+	public static final String COLORECTAL_CANCER_TREATMENT = "";
+	
+	public static final String RETINOBLASTOMA_CANCER_TREATMENT = "";
+	
+	public static final String PROSTATE_CANCER_TREATMENT = "";
+	
+	public static final String ORAL_CANCER_TREATMENT = "";
+	
+	public static final String OTHER_CANCER_TYPE_TREATMENT = "";
 	
 }
