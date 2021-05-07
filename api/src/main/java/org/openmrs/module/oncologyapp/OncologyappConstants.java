@@ -38,21 +38,79 @@ public class OncologyappConstants {
 	
 	public static final String OTHER_CANCER_TYPE = "";
 	
-	//Cervix cancer types
+	//Cervix cancer screening tests
 	public static final String HPV_TEST = "159859AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
-	//treatment plans for cancer
-	public static final String CERVICAL_CANCER_TREATMENT = "";
+	public static final String VIA_TEST = "162816AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
-	public static final String BREAST_CANCER_TREATMENT = "";
+	public static final String PAP_SMEAR_TEST = "885AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
-	public static final String COLORECTAL_CANCER_TREATMENT = "";
+	public static final String COLPOSCOPY = "160705AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
-	public static final String RETINOBLASTOMA_CANCER_TREATMENT = "";
+	//Breast cancer screening tests
+	public static final String CBE = "";
 	
-	public static final String PROSTATE_CANCER_TREATMENT = "";
+	public static final String ULTRA_SOUND = "";
 	
-	public static final String ORAL_CANCER_TREATMENT = "";
+	public static final String MAMMOGRAPHY = "";
+	
+	//Colorectal cancer screening tests
+	public static final String FECAL_OCCULT_BLOOD = "159362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	
+	public static final String COLONOSCOPY = "";
+	
+	//Prostate cancer screening tests
+	public static final String DRE = "";//Digital rectal examination
+	
+	public static final String PSA = "";//Prostatic specific antigen testing
+	
+	public static final String TRUS = "161164AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";//Trans rectal ultrasound biopsy
+	
+	//Oral cancer screening tests
+	public static final String VISUAL_EXAMINATION = "163308AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	
+	public static final String CYTOLOGY = "";
+	
+	public static final String IMAGING = "";
+	
+	public static final String BIOPSY = "";
+	
+	//Cancer treatment or action
+	public static final String HPV_TREATMENT = "";
+	
+	public static final String VIA_TREATMENT = "";
+	
+	public static final String PAP_SMEAR_TREATMENT = "";
+	
+	public static final String COLPOSCOPY_TREATMENT = "";
+	
+	public static final String CBE_TREATMENT = "";
+	
+	public static final String ULTRASOUND_TREATMENT = "";
+	
+	public static final String MAMMOGRAPHY_TREATMENT = "";
+	
+	public static final String FECAL_OCCULT_BLOOD_TEST_TREATMENT = "";
+	
+	public static final String COLONOSCOPY_TREATMENT = "";
+	
+	public static final String EUA_TREATMENT = "";
+	
+	public static final String RB1_TREATMENT = "";
+	
+	public static final String DRE_TREATMENT = "";
+	
+	public static final String PSA_TREATMENT = "";
+	
+	public static final String TRUS_TREATMENT = "";
+	
+	public static final String VISUAL_EXAMINATION_TREATMENT = "";
+	
+	public static final String CYTOLOGY_TREATMENT = "";
+	
+	public static final String IMAGING_TREATMENT = "";
+	
+	public static final String BIOPSY_TREATMENT = "";
 	
 	public static final String OTHER_CANCER_TYPE_TREATMENT = "";
 	
