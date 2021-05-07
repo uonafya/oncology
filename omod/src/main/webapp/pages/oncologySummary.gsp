@@ -19,8 +19,5 @@
             ${ ui.includeFragment("kenyaemr", "visitCompletedForms", [ visit: activeVisit ]) }
             <% } %>
         </td>
-        <td width="15%" valign="top" style="padding-left: 5px">
-            ${ ui.includeFragment("kenyaemr", "providerAction/providerActions") }
-        </td>
     </tr>
 </table>
