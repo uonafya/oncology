@@ -2,7 +2,6 @@ package org.openmrs.module.oncologyapp.reporting.builder;
 
 import org.openmrs.Concept;
 import org.openmrs.EncounterType;
-import org.openmrs.Obs;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.kenyacore.report.CohortReportDescriptor;
 import org.openmrs.module.kenyacore.report.builder.Builds;
@@ -14,11 +13,8 @@ import org.openmrs.module.kenyaemr.reporting.calculation.converter.EncounterDate
 import org.openmrs.module.kenyaemr.reporting.data.converter.CalculationResultConverter;
 import org.openmrs.module.kenyaemr.reporting.data.converter.CustomDataConverter;
 import org.openmrs.module.oncologyapp.OncologyappConstants;
-import org.openmrs.module.oncologyapp.calculation.DateScreenedForCancerCalculation;
 import org.openmrs.module.reporting.common.TimeQualifier;
 import org.openmrs.module.reporting.data.DataDefinition;
-import org.openmrs.module.reporting.data.converter.DataConverter;
-import org.openmrs.module.reporting.data.encounter.definition.EncounterDatetimeDataDefinition;
 import org.openmrs.module.reporting.data.patient.definition.EncountersForPatientDataDefinition;
 import org.openmrs.module.reporting.data.person.definition.ObsForPersonDataDefinition;
 import org.openmrs.module.reporting.dataset.definition.PatientDataSetDefinition;
