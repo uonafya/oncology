@@ -67,46 +67,41 @@
                         <td><patient id="bcn" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" required="false" /></td>
                     </tr>
                 </includeIf>
-                <tr>
-                    <td>Health Insurance</td>
-                    <td>
-                        <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="NHIF,Other,None" style="radio" />
-                    </td>
-                </tr>
-                <br />
-
                 <th colspan="2">&nbsp;History of Risk Factors</th>
 
                 <br />
                 <tr>
                     <td>Do you smoke cigarattes</td>
                     <td>
-                        <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="YES,NO,STOPPED" style="radio"/> <br />
-                        <span id="smokeOptions">
-                        Number of years smoked:<input type="text" />
-                        <br />
-                        Number of ciggarattes per day:<input type="text" />
-                        </span>
+                        <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,158939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Yes,No,Stopped" style="radio" /> <br />
+                         <table id="smokingOptions">
+                             <tr>
+                                 <td>Number of years smoked</td>
+                                 <td><obs conceptId="159931AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+                             </tr>
+                             <tr>
+                                 <td>Number of ciggarattes per day</td>
+                                 <td><obs conceptId="1546AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+                             </tr>
+                         </table>
                     </td>
                 </tr>
                 <tr>
                     <td>Do you use other form of tobacco</td>
                     <td>
-                        <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="YES,NO,STOPPED" style="radio" />
+                        <obs conceptId="163731AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,158939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Yes,No,Stopped" style="radio" />
                     </td>
                 </tr>
                 <tr>
                     <td>Do you take Alcohol</td>
                     <td>
-                        <obs class="Do you take Alcohol" conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="YES,NO,STOPPED" style="radio" />
+                        <obs conceptId="159449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,158939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                             answerLabels="Yes,No,Stopped" style="radio" />
                     </td>
                 </tr>
                 <tr>
@@ -120,9 +115,9 @@
                 <tr>
                     <td>Previous Cancer Treatment</td>
                     <td>
-                        <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerLabels="Chemotherapy,Radiotherapy,Hormonal Therapy" style="checkbox" />
+                        <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="152520AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Chemotherapy" style="checkbox" /><br />
+                        <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="161174AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Radiotherapy" style="checkbox" /><br />
+                        <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="0c22e88e-f339-4b44-92a9-0c95dd91a4ff" answerLabel="Hormonal therapy" style="checkbox" />
                     </td>
                 </tr>
                 <includeIf velocityTest="$patient.gender == 'F' ">
@@ -151,32 +146,35 @@
                                         <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="111AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Dyspepsia" style="checkbox" /><br />
                                         <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="117671AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Blood in stool" style="checkbox" /><br />
                                         <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5192AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Yellow eyes" style="checkbox" /><br />
-                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="163683AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Blood in urine" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="840AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Blood in urine" style="checkbox" /><br />
                                         <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="132667AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Nose Bleeding" style="checkbox" /><br />
                                         <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5954AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Difficulty in swallowing" style="checkbox" />
                                     </td>
                                     <td>
                                         <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Weight loss" style="checkbox" /><br />
-                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="117671AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Easy fatigability" style="checkbox" /><br />
-                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5192AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Abnormal vaginal bleeding" style="checkbox" /><br />
-                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="163683AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Changing/enlarging skin moles" style="checkbox" /><br />
-                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="132667AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Chronic skin ulcers" style="checkbox" />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="140501AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Easy fatigability" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="150802AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Abnormal vaginal bleeding" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="115844AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Changing/enlarging skin moles" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="120551AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Chronic skin ulcers" style="checkbox" />
                                     </td>
                                     <td>
-                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5954AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Lumps/swellings" style="checkbox" /><br />
-                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Chronic cough" style="checkbox" /><br />
-                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="117671AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Persistent headaches" style="checkbox" /><br />
-                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5192AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Changing bowel habits" style="checkbox" /><br />
-                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="163683AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Post-coital bleeding" style="checkbox" />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="115919AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Lumps/swellings" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="145455AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Chronic cough" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="125052AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Persistent headaches" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="151903AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Changing bowel habits" style="checkbox" /><br />
+                                        <obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="129452AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Post-coital bleeding" style="checkbox" />
+                                    </td>
+                                    <td>
+                                        <obs conceptId="5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="other-common-symtops" />
+                                        <obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
                                     </td>
                                 </tr>
                             </tdbody>
                         </table>
                     </td>
                 </tr>
-                <tr><th colspan="2">&nbsp;Screening</th></tr>
+                <tr><th colspan="2">&nbsp;Cancer Screening</th></tr>
                 <tr>
-                    <td valign="top">Screening</td>
                     <td>
                         <table class="screening" style="width: 100%" cellspacing="0" cellpadding="0">
                             <tbody>
@@ -441,7 +439,7 @@
                 <tr>
                     <td>Referred: <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                        answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                       answerLabels="No,Yes" style="radio"/> </td>
+                                       answerLabels="No,Yes" style="radio" /> </td>
                 </tr>
                 <tr>
                     <td>Reason For Referral: <obs conceptId="1887AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
