@@ -182,7 +182,7 @@
                                 <td>Visit type</td>
                                 <td colspan="3">
                                     <obs conceptId="164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                         answerConceptIds="164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,bbd5d81e-d694-48e6-a948-ed82e63e2030,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerConceptIds="164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,bbd5d81e-d694-48e6-a948-ed82e63e2030,d6dbc59d-26ea-459e-be4a-75b89c9210ae"
                                          answerLabels="Initial screening,Repeat screening, Post-Treatment screening" style="radio" />
                                 </td>
                             </tr>
@@ -193,21 +193,18 @@
                                 <th>Treatment/Action</th>
                             </tr>
                             <includeIf velocityTest="$patient.gender == 'F' ">
-                                <tr>
-                                    <th rowspan="4">Cervical</th>
-                                    <includeIf velocityTest="$patient.age >30 ">
-                                        <th>HPV</th>
-                                        <td valign="top"><obs conceptId="159859AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerLabels="Positive,Negative" style="radio" answerSeparator="" />
-                                        </td>
-                                        <td valign="top"><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio" /></td>
-                                    </includeIf>
-                                </tr>
-                                <includeIf velocityTest="$patient.age >15 ">
+                                    <tr>
+                                        <th rowspan="4">Cervical</th>
+                                            <th>HPV</th>
+                                            <td valign="top"><obs conceptId="159859AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                     answerLabels="Positive,Negative" style="radio" answerSeparator="" />
+                                            </td>
+                                            <td valign="top"><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                     labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                     answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio" /></td>
+                                    </tr>
                                     <tr>
                                         <td colspan="4">Have you ever had sexual intercourse in the last five years**?
                                             <obs conceptId="160666AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -242,8 +239,6 @@
                                         <td>&nbsp;</td>
                                     </tr>
                                     </div>
-
-                                </includeIf>
                             </includeIf>
                             <tr>
                                 <th rowspan="3">Breast</th>
