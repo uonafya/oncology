@@ -66,7 +66,7 @@
 
     <!-- Encounter date, provider and location are not relevant for CE forms -->
     <div>
-        <encounterDate id="encounter-date" showTime="true" />
+        <encounterDate id="encounter-date" showTime="false" />
         <encounterProvider default="ae01b8ff-a4cc-4012-bcf7-72359e852e14"/>
         <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation"/>
     </div>
@@ -76,7 +76,7 @@
             <tr>
                 <th align="left">Relationship</th>
                 <th align="left">Cancer type</th>
-                <th align="left">Year when diagnosed</th>
+                <th align="left">Age at diagnosed</th>
             </tr>
             </thead>
             <tbody>
@@ -92,11 +92,11 @@
 
                             <td>
                                 <obs class="cancer-type" conceptId="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerConceptIds="116023AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,110517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,127527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,158565AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,113706AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     style="dropdown" answerLabels="Cervical,Breast,Colorectal,Retinoblastoma,Prostate,Oral cancer,Other" />
+                                     answerConceptIds="116023AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,146221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133350AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133318AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133304AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115195AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116331AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115354AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115357AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133328AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133709AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,136324AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     style="dropdown" answerLabels="Cervical,Breast,Throat/Oesopahus,Prostate,Cololectaral,Ovary,Stomach,Uterus,Non-Hodgkin lymphma,Leukemia,Pancreatic,Liver,Lung,Multiple Myloma,Cancer of nassal pharynx,Oral cavity,Bladder,Caposi sarcoma,Brain cancer/central,Larynx" />
                             </td>
                             <td>
-                                <obs class="date-diagnosed" conceptId="159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                                <obs class="date-diagnosed" conceptId="160617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
                             </td>
                         </tr>
                     </obsgroup>
