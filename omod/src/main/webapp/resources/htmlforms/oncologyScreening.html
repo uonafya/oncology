@@ -14,11 +14,17 @@
 <htmlform>
     <script type="text/javascript">
         jq(document).ready(function(){
-            jq('#sexualActive').children().attr('disabled', 'disabled');
-            jq('#sexActive input:radio').click(function() {
-
-            });
+            disableDivTagsWhenFormLoads();
         });
+        function disableDivTagsWhenFormLoads() {
+            jq('#cervicalId *').prop('disabled', true);
+            jq('#breastId *').prop('disabled', true);
+            jq('#colorectalId *').prop('disabled', true);
+            jq('#retinoblastomaId *').prop('disabled', true);
+            jq('#prostateId *').prop('disabled', true);
+            jq('#oralId *').prop('disabled', true);
+            jq('#otherId *').prop('disabled', true);
+        }
     </script>
     <style>
         table.screening {
@@ -180,6 +186,13 @@
                         <obs conceptId="164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,bbd5d81e-d694-48e6-a948-ed82e63e2030,d6dbc59d-26ea-459e-be4a-75b89c9210ae"
                              answerLabels="Initial screening,Repeat screening, Post-Treatment screening" style="radio" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Cancer type:<obs conceptId="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerConceptIds="116023AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133350AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,127527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,146221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1be9b3bb-40dc-44bb-97c8-13824287f3cb"
+                                         style="dropdown" answerLabels="Cervical,Breast,Colorectal,Retinoblastoma,Prostate,Oral cancer,Other"  style="radio"/>
                     </td>
                 </tr>
                 <tr>
