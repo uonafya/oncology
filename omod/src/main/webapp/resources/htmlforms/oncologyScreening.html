@@ -15,15 +15,407 @@
     <script type="text/javascript">
         jq(document).ready(function(){
             disableDivTagsWhenFormLoads();
+            getTypeOfCancerPickedToToggleResponses();
+            getClickEventOnCancerType();
         });
         function disableDivTagsWhenFormLoads() {
-            jq('#cervicalId *').prop('disabled', true);
-            jq('#breastId *').prop('disabled', true);
-            jq('#colorectalId *').prop('disabled', true);
-            jq('#retinoblastomaId *').prop('disabled', true);
-            jq('#prostateId *').prop('disabled', true);
-            jq('#oralId *').prop('disabled', true);
-            jq('#otherId *').prop('disabled', true);
+            jq('#cervicalHpv *').prop('disabled', true);
+            jq('#cervicalVia *').prop('disabled', true);
+            jq('#cervicalPapSmear *').prop('disabled', true);
+
+            jq('#breastCbe *').prop('disabled', true);
+            jq('#breastUltrasound *').prop('disabled', true);
+            jq('#breastMammograph *').prop('disabled', true);
+
+            jq('#colorectalFobt *').prop('disabled', true);
+            jq('#colorectalColonoscopy *').prop('disabled', true);
+
+            jq('#retinoblastomaEua *').prop('disabled', true);
+            jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+            jq('#prostateDre *').prop('disabled', true);
+            jq('#prostatePsa *').prop('disabled', true);
+            jq('#prostateTrus *').prop('disabled', true);
+
+            jq('#oralVisual *').prop('disabled', true);
+            jq('#oralCytology *').prop('disabled', true);
+            jq('#oralImaging *').prop('disabled', true);
+            jq('#oralBiopsy *').prop('disabled', true);
+
+            jq('#otherCancer *').prop('disabled', true);
+        }
+        function getTypeOfCancerPickedToToggleResponses() {
+            var optValues = getValue('cancerType.value');
+            if (optValues === 116023){
+                jq('#cervicalHpv *').prop('disabled', false);
+                jq('#cervicalVia *').prop('disabled', false);
+                jq('#cervicalPapSmear *').prop('disabled', false);
+
+                jq('#breastCbe *').prop('disabled', true);
+                jq('#breastUltrasound *').prop('disabled', true);
+                jq('#breastMammograph *').prop('disabled', true);
+
+                jq('#colorectalFobt *').prop('disabled', true);
+                jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                jq('#retinoblastomaEua *').prop('disabled', true);
+                jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                jq('#prostateDre *').prop('disabled', true);
+                jq('#prostatePsa *').prop('disabled', true);
+                jq('#prostateTrus *').prop('disabled', true);
+
+                jq('#oralVisual *').prop('disabled', true);
+                jq('#oralCytology *').prop('disabled', true);
+                jq('#oralImaging *').prop('disabled', true);
+                jq('#oralBiopsy *').prop('disabled', true);
+
+                jq('#otherCancer *').prop('disabled', true);
+            }
+            else if(optValues === 116026) {
+                jq('#cervicalHpv *').prop('disabled', true);
+                jq('#cervicalVia *').prop('disabled', true);
+                jq('#cervicalPapSmear *').prop('disabled', true);
+
+                jq('#breastCbe *').prop('disabled', false);
+                jq('#breastUltrasound *').prop('disabled', false);
+                jq('#breastMammograph *').prop('disabled', false);
+
+                jq('#colorectalFobt *').prop('disabled', true);
+                jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                jq('#retinoblastomaEua *').prop('disabled', true);
+                jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                jq('#prostateDre *').prop('disabled', true);
+                jq('#prostatePsa *').prop('disabled', true);
+                jq('#prostateTrus *').prop('disabled', true);
+
+                jq('#oralVisual *').prop('disabled', true);
+                jq('#oralCytology *').prop('disabled', true);
+                jq('#oralImaging *').prop('disabled', true);
+                jq('#oralBiopsy *').prop('disabled', true);
+
+                jq('#otherCancer *').prop('disabled', true);
+            }
+            else if(optValues === 133350) {
+                jq('#cervicalHpv *').prop('disabled', true);
+                jq('#cervicalVia *').prop('disabled', true);
+                jq('#cervicalPapSmear *').prop('disabled', true);
+
+                jq('#breastCbe *').prop('disabled', true);
+                jq('#breastUltrasound *').prop('disabled', true);
+                jq('#breastMammograph *').prop('disabled', true);
+
+                jq('#colorectalFobt *').prop('disabled', false);
+                jq('#colorectalColonoscopy *').prop('disabled', false);
+
+                jq('#retinoblastomaEua *').prop('disabled', true);
+                jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                jq('#prostateDre *').prop('disabled', true);
+                jq('#prostatePsa *').prop('disabled', true);
+                jq('#prostateTrus *').prop('disabled', true);
+
+                jq('#oralVisual *').prop('disabled', true);
+                jq('#oralCytology *').prop('disabled', true);
+                jq('#oralImaging *').prop('disabled', true);
+                jq('#oralBiopsy *').prop('disabled', true);
+
+                jq('#otherCancer *').prop('disabled', true);
+            }
+            else if(optValues === 127527) {
+                jq('#cervicalHpv *').prop('disabled', true);
+                jq('#cervicalVia *').prop('disabled', true);
+                jq('#cervicalPapSmear *').prop('disabled', true);
+
+                jq('#breastCbe *').prop('disabled', true);
+                jq('#breastUltrasound *').prop('disabled', true);
+                jq('#breastMammograph *').prop('disabled', true);
+
+                jq('#colorectalFobt *').prop('disabled', true);
+                jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                jq('#retinoblastomaEua *').prop('disabled', false);
+                jq('#retinoblastomaRb1 *').prop('disabled', false);
+
+                jq('#prostateDre *').prop('disabled', true);
+                jq('#prostatePsa *').prop('disabled', true);
+                jq('#prostateTrus *').prop('disabled', true);
+
+                jq('#oralVisual *').prop('disabled', true);
+                jq('#oralCytology *').prop('disabled', true);
+                jq('#oralImaging *').prop('disabled', true);
+                jq('#oralBiopsy *').prop('disabled', true);
+
+                jq('#otherCancer *').prop('disabled', true);
+            }
+            else if(optValues === 146221) {
+                jq('#cervicalHpv *').prop('disabled', true);
+                jq('#cervicalVia *').prop('disabled', true);
+                jq('#cervicalPapSmear *').prop('disabled', true);
+
+                jq('#breastCbe *').prop('disabled', true);
+                jq('#breastUltrasound *').prop('disabled', true);
+                jq('#breastMammograph *').prop('disabled', true);
+
+                jq('#colorectalFobt *').prop('disabled', true);
+                jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                jq('#retinoblastomaEua *').prop('disabled', true);
+                jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                jq('#prostateDre *').prop('disabled', false);
+                jq('#prostatePsa *').prop('disabled', false);
+                jq('#prostateTrus *').prop('disabled', false);
+
+                jq('#oralVisual *').prop('disabled', true);
+                jq('#oralCytology *').prop('disabled', true);
+                jq('#oralImaging *').prop('disabled', true);
+                jq('#oralBiopsy *').prop('disabled', true);
+
+                jq('#otherCancer *').prop('disabled', true);
+            }
+            else if(optValues === 115355) {
+                jq('#cervicalHpv *').prop('disabled', true);
+                jq('#cervicalVia *').prop('disabled', true);
+                jq('#cervicalPapSmear *').prop('disabled', true);
+
+                jq('#breastCbe *').prop('disabled', true);
+                jq('#breastUltrasound *').prop('disabled', true);
+                jq('#breastMammograph *').prop('disabled', true);
+
+                jq('#colorectalFobt *').prop('disabled', true);
+                jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                jq('#retinoblastomaEua *').prop('disabled', true);
+                jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                jq('#prostateDre *').prop('disabled', true);
+                jq('#prostatePsa *').prop('disabled', true);
+                jq('#prostateTrus *').prop('disabled', true);
+
+                jq('#oralVisual *').prop('disabled', false);
+                jq('#oralCytology *').prop('disabled', false);
+                jq('#oralImaging *').prop('disabled', false);
+                jq('#oralBiopsy *').prop('disabled', false);
+
+                jq('#otherCancer *').prop('disabled', true);
+            }
+            else if(optValues === 1000123) {
+                jq('#cervicalHpv *').prop('disabled', true);
+                jq('#cervicalVia *').prop('disabled', true);
+                jq('#cervicalPapSmear *').prop('disabled', true);
+
+                jq('#breastCbe *').prop('disabled', true);
+                jq('#breastUltrasound *').prop('disabled', true);
+                jq('#breastMammograph *').prop('disabled', true);
+
+                jq('#colorectalFobt *').prop('disabled', true);
+                jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                jq('#retinoblastomaEua *').prop('disabled', true);
+                jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                jq('#prostateDre *').prop('disabled', true);
+                jq('#prostatePsa *').prop('disabled', true);
+                jq('#prostateTrus *').prop('disabled', true);
+
+                jq('#oralVisual *').prop('disabled', true);
+                jq('#oralCytology *').prop('disabled', true);
+                jq('#oralImaging *').prop('disabled', true);
+                jq('#oralBiopsy *').prop('disabled', true);
+
+                jq('#otherCancer *').prop('disabled', false);
+            }
+        }
+        function getClickEventOnCancerType() {
+            jq('#cancerType input:radio').click(function() {
+                alert("The click event was called here with>>"+jq(this).val());
+
+                if (jq(this).val() === 116023) {
+                    jq('#cervicalHpv *').prop('disabled', false);
+                    jq('#cervicalVia *').prop('disabled', false);
+                    jq('#cervicalPapSmear *').prop('disabled', false);
+
+                    jq('#breastCbe *').prop('disabled', true);
+                    jq('#breastUltrasound *').prop('disabled', true);
+                    jq('#breastMammograph *').prop('disabled', true);
+
+                    jq('#colorectalFobt *').prop('disabled', true);
+                    jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                    jq('#retinoblastomaEua *').prop('disabled', true);
+                    jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                    jq('#prostateDre *').prop('disabled', true);
+                    jq('#prostatePsa *').prop('disabled', true);
+                    jq('#prostateTrus *').prop('disabled', true);
+
+                    jq('#oralVisual *').prop('disabled', true);
+                    jq('#oralCytology *').prop('disabled', true);
+                    jq('#oralImaging *').prop('disabled', true);
+                    jq('#oralBiopsy *').prop('disabled', true);
+
+                    jq('#otherCancer *').prop('disabled', true);
+                }
+                else if(jq(this).val() === 116026) {
+                    jq('#cervicalHpv *').prop('disabled', true);
+                    jq('#cervicalVia *').prop('disabled', true);
+                    jq('#cervicalPapSmear *').prop('disabled', true);
+
+                    jq('#breastCbe *').prop('disabled', false);
+                    jq('#breastUltrasound *').prop('disabled', false);
+                    jq('#breastMammograph *').prop('disabled', false);
+
+                    jq('#colorectalFobt *').prop('disabled', true);
+                    jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                    jq('#retinoblastomaEua *').prop('disabled', true);
+                    jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                    jq('#prostateDre *').prop('disabled', true);
+                    jq('#prostatePsa *').prop('disabled', true);
+                    jq('#prostateTrus *').prop('disabled', true);
+
+                    jq('#oralVisual *').prop('disabled', true);
+                    jq('#oralCytology *').prop('disabled', true);
+                    jq('#oralImaging *').prop('disabled', true);
+                    jq('#oralBiopsy *').prop('disabled', true);
+
+                    jq('#otherCancer *').prop('disabled', true);
+                }
+                else if(jq(this).val() === 133350) {
+                    jq('#cervicalHpv *').prop('disabled', true);
+                    jq('#cervicalVia *').prop('disabled', true);
+                    jq('#cervicalPapSmear *').prop('disabled', true);
+
+                    jq('#breastCbe *').prop('disabled', true);
+                    jq('#breastUltrasound *').prop('disabled', true);
+                    jq('#breastMammograph *').prop('disabled', true);
+
+                    jq('#colorectalFobt *').prop('disabled', false);
+                    jq('#colorectalColonoscopy *').prop('disabled', false);
+
+                    jq('#retinoblastomaEua *').prop('disabled', true);
+                    jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                    jq('#prostateDre *').prop('disabled', true);
+                    jq('#prostatePsa *').prop('disabled', true);
+                    jq('#prostateTrus *').prop('disabled', true);
+
+                    jq('#oralVisual *').prop('disabled', true);
+                    jq('#oralCytology *').prop('disabled', true);
+                    jq('#oralImaging *').prop('disabled', true);
+                    jq('#oralBiopsy *').prop('disabled', true);
+
+                    jq('#otherCancer *').prop('disabled', true);
+                }
+                else if(jq(this).val() === 127527) {
+                    jq('#cervicalHpv *').prop('disabled', true);
+                    jq('#cervicalVia *').prop('disabled', true);
+                    jq('#cervicalPapSmear *').prop('disabled', true);
+
+                    jq('#breastCbe *').prop('disabled', true);
+                    jq('#breastUltrasound *').prop('disabled', true);
+                    jq('#breastMammograph *').prop('disabled', true);
+
+                    jq('#colorectalFobt *').prop('disabled', true);
+                    jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                    jq('#retinoblastomaEua *').prop('disabled', false);
+                    jq('#retinoblastomaRb1 *').prop('disabled', false);
+
+                    jq('#prostateDre *').prop('disabled', true);
+                    jq('#prostatePsa *').prop('disabled', true);
+                    jq('#prostateTrus *').prop('disabled', true);
+
+                    jq('#oralVisual *').prop('disabled', true);
+                    jq('#oralCytology *').prop('disabled', true);
+                    jq('#oralImaging *').prop('disabled', true);
+                    jq('#oralBiopsy *').prop('disabled', true);
+
+                    jq('#otherCancer *').prop('disabled', true);
+                }
+                else if(jq(this).val() === 146221) {
+                    jq('#cervicalHpv *').prop('disabled', true);
+                    jq('#cervicalVia *').prop('disabled', true);
+                    jq('#cervicalPapSmear *').prop('disabled', true);
+
+                    jq('#breastCbe *').prop('disabled', true);
+                    jq('#breastUltrasound *').prop('disabled', true);
+                    jq('#breastMammograph *').prop('disabled', true);
+
+                    jq('#colorectalFobt *').prop('disabled', true);
+                    jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                    jq('#retinoblastomaEua *').prop('disabled', true);
+                    jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                    jq('#prostateDre *').prop('disabled', false);
+                    jq('#prostatePsa *').prop('disabled', false);
+                    jq('#prostateTrus *').prop('disabled', false);
+
+                    jq('#oralVisual *').prop('disabled', true);
+                    jq('#oralCytology *').prop('disabled', true);
+                    jq('#oralImaging *').prop('disabled', true);
+                    jq('#oralBiopsy *').prop('disabled', true);
+
+                    jq('#otherCancer *').prop('disabled', true);
+                }
+                else if(jq(this).val() === 115355) {
+                    jq('#cervicalHpv *').prop('disabled', true);
+                    jq('#cervicalVia *').prop('disabled', true);
+                    jq('#cervicalPapSmear *').prop('disabled', true);
+
+                    jq('#breastCbe *').prop('disabled', true);
+                    jq('#breastUltrasound *').prop('disabled', true);
+                    jq('#breastMammograph *').prop('disabled', true);
+
+                    jq('#colorectalFobt *').prop('disabled', true);
+                    jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                    jq('#retinoblastomaEua *').prop('disabled', true);
+                    jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                    jq('#prostateDre *').prop('disabled', true);
+                    jq('#prostatePsa *').prop('disabled', true);
+                    jq('#prostateTrus *').prop('disabled', true);
+
+                    jq('#oralVisual *').prop('disabled', false);
+                    jq('#oralCytology *').prop('disabled', false);
+                    jq('#oralImaging *').prop('disabled', false);
+                    jq('#oralBiopsy *').prop('disabled', false);
+
+                    jq('#otherCancer *').prop('disabled', true);
+                }
+                else if(jq(this).val() === 1000123) {
+                    jq('#cervicalHpv *').prop('disabled', true);
+                    jq('#cervicalVia *').prop('disabled', true);
+                    jq('#cervicalPapSmear *').prop('disabled', true);
+
+                    jq('#breastCbe *').prop('disabled', true);
+                    jq('#breastUltrasound *').prop('disabled', true);
+                    jq('#breastMammograph *').prop('disabled', true);
+
+                    jq('#colorectalFobt *').prop('disabled', true);
+                    jq('#colorectalColonoscopy *').prop('disabled', true);
+
+                    jq('#retinoblastomaEua *').prop('disabled', true);
+                    jq('#retinoblastomaRb1 *').prop('disabled', true);
+
+                    jq('#prostateDre *').prop('disabled', true);
+                    jq('#prostatePsa *').prop('disabled', true);
+                    jq('#prostateTrus *').prop('disabled', true);
+
+                    jq('#oralVisual *').prop('disabled', true);
+                    jq('#oralCytology *').prop('disabled', true);
+                    jq('#oralImaging *').prop('disabled', true);
+                    jq('#oralBiopsy *').prop('disabled', true);
+
+                    jq('#otherCancer *').prop('disabled', false);
+                }
+            });
         }
     </script>
     <style>
@@ -53,7 +445,7 @@
         <table style="width: 100%" cellspacing="0" cellpadding="0">
             <tr>
                 <td>Date:
-                    <encounterDate id="encounter-date" showTime="false" />
+                    <encounterDate id="encounter-date" showTime="true" />
                 </td>
                 <td>Enrolled by:
                     <encounterProvider default="currentUser" />
@@ -181,18 +573,18 @@
                     <th colspan="2">&nbsp;Cancer Screening</th>
                 </tr>
                 <tr>
-                    <td>Visit type</td>
-                    <td>
+                    <td colspan="2">Visit type
+
                         <obs conceptId="164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                              answerConceptIds="164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,bbd5d81e-d694-48e6-a948-ed82e63e2030,d6dbc59d-26ea-459e-be4a-75b89c9210ae"
                              answerLabels="Initial screening,Repeat screening, Post-Treatment screening" style="radio" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Cancer type:<obs conceptId="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                          answerConceptIds="116023AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133350AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,127527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,146221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1be9b3bb-40dc-44bb-97c8-13824287f3cb"
-                                         style="dropdown" answerLabels="Cervical,Breast,Colorectal,Retinoblastoma,Prostate,Oral cancer,Other"  style="radio"/>
+                                         answerLabels="Cervical,Breast,Colorectal,Retinoblastoma,Prostate,Oral cancer,Other"  style="radio" id="cancerType" />
                     </td>
                 </tr>
                 <tr>
@@ -205,9 +597,8 @@
                                 <th>Treatment/Action</th>
                             </thead>
                             <tbody>
-                                <div id="cervicalId">
                                     <includeIf velocityTest="$patient.gender == 'F' ">
-                                        <tr>
+                                        <tr id="cervicalHpv">
                                             <th rowspan="3">Cervical</th>
                                             <th>HPV</th>
                                             <td valign="top"><obs conceptId="159859AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -220,7 +611,7 @@
                                                                   answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio" />
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr id="cervicalVia">
 
 
                                             <th>VIA/VILI</th>
@@ -234,7 +625,7 @@
                                                      answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
                                                      answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio" /></td>
                                         </tr>
-                                        <tr>
+                                        <tr id="cervicalPapSmear">
 
                                             <th>Pap smear</th>
                                             <td><obs conceptId="885AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -245,9 +636,8 @@
                                             <td>&nbsp;</td>
                                         </tr>
                                     </includeIf>
-                                </div>
-                                <div id="breastId">
-                                    <tr>
+
+                                    <tr id="breastCbe">
                                         <th rowspan="3">Breast</th>
                                         <th>CBE</th>
                                         <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -261,7 +651,7 @@
                                                  answerLabels="Counseled on Negative result,Referred for imaging" style="radio" />
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr id="breastUltrasound">
                                         <th>Ultrasound</th>
                                         <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
@@ -275,7 +665,7 @@
                                         </td>
                                     </tr>
 
-                                    <tr>
+                                    <tr id="breastMammograph">
                                         <th>Mammography</th>
                                         <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  answerSeparator="&lt;br/&gt;" answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -287,10 +677,8 @@
                                                  answerLabels="Counseled on Negative Findings,Reffered for further evaluation and or management" style="radio" />
                                         </td>
                                     </tr>
-                                </div>
-                                <div id="colorectalId">
                                     <includeIf velocityTest="$patient.age >40 ">
-                                        <tr>
+                                        <tr id="colorectalFobt">
                                             <th rowspan="2">Colorectal</th>
                                             <th>FOBT</th>
                                             <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -303,7 +691,7 @@
                                                      answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" />
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr id="colorectalColonoscopy">
 
                                             <th>Colonoscopy</th>
                                             <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -316,10 +704,8 @@
                                                      answerLabels="Counseled on Negative findings,Polypectomy,Referred for further management" style="radio" /></td>
                                         </tr>
                                     </includeIf>
-                                </div>
-                                <div id="retinoblastomaId">
                                     <includeIf velocityTest="$patient.age <5 ">
-                                        <tr>
+                                        <tr id="retinoblastomaEua">
                                             <th rowspan="2">Retinoblastoma</th>
                                             <th>EUA</th>
                                             <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -332,7 +718,7 @@
                                                      answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" />
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr id="retinoblastomaRb1">
 
                                             <th>Retinoblastoma gene (RB1 gene) testing</th>
                                             <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -344,10 +730,8 @@
                                                      answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" /></td>
                                         </tr>
                                     </includeIf>
-                                </div>
-                                <div id="prostateId">
                                     <includeIf velocityTest="$patient.gender == 'M' && $patient.age >40">
-                                        <tr>
+                                        <tr id="prostateDre">
                                             <th rowspan="3">Prostate</th>
                                             <th>DRE</th>
                                             <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -360,7 +744,7 @@
                                                      answerLabels="Counseled on Negative result,Referred for further evaluation" style="radio" />
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr id="prostatePsa">
                                             <th>PSA testing</th>
                                             <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                      answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -371,7 +755,7 @@
                                                      answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                      answerLabels="Counseled on Negative Findings,Referred for further evaluation" style="radio" /></td>
                                         </tr>
-                                        <tr>
+                                        <tr id="prostateTrus">
                                             <th>TRUS biopsy</th>
                                             <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                      labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
@@ -384,9 +768,7 @@
                                                      answerLabels="Counseled on Negative Findings,Referred for further evaluation" style="radio" /></td>
                                         </tr>
                                     </includeIf>
-                                </div>
-                                <div id="oralId">
-                                    <tr>
+                                    <tr id="oralVisual">
                                         <th rowspan="4">Oral</th>
                                         <th>Visual</th>
                                         <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -399,7 +781,7 @@
                                                  answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" />
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr id="oralCytology">
                                         <th>Cytology</th>
                                         <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -411,7 +793,7 @@
                                                  answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" />
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr id="oralImaging">
                                         <th>Imaging</th>
                                         <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -423,7 +805,7 @@
                                                  answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" />
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr id="oralBiopsy">
                                         <th>Biopsy</th>
                                         <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -435,9 +817,7 @@
                                                  answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" />
                                         </td>
                                     </tr>
-                                </div>
-                                <div id="otherId">
-                                    <tr>
+                                    <tr id="otherCancer">
                                         <td>
                                             Other(specify)<br />
                                             <obs conceptId="1be9b3bb-40dc-44bb-97c8-13824287f3cb" cols="30" rows="3"  />
@@ -456,8 +836,6 @@
                                         </td>
 
                                     </tr>
-                                </div>
-
                             </tbody>
                         </table>
 
@@ -482,7 +860,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Other:<obs conceptId="164359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="100" />
+                        Other reasons<br /> <obs conceptId="164359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="100" />
                     </td>
                 </tr>
             </tbody>

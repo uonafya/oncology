@@ -15,25 +15,8 @@
     <script type="text/javascript">
     </script>
     <style>
-        .section {
-            border: 1px solid $headerColor;
-            padding: 2px;
-            text-align: left;
-            margin-bottom: 1em;
-        }
-        .sectionHeader {
-            background-color: $headerColor;
-            color: $fontOnHeaderColor;
-            display: block;
-            padding: 2px;
-            font-weight: bold;
-        }
         table.baseline-aligned td {
             vertical-align: baseline;
-        }
-        table.moh406 {
-            border-collapse: collapse;
-            background-color: #FBFAE1;
         }
         table.oncology > tbody > tr > td, table.oncology > tbody > tr > th {
             border: 1px solid black;
@@ -42,33 +25,6 @@
             text-align: left;
 
 
-        }
-        td.header {
-            border: 1px solid black;
-            background-color: #CCD1D1;
-            width: 7%;
-        }
-        td.data {
-            border: 1px solid black;
-            text-align: left;
-        }
-        #rotate_text
-        {
-            id: rot_text;
-            width:130px;
-            height:100px;
-            -ms-transform:rotate(270deg); /* IE 9 */
-            -moz-transform:rotate(270deg); /* Firefox */
-            -webkit-transform:rotate(270deg); /* Safari and Chrome */
-            -o-transform:rotate(270deg); /* Opera */
-        }
-        .tooltip{
-            margin:8px;
-            padding:8px;
-            border:1px solid blue;
-            background-color:yellow;
-            position: absolute;
-            z-index: 2;
         }
     </style>
 
@@ -96,13 +52,13 @@
             <tr>
                 <td>Religion</td>
                 <td>
-                    <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                    <obs conceptId="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptIds="163125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162933AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,163124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabels="Christian,Muslim,Hindu,Other" />
                 </td>
             </tr>
             <tr>
                 <td>Employment Status</td>
                 <td>
-                    <obs conceptId="163399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                    <obs conceptId="552e950f-eeb0-4e0c-9e68-5a4b9057caea" answerConceptIds="e50c2446-d4af-44dd-a8f1-c8dc7e510e1d,bf819b2a-e908-4e3f-a457-df636023f1fe,123801AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159461AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159465AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"  answerLabels="Full-time,Part-time,Unemployed,Retired,Student" style="radio" />
                 </td>
             </tr>
         </table>
