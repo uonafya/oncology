@@ -15,16 +15,15 @@
     <script type="text/javascript">
     </script>
     <style>
-        table.baseline-aligned td {
-            vertical-align: baseline;
+        table.screening {
+            border-collapse: collapse;
+            background-color: #F3F9FF;
         }
-        table.oncology > tbody > tr > td, table.oncology > tbody > tr > th {
+        table.screening > tbody > tr > td, table.screening > tbody > tr > th {
             border: 1px solid black;
             vertical-align: baseline;
-            padding: 4px;
+            padding: 3.6px;
             text-align: left;
-
-
         }
     </style>
 
@@ -44,7 +43,7 @@
         </table>
     </div>
     <div class="ke-form-content">
-        <table style="align: center">
+        <table cellspacing="0" cellpadding="0" class="screening">
             <tr>
                 <td>Birth certificate number:</td>
                 <td><patient id="bcert" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" /></td>

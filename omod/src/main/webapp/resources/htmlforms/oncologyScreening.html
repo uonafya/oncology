@@ -46,7 +46,6 @@
         }
         function getTypeOfCancerPickedToToggleResponses() {
             var optValues = parseInt(getValue('cancerType.value'));
-            alert(optValues);
             if (optValues === 116023){
                 jq('#cervicalHpv *').prop('disabled', false);
                 jq('#cervicalVia *').prop('disabled', false);
@@ -428,16 +427,6 @@
             vertical-align: baseline;
             padding: 3.6px;
             text-align: left;
-        }
-        .left-table {
-            display: inline-block; border: 1px solid; float: left;
-        }
-
-        .right-table {
-            display: inline-block; border: 1px solid;
-        }
-        .trbackcolor{
-            background-color: lightgrey;
         }
     </style>
 

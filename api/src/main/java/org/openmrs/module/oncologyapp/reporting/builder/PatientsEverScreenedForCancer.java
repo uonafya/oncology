@@ -48,9 +48,9 @@ public class PatientsEverScreenedForCancer extends CalculationReportBuilder {
 		dsd.addColumn("Date of screening visit", getLastScreeningEncounter(), "", new EncounterDatetimeConverter());
 		
 		dsd.addColumn("Type of visit", new ObsForPersonDataDefinition("Type of visit", TimeQualifier.LAST, visitType, null,
-		        null), "onOrBefore=${endDate}", new CustomDataConverter());
+		        null), "", new CustomDataConverter());
 		dsd.addColumn("Type of cancer screened", new ObsForPersonDataDefinition("TType of cancer screened",
-		        TimeQualifier.LAST, visitType, null, null), "onOrBefore=${endDate}", new CustomDataConverter());
+		        TimeQualifier.LAST, visitType, null, null), "", new CustomDataConverter());
 		
 	}
 	
