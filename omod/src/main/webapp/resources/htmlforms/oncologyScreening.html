@@ -45,7 +45,8 @@
             jq('#otherCancer *').prop('disabled', true);
         }
         function getTypeOfCancerPickedToToggleResponses() {
-            var optValues = getValue('cancerType.value');
+            var optValues = parseInt(getValue('cancerType.value'));
+            alert(optValues);
             if (optValues === 116023){
                 jq('#cervicalHpv *').prop('disabled', false);
                 jq('#cervicalVia *').prop('disabled', false);
@@ -231,9 +232,8 @@
         }
         function getClickEventOnCancerType() {
             jq('#cancerType input:radio').click(function() {
-                alert("The click event was called here with>>"+jq(this).val());
-
-                if (jq(this).val() === 116023) {
+                    var value = parseInt(jq(this).val());
+                if (value === 116023) {
                     jq('#cervicalHpv *').prop('disabled', false);
                     jq('#cervicalVia *').prop('disabled', false);
                     jq('#cervicalPapSmear *').prop('disabled', false);
@@ -259,7 +259,7 @@
 
                     jq('#otherCancer *').prop('disabled', true);
                 }
-                else if(jq(this).val() === 116026) {
+                else if(value === 116026) {
                     jq('#cervicalHpv *').prop('disabled', true);
                     jq('#cervicalVia *').prop('disabled', true);
                     jq('#cervicalPapSmear *').prop('disabled', true);
@@ -285,7 +285,7 @@
 
                     jq('#otherCancer *').prop('disabled', true);
                 }
-                else if(jq(this).val() === 133350) {
+                else if(value === 133350) {
                     jq('#cervicalHpv *').prop('disabled', true);
                     jq('#cervicalVia *').prop('disabled', true);
                     jq('#cervicalPapSmear *').prop('disabled', true);
@@ -311,7 +311,7 @@
 
                     jq('#otherCancer *').prop('disabled', true);
                 }
-                else if(jq(this).val() === 127527) {
+                else if(value === 127527) {
                     jq('#cervicalHpv *').prop('disabled', true);
                     jq('#cervicalVia *').prop('disabled', true);
                     jq('#cervicalPapSmear *').prop('disabled', true);
@@ -337,7 +337,7 @@
 
                     jq('#otherCancer *').prop('disabled', true);
                 }
-                else if(jq(this).val() === 146221) {
+                else if(value === 146221) {
                     jq('#cervicalHpv *').prop('disabled', true);
                     jq('#cervicalVia *').prop('disabled', true);
                     jq('#cervicalPapSmear *').prop('disabled', true);
@@ -363,7 +363,7 @@
 
                     jq('#otherCancer *').prop('disabled', true);
                 }
-                else if(jq(this).val() === 115355) {
+                else if(value === 115355) {
                     jq('#cervicalHpv *').prop('disabled', true);
                     jq('#cervicalVia *').prop('disabled', true);
                     jq('#cervicalPapSmear *').prop('disabled', true);
@@ -389,7 +389,7 @@
 
                     jq('#otherCancer *').prop('disabled', true);
                 }
-                else if(jq(this).val() === 1000123) {
+                else if(value === 1000123) {
                     jq('#cervicalHpv *').prop('disabled', true);
                     jq('#cervicalVia *').prop('disabled', true);
                     jq('#cervicalPapSmear *').prop('disabled', true);
