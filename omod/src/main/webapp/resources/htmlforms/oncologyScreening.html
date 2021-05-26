@@ -236,6 +236,7 @@
                     jq('#cervicalHpv *').prop('disabled', false);
                     jq('#cervicalVia *').prop('disabled', false);
                     jq('#cervicalPapSmear *').prop('disabled', false);
+                    processHpvResponsesAndTreatment();
 
                     jq('#breastCbe *').prop('disabled', true);
                     jq('#breastUltrasound *').prop('disabled', true);
@@ -416,6 +417,32 @@
                 }
             });
         }
+        function processHpvResponsesAndTreatment() {
+            jq('#hpvResponses input:radio').click(function() {
+                var value = parseInt(jq(this).val());
+                if(value === 664) {
+                    jq('#hpvTreatmentForNegativeResults *').prop('disabled', false);
+                    jq('#hpvTreatmentForPositiveResults *').prop('disabled', true);
+                }
+                else if(value === 703) {
+                    jq('#hpvTreatmentForPositiveResults *').prop('disabled', false);
+                    jq('#hpvTreatmentForNegativeResults *').prop('disabled', true);
+                }
+            });
+        }
+        function processViaResponsesAndTreatment() {
+            jq('#hpvTreatmentForNegativeResults *').prop('disabled', false);
+            jq('#hpvTreatmentForPositiveResults *').prop('disabled', false);
+            jq('#viaResponses input:radio').click(function() {
+                var value = parseInt(jq(this).val());
+                if(value === 664) {
+                    jq('#hpvTreatmentForNegativeResults *').prop('disabled', false);
+                }
+                else if(value === 703) {
+                    jq('#hpvTreatmentForPositiveResults *').prop('disabled', false);
+                }
+            });
+        }
     </script>
     <style>
         table.screening {
@@ -591,28 +618,64 @@
                                             <th rowspan="3">Cervical</th>
                                             <th>HPV</th>
                                             <td valign="top"><obs conceptId="159859AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                                  answerLabels="Positive,Negative" style="radio" answerSeparator="" />
+                                                                  answerConceptIds="664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                  answerLabels="Negative,Positive" style="radio"  answerSeparator="&lt;br/&gt;" id="hpvResponses" />
                                             </td>
-                                            <td valign="top"><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                                  labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                                  answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                                  answerLabels="Counseled on Negative result,Referred for VIA/VILI,PAP smear" style="radio" />
+                                            <td valign="top">
+                                                <div id="hpvTreatmentForNegativeResults">
+                                                    <obs conceptId="62a2e091-688e-40f4-b70f-dab1aef62388" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on negative results" style="checkbox" /><br />
+                                                    <obs conceptId="62a2e091-688e-40f4-b70f-dab1aef62388" answerConceptId="c8c67930-1002-4637-be09-755560fd8452" answerLabel="Re-screen after 5 years" style="checkbox" /><br />
+                                                    <obs conceptId="62a2e091-688e-40f4-b70f-dab1aef62388" answerConceptId="13be60bf-28ac-44b7-a847-4f1c24f2afa6" answerLabel="Re-screening after 2 years" style="checkbox" />
+                                                </div>
+
+                                                <hr />
+                                                <div id="hpvTreatmentForPositiveResults">
+                                                    <obs conceptId="62a2e091-688e-40f4-b70f-dab1aef62388" answerConceptId="73e82dc9-f73a-47a8-b4e6-fdf3c1f4b73f" answerLabel="Do a VIA or colposcopy" style="checkbox" />
+                                                </div>
                                             </td>
                                         </tr>
+
                                         <tr id="cervicalVia">
 
-
                                             <th>VIA/VILI</th>
-                                            <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     answerLabels="Positive,Negative,suspicious for cancer" style="radio" />
+                                            <td><obs conceptId="162816AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                     answerSeparator="&lt;br/&gt;"
+                                                     answerConceptIds="664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                     answerLabels="Negative,Positive,suspicious for cancer" style="radio" id="viaResponses" />
                                             </td>
-                                            <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664,664"
-                                                     answerLabels="Counseled on Negative result,Crytherapy,LEEP,Thermocoagulation,Reffered for further management" style="radio" /></td>
+                                            <td>
+                                                <div id="viaTreatmentNegativeResults">
+                                                    <obs conceptId="3ddc3275-66c2-40fc-9ed2-12c1725d50f9" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled for negative result" style="checkbox" />
+                                                </div>
+                                                <hr />
+                                                <div id="viaTreatmentPositiveResults">
+                                                    <obs conceptId="3ddc3275-66c2-40fc-9ed2-12c1725d50f9" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled for negative result" style="checkbox" id="cryotherapy" /><br />
+                                                        <div id="cryotherapyOptions">
+                                                            <obs conceptId="a2d67f28-1e66-4199-8f50-067d37a06da7" answerConceptIds="8329d974-5371-4fb0-98da-762da897ef72,d1d9a2a0-2ae7-4bf1-970a-0c6f51d67428,b4fe108d-c980-4451-99fb-6ef42e9a8dcc,60dbeb18-e599-4276-8252-5eb84641a4a3" answerLabels="Done single visit approach,Crytotherapy postponed,Referred for cryotherapy,postponed cryotherapy done today" style="dropdown" />
+                                                            Date screening done<br /><obs conceptId="23f45ac8-613a-4ece-b3d9-ac1697acc2ab" />
+                                                        </div>
+                                                    <br />
+                                                    <div id="thermalAblationOptions">
+                                                        <obs conceptId="d2632d95-4869-4f81-b06f-2a9f6d442853" answerConceptIds="8329d974-5371-4fb0-98da-762da897ef72,d2632d95-4869-4f81-b06f-2a9f6d442853,d1d9a2a0-2ae7-4bf1-970a-0c6f51d67428,1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,60dbeb18-e599-4276-8252-5eb84641a4a3" answerLabels="Done single visit approach,Thermal ablation,Postponed,Referred for Thermal ablation,Postponed Thermal abilation done today" style="dropdown" />
+                                                        Date screening done<br /><obs conceptId="23f45ac8-613a-4ece-b3d9-ac1697acc2ab" />
+                                                    </div>
+                                                    <br />
+                                                    <div id="leepOptions">
+                                                        <obs conceptId="162810AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptIds="8329d974-5371-4fb0-98da-762da897ef72,d1d9a2a0-2ae7-4bf1-970a-0c6f51d67428,b4fe108d-c980-4451-99fb-6ef42e9a8dcc" answerLabels="LEEP performed SVA,LEEP postponed,Referred for LEEP" style="dropdown" />
+                                                    </div>
+                                                    <br />
+                                                    <div id="otherTreatmentForViaPositive">
+                                                        <obs conceptId="57c76c24-baa2-4c12-9f30-b8d192bae1a4" answerConceptIds="162811AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159837AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabels="Cone biopsy,Hysterectomy" style="dropdown" />
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div id="viaSuspectForCancerOptions">
+                                                    <p>
+                                                        Referred for further management
+                                                    </p>
+                                                </div>
+
+                                            </td>
                                         </tr>
                                         <tr id="cervicalPapSmear">
 

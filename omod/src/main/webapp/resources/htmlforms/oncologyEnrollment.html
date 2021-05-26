@@ -43,11 +43,13 @@
         </table>
     </div>
     <div class="ke-form-content">
-        <table cellspacing="0" cellpadding="0" class="screening">
-            <tr>
-                <td>Birth certificate number:</td>
-                <td><patient id="bcert" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" /></td>
-            </tr>
+        <table cellspacing="0" cellpadding="0" class="screening" align="center">
+            <includeIf velocityTest="$patient.age <18 ">
+                <tr>
+                    <td>Birth certificate number:</td>
+                    <td><patient id="bcert" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" /></td>
+                </tr>
+            </includeIf>
             <tr>
                 <td>Religion</td>
                 <td>
