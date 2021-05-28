@@ -752,14 +752,10 @@
                                             </td>
                                         </tr>
 
-                                            <tr id="breastCbe">
+
+                                        <includeIf velocityTest="$patient.age > 24 ">
+                                        <tr id="breastCbe">
                                                 <th rowspan="3">Breast</th>
-                                                <includeIf velocityTest="$patient.age < 25 ">
-                                                    <th>&nbsp;</th>
-                                                    <td>&nbsp;</td>
-                                                    <td>&nbsp;</td>
-                                                </includeIf>
-                                                <includeIf velocityTest="$patient.age > 24 ">
                                                     <th>Clinical Breast Examination<br />(CBE)</th>
                                                     <td><obs conceptId="7d1bd60b-bc97-4194-8688-727360199492"
                                                              answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -774,10 +770,30 @@
                                                             <obs conceptId="08fbc479-e0f9-4fff-93f0-2455bae05c66" answerConceptId="1609AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Refer for imaging" style="checkbox" />
                                                         </div>
                                                     </td>
-                                                </includeIf>
                                             </tr>
-
-                                            <tr id="breastUltrasound">
+                                        </includeIf>
+                                        <includeIf velocityTest="$patient.age > 24 ">
+                                        <tr id="breastUltrasound">
+                                            <th>Ultrasound</th>
+                                            <td><obs conceptId="3cb64490-aa67-4d23-b7d2-fb29b5b894da"
+                                                     labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                                     answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,8cc5d428-0bfd-41f0-a7fb-a239aadadb0d,2ab46b88-b87a-4321-839f-b1351410335d,deec6439-884f-4921-b9d3-cfa77666d6e6,fbfd99cf-2be1-403d-b8c3-15b686d5cc78,89683205-f2c6-45e7-824d-9db0a29ca6c8"
+                                                     answerLabels="BIRADS 1,BIRADS 0,BIRADS 2, BIRADS 3, BIRADS 4, BIRADS 5,BIRADS 6"  style="radio" id="breastUltrasoundFindings" />
+                                            </td>
+                                            <td>
+                                                <div id="ultrasoundNegativeResultTreatmentOption">
+                                                    <obs conceptId="89875192-b834-4525-a021-e67c24e661f2" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counsel for negative findings" style="checkbox" />
+                                                </div>
+                                                <hr />
+                                                <div>
+                                                    <obs conceptId="89875192-b834-4525-a021-e67c24e661f2" answerConceptId="b4fe108d-c980-4451-99fb-6ef42e9a8dcc" answerLabel="Referred for further evaluation and management" style="checkbox" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </includeIf>
+                                        <includeIf velocityTest="$patient.age < 25 ">
+                                            <tr id="breastUltrasoundOnly">
+                                                <th>Breast</th>
                                                 <th>Ultrasound</th>
                                                 <td><obs conceptId="3cb64490-aa67-4d23-b7d2-fb29b5b894da"
                                                          labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
@@ -785,7 +801,7 @@
                                                          answerLabels="BIRADS 1,BIRADS 0,BIRADS 2, BIRADS 3, BIRADS 4, BIRADS 5,BIRADS 6"  style="radio" id="breastUltrasoundFindings" />
                                                 </td>
                                                 <td>
-                                                    <div id="ultrasoundNegativeResultTreatmentOption">
+                                                    <div id="ultrasoundNegativeResultTreatmentOptionOnly">
                                                         <obs conceptId="89875192-b834-4525-a021-e67c24e661f2" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counsel for negative findings" style="checkbox" />
                                                     </div>
                                                     <hr />
@@ -794,6 +810,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                        </includeIf>
                                         <includeIf velocityTest="$patient.age > 34 ">
                                             <tr id="breastMammograph">
                                                 <th>Mammography</th>
@@ -902,14 +919,14 @@
                                             <td>
                                                 <div id="prostateTreatmentOptions">
                                                     <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Patient education" style="checkbox" /><br />
-                                                    <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on Negative findings, after all the three investigations(DRE, PSA test and TRUS)" style="checkbox" />
+                                                    <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on -ve findings, after (DRE, PSA test and TRUS)" style="checkbox" />
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr id="prostatePsa">
                                             <th>PSA testing</th>
                                             <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                     answerConceptIds="0f5ead05-41de-47ad-8c66-673eeb10945f,78d9d6a2-7127-4b76-8c9b-1ee90f408e9c, c403d1b2-8e22-42fd-94ad-627709fbb3d9"
                                                      answerLabels="0-4ng/ml,4-10ng/ml,>10ng/ml" style="radio" answerSeparator="&lt;br/&gt;" id="psaFindingOptions" />
                                             </td>
                                             <td>&nbsp;</td>
@@ -937,48 +954,60 @@
                                         </td>
                                         <td>
                                             <div id="visualExamNormalOption">
-                                                <obs conceptId="2b2b89a7-43df-4429-9e97-8bceb87bc7b0" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on normal findings" style="checkbox" />
+                                                *<obs conceptId="2b2b89a7-43df-4429-9e97-8bceb87bc7b0" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on normal findings" style="checkbox" />
                                             </div>
                                             <hr />
                                             <div id="visualExamAbnormalOption">
-                                                <obs conceptId="2b2b89a7-43df-4429-9e97-8bceb87bc7b0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Referred for further evaluation" style="checkbox" />
+                                                *<obs conceptId="2b2b89a7-43df-4429-9e97-8bceb87bc7b0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Referred for further evaluation" style="checkbox" />
                                             </div>
                                         </td>
                                     </tr>
                                     <tr id="oralCytology">
                                         <th>Cytology</th>
-                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerLabels="Normal,Abnormal" style="radio" />
+                                        <td><obs conceptId="161199AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 answerLabels="Normal,Abnormal" style="radio" id="cytologyFindings" answerSeparator="&lt;br/&gt;" />
                                         </td>
-                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" />
+                                        <td>
+                                            <div id="cytologyNormalTreatmentOptions">
+                                                *<obs conceptId="2b2b89a7-43df-4429-9e97-8bceb87bc7b0" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on normal findings" style="checkbox" />
+                                            </div>
+                                            <hr />
+                                            <div id="cytologyExamAbnormalOption">
+                                                *<obs conceptId="2b2b89a7-43df-4429-9e97-8bceb87bc7b0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Referred for further evaluation" style="checkbox" />
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr id="oralImaging">
                                         <th>Imaging</th>
-                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerLabels="Normal,Abnormal" style="radio"/>
+                                        <td><obs conceptId="f5061499-934b-4d85-88b4-128cd3140970"
+                                                 answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 answerLabels="Normal,Abnormal" style="radio" answerSeparator="&lt;br/&gt;" id="oralImagingFindings" />
                                         </td>
-                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" />
+                                        <td>
+                                            <div id="imagingNormalTreatmentOptions">
+                                                *<obs conceptId="2b2b89a7-43df-4429-9e97-8bceb87bc7b0" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on normal findings" style="checkbox" />
+                                            </div>
+                                            <hr />
+                                            <div id="imagingAbnormalTreatmentOptions">
+                                                *<obs conceptId="2b2b89a7-43df-4429-9e97-8bceb87bc7b0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Referred for further evaluation" style="checkbox" />
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr id="oralBiopsy">
                                         <th>Biopsy</th>
-                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerLabels="Normal,Abnormal" style="radio" />
+                                        <td><obs conceptId="535aebd0-f381-4ae6-961c-caa0ecf64736"
+                                                 answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                 answerLabels="Normal,Abnormal" style="radio" answerSeparator="&lt;br/&gt;" id="oralBiopsyFindings" />
                                         </td>
-                                        <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                 answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                 answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" />
+                                        <td>
+                                            <div id="biopsyNormalTreatmentOptions">
+                                                *<obs conceptId="2b2b89a7-43df-4429-9e97-8bceb87bc7b0" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on normal findings" style="checkbox" />
+                                            </div>
+                                            <hr />
+                                            <div id="biopsyAbnormalTreatmentOptions">
+                                                *<obs conceptId="2b2b89a7-43df-4429-9e97-8bceb87bc7b0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Referred for further evaluation" style="checkbox" />
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr id="otherCancer">
