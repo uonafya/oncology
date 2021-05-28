@@ -27,6 +27,7 @@ public class PatientsEverScreenedForCancer extends CalculationReportBuilder {
 	@Override
 	protected void addColumns(CohortReportDescriptor report, PatientDataSetDefinition dsd) {
 		Concept visitType = Context.getConceptService().getConceptByUuid(OncologyappConstants.TYPE_OF_VISIT);
+		Concept cancerType = Context.getConceptService().getConceptByUuid(OncologyappConstants.CANCER_TYPE);
 		/*
 		//Client name
 		//Age
@@ -49,8 +50,8 @@ public class PatientsEverScreenedForCancer extends CalculationReportBuilder {
 		
 		dsd.addColumn("Type of visit", new ObsForPersonDataDefinition("Type of visit", TimeQualifier.LAST, visitType, null,
 		        null), "", new CustomDataConverter());
-		dsd.addColumn("Type of cancer screened", new ObsForPersonDataDefinition("TType of cancer screened",
-		        TimeQualifier.LAST, visitType, null, null), "", new CustomDataConverter());
+		dsd.addColumn("Type of cancer screened", new ObsForPersonDataDefinition("Type of cancer screened",
+		        TimeQualifier.LAST, cancerType, null, null), "", new CustomDataConverter());
 		
 	}
 	

@@ -22,7 +22,7 @@ public class OncologyappConstants {
 	public static final String TYPE_OF_VISIT = "164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
 	//types of cancer
-	public static final String CANCER_TYPE = "161079AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	public static final String CANCER_TYPE = "116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
 	public static final String CERVICAL_CANCER_TYPE = "116023AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	

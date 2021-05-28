@@ -1,12 +1,19 @@
 package org.openmrs.module.oncologyapp.metadata;
 
 import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
+import org.openmrs.module.metadatadeploy.bundle.Requires;
+import org.springframework.stereotype.Component;
 
 import static org.openmrs.module.metadatadeploy.bundle.CoreConstructors.idSet;
 import static org.openmrs.module.metadatadeploy.bundle.CoreConstructors.privilege;
 import static org.openmrs.module.metadatadeploy.bundle.CoreConstructors.role;
 
-public class SecurityMetadata extends AbstractMetadataBundle {
+/**
+ * Implementation of access control to the app.
+ */
+@Component
+@Requires(org.openmrs.module.kenyaemr.metadata.SecurityMetadata.class)
+public class OncologySecurityMetadata extends AbstractMetadataBundle {
 	
 	public static class _Privilege {
 		
