@@ -747,13 +747,14 @@
                                                 </div>
                                                 <hr />
                                                 <div id="colposcopySuspectCancerTreatmentOption">
-                                                    <b>Refer for appropraite diagnosis and management</b>
+                                                    <obs conceptId="160705AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="b4fe108d-c980-4451-99fb-6ef42e9a8dcc" answerLabel="Refer for appropraite diagnosis and management" style="checkbox" />
                                                 </div>
                                             </td>
                                         </tr>
-                                        <includeIf velocityTest="$patient.age > 24 ">
+
                                             <tr id="breastCbe">
                                                 <th rowspan="3">Breast</th>
+                                                <includeIf velocityTest="$patient.age > 24 ">
                                                 <th>Clinical Breast Examination<br />(CBE)</th>
                                                 <td><obs conceptId="7d1bd60b-bc97-4194-8688-727360199492"
                                                          answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -768,8 +769,9 @@
                                                         <obs conceptId="08fbc479-e0f9-4fff-93f0-2455bae05c66" answerConceptId="1609AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Refer for imaging" style="checkbox" />
                                                     </div>
                                                 </td>
+                                                </includeIf>
                                             </tr>
-                                        </includeIf>
+
                                             <tr id="breastUltrasound">
                                                 <th>Ultrasound</th>
                                                 <td><obs conceptId="3cb64490-aa67-4d23-b7d2-fb29b5b894da"
@@ -792,7 +794,7 @@
                                                 <th>Mammography</th>
                                                 <td><obs conceptId="163591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                          answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,8cc5d428-0bfd-41f0-a7fb-a239aadadb0d,2ab46b88-b87a-4321-839f-b1351410335d,deec6439-884f-4921-b9d3-cfa77666d6e6,fbfd99cf-2be1-403d-b8c3-15b686d5cc78,89683205-f2c6-45e7-824d-9db0a29ca6c8"
-                                                         answerLabels="BIRADS 1,BIRADS 0,BIRADS 2,BIRADS 3,BIRADS 4,BIRADS 5,BIRADS 6"  style="radio" id="breastMamogramFindings" />
+                                                         answerLabels="BIRADS 1,BIRADS 0,BIRADS 2,BIRADS 3,BIRADS 4,BIRADS 5,BIRADS 6"  style="radio" id="breastMamogramFindings" answerSeparator="&lt;br/&gt;" />
                                                 </td>
                                                 <td>
                                                     <div id="mamogramNegativeResultTreatmentOption">
@@ -851,26 +853,37 @@
                                         <tr id="retinoblastomaEua">
                                             <th rowspan="2">Retinoblastoma</th>
                                             <th>EUA</th>
-                                            <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     answerLabels="Normal,Abnormal" style="radio" />
+                                            <td><obs conceptId="164051AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                     answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                     answerLabels="Normal,Abnormal" style="radio" answerSeparator="&lt;br/&gt;" id="euaFindings" />
                                             </td>
-                                            <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" />
+                                            <td>
+                                                <div id="euaNormalTreatmentOptions">
+                                                   * <obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on Negative findings" style="checkbox" />
+                                                </div>
+                                                <hr />
+                                                <div id="euaAbnormalTreatmentOptions">
+                                                    * <obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Referred for further evaluation" style="checkbox" />
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr id="retinoblastomaRb1">
 
                                             <th>Retinoblastoma gene (RB1 gene) testing</th>
-                                            <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     answerLabels="Positive,Negative" style="radio" /></td>
-                                            <td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                     answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     answerLabels="Counseled on Negative findings,Referred for further evaluation" style="radio" /></td>
+                                            <td>
+                                                <obs conceptId="2d6104a0-b21c-4f2f-ab9b-759611714f18"
+                                                     answerConceptIds="664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                     answerLabels="Positive,Negative" style="radio" answerSeparator="&lt;br/&gt;" id="rb1Findings" />
+                                            </td>
+                                            <td>
+                                                <div id="rb1PositiveTreatmentOptions">
+                                                    *<obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Referred for further evaluation" style="checkbox" />
+                                                </div>
+                                                <hr />
+                                                <div id="rb1NegativeTreatmentOptions">
+                                                    *<obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on Negative findings" style="checkbox" />
+                                                </div>
+                                            </td>
                                         </tr>
                                     </includeIf>
                                     <includeIf velocityTest="$patient.gender == 'M' && $patient.age >40">
