@@ -18,9 +18,9 @@
 	<url>https://wiki.openmrs.org/x/FQ4z</url>
 
 	<scm>
-		<connection>scm:git:git@github.com:openmrs/openmrs-module-patientqueuapp.git</connection>
-		<developerConnection>scm:git:git@github.com:openmrs/openmrs-module-patientqueuapp.git</developerConnection>
-		<url>https://github.com/openmrs/openmrs-module-patientqueuapp/</url>
+		<connection>scm:git:https://github.com/uonafya/oncology.git</connection>
+		<developerConnection>scm:git:https://github.com/uonafya/oncology.git</developerConnection>
+		<url>https://github.com/uonafya/oncology.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -160,7 +160,7 @@
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>ehrconfigs-api</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
+				<version>1.0.0</version>
 				<scope>provided</scope>
 			</dependency>
 			<!-- End OpenMRS modules -->
@@ -211,7 +211,7 @@
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>hospitalcore-api</artifactId>
 				<version>${hospitalcoreVersion}</version>
-				<scope>compile</scope>
+				<scope>provided</scope>
 
 			</dependency>
 
@@ -244,7 +244,7 @@
 
 	<properties>
 		<openMRSVersion>1.12.0</openMRSVersion>
-		<appframeworkVersion>2.2.1</appframeworkVersion>
+		<appframeworkVersion>2.9</appframeworkVersion>
 		<calculationVersion>1.0</calculationVersion>
 		<htmlformentryVersion>2.3</htmlformentryVersion>
 		<htmlwidgetsVersion>1.6.6</htmlwidgetsVersion>
@@ -261,6 +261,6 @@
 		<webservices.restVersion>2.1</webservices.restVersion>
 		<logicVersion>0.5.2</logicVersion>
 		<uilibraryVersion>2.0.4</uilibraryVersion>
-		<hospitalcoreVersion>1.0.0-SNAPSHOT</hospitalcoreVersion>
+		<hospitalcoreVersion>1.0.0</hospitalcoreVersion>
     </properties>
 </project>

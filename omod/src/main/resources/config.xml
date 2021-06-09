@@ -17,7 +17,7 @@
 	<!-- <updateURL>https://modules.openmrs.org/modules/download/@MODULE_ID@/update.rdf</updateURL> -->
 	<!-- /Base Module Properties -->
 
-	<require_version>1.11.6</require_version>
+	<require_version>1.12.0</require_version>
 
 	<!-- Extensions -->
 	<extension>
@@ -92,7 +92,7 @@
 
 	<!-- Internationalization -->
 	<!-- All message codes should start with @MODULE_ID@.* -->
-	<!--
+
 	<messages>
 		<lang>en</lang>
 		<file>messages.properties</file>
@@ -105,6 +105,5 @@
 		<lang>es</lang>
 		<file>messages_es.properties</file>
 	</messages>
--->
 
 </module>
