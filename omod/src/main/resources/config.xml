@@ -93,7 +93,7 @@
 	<!-- Internationalization -->
 	<!-- All message codes should start with @MODULE_ID@.* -->
 
-	<messages>
+	<!--<messages>
 		<lang>en</lang>
 		<file>messages.properties</file>
 	</messages>
@@ -104,6 +104,6 @@
 	<messages>
 		<lang>es</lang>
 		<file>messages_es.properties</file>
-	</messages>
+	</messages>-->
 
 </module>
