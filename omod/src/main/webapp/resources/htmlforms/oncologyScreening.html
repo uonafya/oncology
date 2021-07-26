@@ -814,7 +814,7 @@
                                                 </td>
                                             </tr>
                                         </includeIf>
-                                        <includeIf velocityTest="$patient.age > 34 ">
+                                        <includeIf velocityTest="$patient.age > 40 && $patient.age < 60 ">
                                             <tr id="breastMammograph">
                                                 <th>Mammography</th>
                                                 <td><obs conceptId="163591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -839,7 +839,7 @@
                                             <th>Fecal Occult Blood Test</th>
                                             <td><obs conceptId="159362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                      answerConceptIds="664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     answerLabels="Guaiac Negative,Guaiac Positive" style="radio" id="fobt" answerSeparator="&lt;br/&gt;"/>
+                                                     answerLabels="Negative,Positive" style="radio" id="fobt" answerSeparator="&lt;br/&gt;"/>
                                             </td>
                                             <td>
                                                 <div id="fobtNegativeTreatmentOptions">
@@ -856,8 +856,8 @@
                                             <th>Colonoscopy</th>
                                             <td><obs conceptId="161166AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                      labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                     answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,148910AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133350AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,aed393be-c64e-4950-b4d6-9e1ce413d2ac"
-                                                     answerLabels="No abnormality,Polyps,Cancer,Other abnormalities" style="radio"  id="colonoscopyFindings" /></td>
+                                                     answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,148910AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133350AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,118606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,aed393be-c64e-4950-b4d6-9e1ce413d2ac"
+                                                     answerLabels="No abnormality,Polyps,Suspicoius for cancer,Inflammation,Other abnormalities" style="radio"  id="colonoscopyFindings" /></td>
 
                                             <td>
                                                 <div id="colonoscopyNoAbnomaltyTreatmentOption">
@@ -865,9 +865,13 @@
                                                 </div>
                                                 <hr />
                                                 <div id="colonoscopyPolypsTreatmentOption">
-                                                    <obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a" answerConceptId="162907AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Polypectomy" style="checkbox" />
+                                                    <obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a" answerConceptId="162907AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Refer to surgical resection" style="checkbox" />
                                                 </div>
                                                 <br />
+                                                <div id="colonoscopySuspeciousAndInflamationTreatmentOption">
+                                                    <obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a" answerConceptId="9b892de0-0551-449c-88d1-470f6618943c" answerLabel="Refer to surgical resection" style="checkbox" />
+                                                </div>
+                                                <hr />
                                                 <div id="colonoscancerOtherTreatmentOption">
                                                     <obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a" answerConceptId="b4fe108d-c980-4451-99fb-6ef42e9a8dcc" answerLabel="Refereed for further management" style="checkbox" />
                                                 </div>
@@ -924,6 +928,10 @@
                                                     <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Patient education" style="checkbox" /><br />
                                                     <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on -ve findings, after (DRE, PSA test and TRUS)" style="checkbox" />
                                                 </div>
+                                                <hr />
+                                                <div id="enlargedhardTreatment">
+                                                    <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Perfromed/refferd for further evaluation(PSA,TRUS Biopsy)" style="checkbox" />
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr id="prostatePsa">
@@ -932,20 +940,28 @@
                                                      answerConceptIds="0f5ead05-41de-47ad-8c66-673eeb10945f,78d9d6a2-7127-4b76-8c9b-1ee90f408e9c, c403d1b2-8e22-42fd-94ad-627709fbb3d9"
                                                      answerLabels="0-4ng/ml,4-10ng/ml,>10ng/ml" style="radio" answerSeparator="&lt;br/&gt;" id="psaFindingOptions" />
                                             </td>
-                                            <td>&nbsp;</td>
+                                            <td>
+                                                <div id="psa04ngml">
+                                                    <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled for negative results" style="checkbox" /><br />
+                                                    <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="160523AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Routine follow-up" style="checkbox" />
+                                                </div>
+                                                <br />
+                                                <div id="psa410ngml">
+                                                    <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Further evaluation" style="checkbox" />
+                                                </div>
+                                                <br />
+                                                <div id="psabove10ngml">
+                                                    <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="9b892de0-0551-449c-88d1-470f6618943c" answerLabel="Perform/refer for biopsy" style="checkbox" />
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr id="prostateTrus">
                                             <th>Trans-fectal ultrasound(TRUS) biopsy</th>
                                             <td><obs conceptId="161164AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
                                                      answerConceptIds=" 6ca703a8-7461-4e7c-8703-b03b46aa981c,c49a8568-a56d-4c6e-afed-6be347c15fe0,158566AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,3d629987-ee66-43d8-8532-f41ba00dc493,2b7a0b08-ca77-4df7-9508-b9f8913c2066"
                                                      answerLabels="Benign,Inflammation (acute/chronic),Prostatic intraepithelial neoplasia (PIN),Adenocarcinoma,Other malignancies" style="radio" />
                                             </td>
-                                            <td>
-                                                <div>
-                                                    <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Referred for further evaluation" style="checkbox" />
-                                                </div>
-                                            </td>
+                                            <td>&nbsp;</td>
                                         </tr>
                                     </includeIf>
                                     <tr id="oralVisual">
