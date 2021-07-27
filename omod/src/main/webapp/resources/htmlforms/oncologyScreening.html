@@ -855,7 +855,6 @@
 
                                             <th>Colonoscopy</th>
                                             <td><obs conceptId="161166AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                     labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
                                                      answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,148910AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133350AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,118606AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,aed393be-c64e-4950-b4d6-9e1ce413d2ac"
                                                      answerLabels="No abnormality,Polyps,Suspicoius for cancer,Inflammation,Other abnormalities" style="radio"  id="colonoscopyFindings" /></td>
 
@@ -956,12 +955,16 @@
                                             </td>
                                         </tr>
                                         <tr id="prostateTrus">
-                                            <th>Trans-fectal ultrasound(TRUS) biopsy</th>
+                                            <th>Trans-rectal ultrasound(TRUS) biopsy</th>
                                             <td><obs conceptId="161164AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                      answerConceptIds=" 6ca703a8-7461-4e7c-8703-b03b46aa981c,c49a8568-a56d-4c6e-afed-6be347c15fe0,158566AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,3d629987-ee66-43d8-8532-f41ba00dc493,2b7a0b08-ca77-4df7-9508-b9f8913c2066"
-                                                     answerLabels="Benign,Inflammation (acute/chronic),Prostatic intraepithelial neoplasia (PIN),Adenocarcinoma,Other malignancies" style="radio" />
+                                                     answerLabels="Benign,Inflammation (acute/chronic),Prostatic intraepithelial neoplasia (PIN),Adenocarcinoma,Other malignancies" style="radio" answerSeparator="&lt;br/&gt;" />
                                             </td>
-                                            <td>&nbsp;</td>
+                                            <td>
+                                                <div>
+                                                    <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Referred for further evaluation" style="checkbox" />
+                                                </div>
+                                            </td>
                                         </tr>
                                     </includeIf>
                                     <tr id="oralVisual">
