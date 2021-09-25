@@ -600,14 +600,6 @@
                     <th colspan="2">&nbsp;Cancer Screening</th>
                 </tr>
                 <tr>
-                    <td colspan="2">Visit type
-
-                        <obs conceptId="164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                             answerConceptIds="164180AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,bbd5d81e-d694-48e6-a948-ed82e63e2030,d6dbc59d-26ea-459e-be4a-75b89c9210ae"
-                             answerLabels="Initial screening,Repeat screening, Post-Treatment screening" style="radio" />
-                    </td>
-                </tr>
-                <tr>
                     <td colspan="2">
                         <table class="screening" style="width: 100%" cellspacing="0" cellpadding="0">
                             <thead>
@@ -907,7 +899,7 @@
                                             </td>
                                         </tr>
                                     </includeIf>
-                                    <includeIf velocityTest="$patient.gender == 'M'">
+                                    <includeIf velocityTest="$patient.gender == 'M' && $patient.age >40">
                                         <tr id="prostateDre">
                                             <th rowspan="3">Prostate</th>
                                             <th>DRE</th>
