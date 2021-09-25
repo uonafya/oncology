@@ -609,6 +609,13 @@
                 </tr>
                 <tr>
                     <td colspan="2">
+                        Cancer type:<obs conceptId="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                         answerConceptIds="116023AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133350AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,127527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,146221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1be9b3bb-40dc-44bb-97c8-13824287f3cb"
+                                         answerLabels="Cervical,Breast,Colorectal,Retinoblastoma,Prostate,Oral cancer,bladder, Lung Cancer, Other"  style="user-select: none" id="cancerType" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
                         <table class="screening" style="width: 100%" cellspacing="0" cellpadding="0">
                             <thead>
                                 <th>Cancer</th>
@@ -826,6 +833,7 @@
                                             </tr>
                                         </includeIf>
                                     </includeIf>
+
                                     <includeIf velocityTest="$patient.age >45 ">
                                         <tr id="colorectalFobt">
                                             <th rowspan="2">Colorectal</th>
@@ -870,6 +878,7 @@
                                             </td>
                                         </tr>
                                     </includeIf>
+
                                     <includeIf velocityTest="$patient.age <7 ">
                                         <tr id="retinoblastomaEua">
                                             <th rowspan="2">Retinoblastoma</th>
@@ -907,7 +916,8 @@
                                             </td>
                                         </tr>
                                     </includeIf>
-                                    <includeIf velocityTest="$patient.gender == 'M' && $patient.age >40">
+
+                                    <includeIf velocityTest="$patient.gender == 'M'">
                                         <tr id="prostateDre">
                                             <th rowspan="3">Prostate</th>
                                             <th>DRE</th>
@@ -960,6 +970,7 @@
                                             </td>
                                         </tr>
                                     </includeIf>
+
                                     <tr id="oralVisual">
                                         <th rowspan="4">Oral</th>
                                         <th>Visual</th>
