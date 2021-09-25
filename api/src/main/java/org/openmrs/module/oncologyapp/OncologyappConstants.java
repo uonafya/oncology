@@ -53,11 +53,19 @@ public class OncologyappConstants {
 	public static final String ULTRA_SOUND = "";
 	
 	public static final String MAMMOGRAPHY = "";
+
+	public static final String MAGNETIC_RESONANCE_IMAGING = "";
 	
 	//Colorectal cancer screening tests
 	public static final String FECAL_OCCULT_BLOOD = "159362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	
 	public static final String COLONOSCOPY = "";
+
+	public static final String STOOL_TEST = "";
+
+	public static final String FLEXIBLE_SIGMOIDOSCOPY = "";
+
+	public static final String CT_COLONOGRAPHY = "";
 	
 	//Prostate cancer screening tests
 	public static final String DRE = "";//Digital rectal examination
@@ -72,6 +80,10 @@ public class OncologyappConstants {
 	public static final String CYTOLOGY = "";
 	
 	public static final String IMAGING = "";
+
+	public static final String HPV = "";
+
+	public static final String PANENDOSCOPY = "";
 	
 	public static final String BIOPSY = "";
 	
