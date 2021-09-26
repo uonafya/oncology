@@ -114,7 +114,7 @@
 		url = (typeof action === 'string') ? $.trim(action) : '';
 		url = url || window.location.href || '';
 		if (url) {
-			// clean url (don't include hash vaue)
+			// clean url (don't include hash value)
 			url = (url.match(/^([^#]+)/)||[])[1];
 		}
 
@@ -169,7 +169,7 @@
 		if (qx) {
 			q = ( q ? (q + '&' + qx) : qx );
 		}
-		if (options.type.toUpperCase() == 'GET') {
+		if (options.type.toUpperCase() === 'GET') {
 			options.url += (options.url.indexOf('?') >= 0 ? '&' : '?') + q;
 			options.data = null;  // data is null for 'get'
 		}
@@ -228,7 +228,7 @@
 
 		var hasFileInputs = fileInputs.length > 0;
 		var mp = 'multipart/form-data';
-		var multipart = ($form.attr('enctype') == mp || $form.attr('encoding') == mp);
+		var multipart = ($form.attr('enctype') === mp || $form.attr('encoding') === mp);
 
 		var fileAPI = feature.fileapi && feature.formdata;
 		log("fileAPI :" + fileAPI);
@@ -452,7 +452,7 @@
 				if (n && !sub.disabled) {
 					s.extraData = s.extraData || {};
 					s.extraData[n] = sub.value;
-					if (sub.type == "image") {
+					if (sub.type === "image") {
 						s.extraData[n+'.x'] = form.clk_x;
 						s.extraData[n+'.y'] = form.clk_y;
 					}
@@ -517,7 +517,7 @@
 				if (!method || /post/i.test(method) ) {
 					form.setAttribute('method', 'POST');
 				}
-				if (a != s.url) {
+				if (a !== s.url) {
 					form.setAttribute('action', s.url);
 				}
 
@@ -539,7 +539,7 @@
 					try {
 						var state = getDoc(io).readyState;
 						log('state = ' + state);
-						if (state && state.toLowerCase() == 'uninitialized') {
+						if (state && state.toLowerCase() === 'uninitialized') {
 							setTimeout(checkState,50);
 						}
 					}
@@ -710,7 +710,7 @@
 							}
 						}
 					}
-					else if (dt == 'xml' && !xhr.responseXML && xhr.responseText) {
+					else if (dt === 'xml' && !xhr.responseXML && xhr.responseText) {
 						xhr.responseXML = toXml(xhr.responseText);
 					}
 
@@ -798,7 +798,7 @@
 					else {
 						doc = (new DOMParser()).parseFromString(s, 'text/xml');
 					}
-					return (doc && doc.documentElement && doc.documentElement.nodeName != 'parsererror') ? doc : null;
+					return (doc && doc.documentElement && doc.documentElement.nodeName !== 'parsererror') ? doc : null;
 				};
 			var parseJSON = $.parseJSON || function(s) {
 					/*jslint evil:true */
@@ -974,9 +974,9 @@
 				continue;
 			}
 
-			if (semantic && form.clk && el.type == "image") {
+			if (semantic && form.clk && el.type === "image") {
 				// handle image inputs on the fly when semantic == true
-				if(form.clk == el) {
+				if(form.clk === el) {
 					a.push({name: n, value: $(el).val(), type: el.type });
 					a.push({name: n+'.x', value: form.clk_x}, {name: n+'.y', value: form.clk_y});
 				}

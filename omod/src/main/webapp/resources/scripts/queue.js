@@ -48,7 +48,7 @@ var updateSearchResults = function(results){
     _.each(searchResultsData, function(result){
         var patient_name = result.patientName.replace("null","");
 
-        if (result.referralConcept && result.referralConcept.conceptId == 2548){
+        if (result.referralConcept && result.referralConcept.conceptId === 2548){
             patient_name += " <span class='recent-lozenge'>From Lab</span>";
         }
 
