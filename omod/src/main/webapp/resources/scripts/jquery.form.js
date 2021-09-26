@@ -636,7 +636,7 @@
 					return;
 				}
 
-				if (!doc || doc.location.href == s.iframeSrc) {
+				if (!doc || doc.location.href === s.iframeSrc) {
 					// response not received yet
 					if (!timedOut) {
 						return;
@@ -655,13 +655,13 @@
 						throw 'timeout';
 					}
 
-					var isXml = s.dataType == 'xml' || doc.XMLDocument || $.isXMLDoc(doc);
+					var isXml = s.dataType === 'xml' || doc.XMLDocument || $.isXMLDoc(doc);
 					log('isXml='+isXml);
 					if (!isXml && window.opera && (doc.body === null || !doc.body.innerHTML)) {
 						if (--domCheckCount) {
 							// in some browsers (Opera) the iframe DOM is not always traversable when
 							// the onload callback fires, so we loop a bit to accommodate
-							log('requeing onLoad callback, DOM not available');
+							log('requesting onLoad callback, DOM not available');
 							setTimeout(cb, 250);
 							return;
 						}
@@ -905,7 +905,7 @@
 		}
 		var form = this;
 		form.clk = target;
-		if (target.type == 'image') {
+		if (target.type === 'image') {
 			if (e.offsetX !== undefined) {
 				form.clk_x = e.offsetX;
 				form.clk_y = e.offsetY;
@@ -992,7 +992,7 @@
 					a.push({name: n, value: v[j]});
 				}
 			}
-			else if (feature.fileapi && el.type == 'file') {
+			else if (feature.fileapi && el.type === 'file') {
 				if (elements) {
 					elements.push(el);
 				}
@@ -1019,7 +1019,7 @@
 			// input type=='image' are not found in elements array! handle it here
 			var $input = $(form.clk), input = $input[0];
 			n = input.name;
-			if (n && !input.disabled && input.type == 'image') {
+			if (n && !input.disabled && input.type === 'image') {
 				a.push({name: n, value: $input.val()});
 				a.push({name: n+'.x', value: form.clk_x}, {name: n+'.y', value: form.clk_y});
 			}
@@ -1103,10 +1103,10 @@
 		for (var val=[], i=0, max=this.length; i < max; i++) {
 			var el = this[i];
 			var v = $.fieldValue(el, successful);
-			if (v === null || typeof v == 'undefined' || (v.constructor == Array && !v.length)) {
+			if (v === null || typeof v == 'undefined' || (v.constructor === Array && !v.length)) {
 				continue;
 			}
-			if (v.constructor == Array) {
+			if (v.constructor === Array) {
 				$.merge(val, v);
 			}
 			else {
@@ -1125,20 +1125,20 @@
 			successful = true;
 		}
 
-		if (successful && (!n || el.disabled || t == 'reset' || t == 'button' ||
-			(t == 'checkbox' || t == 'radio') && !el.checked ||
-			(t == 'submit' || t == 'image') && el.form && el.form.clk != el ||
-			tag == 'select' && el.selectedIndex == -1)) {
+		if (successful && (!n || el.disabled || t === 'reset' || t === 'button' ||
+			(t === 'checkbox' || t === 'radio') && !el.checked ||
+			(t === 'submit' || t === 'image') && el.form && el.form.clk !== el ||
+			tag === 'select' && el.selectedIndex === -1)) {
 			return null;
 		}
 
-		if (tag == 'select') {
+		if (tag === 'select') {
 			var index = el.selectedIndex;
 			if (index < 0) {
 				return null;
 			}
 			var a = [], ops = el.options;
-			var one = (t == 'select-one');
+			var one = (t === 'select-one');
 			var max = (one ? index+1 : ops.length);
 			for(var i=(one ? index : 0); i < max; i++) {
 				var op = ops[i];
@@ -1179,16 +1179,16 @@
 		var re = /^(?:color|date|datetime|email|month|number|password|range|search|tel|text|time|url|week)$/i; // 'hidden' is not in this list
 		return this.each(function() {
 			var t = this.type, tag = this.tagName.toLowerCase();
-			if (re.test(t) || tag == 'textarea') {
+			if (re.test(t) || tag === 'textarea') {
 				this.value = '';
 			}
-			else if (t == 'checkbox' || t == 'radio') {
+			else if (t === 'checkbox' || t === 'radio') {
 				this.checked = false;
 			}
-			else if (tag == 'select') {
+			else if (tag === 'select') {
 				this.selectedIndex = -1;
 			}
-			else if (t == "file") {
+			else if (t === "file") {
 				if (/MSIE/.test(navigator.userAgent)) {
 					$(this).replaceWith($(this).clone(true));
 				} else {
@@ -1243,12 +1243,12 @@
 		}
 		return this.each(function() {
 			var t = this.type;
-			if (t == 'checkbox' || t == 'radio') {
+			if (t === 'checkbox' || t === 'radio') {
 				this.checked = select;
 			}
-			else if (this.tagName.toLowerCase() == 'option') {
+			else if (this.tagName.toLowerCase() === 'option') {
 				var $sel = $(this).parent('select');
-				if (select && $sel[0] && $sel[0].type == 'select-one') {
+				if (select && $sel[0] && $sel[0].type === 'select-one') {
 					// deselect all other options
 					$sel.find('option').selected(false);
 				}
