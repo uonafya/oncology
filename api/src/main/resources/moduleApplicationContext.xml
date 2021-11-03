@@ -137,11 +137,11 @@
                 <ref bean="oncologyapp.cancer.form.treatment" />
             </set>
         </property>
-        <property name="commonPatientForms">
+       <!-- <property name="commonPatientForms">
             <set>
                 <ref bean="oncologyapp.form.cancerFamilyHistory" />
             </set>
-        </property>
+        </property>-->
     </bean>
 
     <bean id="oncologyapp.form.cancerFamilyHistory" class="org.openmrs.module.kenyacore.form.FormDescriptor">
