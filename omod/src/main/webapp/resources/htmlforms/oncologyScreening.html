@@ -493,7 +493,7 @@
     <div class="ke-form-content">
         <table class="screening" width="75%" cellpadding="0" cellspacing="0" align="center">
             <tbody>
-                <includeIf velocityTest="$patient.age  > 1 ">
+                <includeIf velocityTest="$patient.age  < 18 ">
                     <tr>
                         <td>Birth certificate number</td>
                         <td><patient id="bcn" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" required="false" /></td>
@@ -568,7 +568,7 @@
                 </tr>
                 <includeIf velocityTest="$patient.gender == 'F' ">
                     <tr>
-                        <td>Female Client
+                        <td>
                             <div id="hoverText">
                                 <span title="Parity should not exceed 15 + 15">Female Client</span>
                             </div>
