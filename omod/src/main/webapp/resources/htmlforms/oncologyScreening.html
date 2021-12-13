@@ -30,6 +30,10 @@
             processCytologyResponsesAndTreatment();
             processImagingResponsesAndTreatment();
             processBiopsyResponsesAndTreatment();
+            processFobtResponsesAndTreatment();
+            processEuaResponsesAndTreatment();
+            processRb1ResponsesAndTreatment();
+
 
             function  calculatePacks(){
                 var result = Math.round(parseInt(getValue("smokeYears.value")) * parseInt(getValue("smokeDays.value")) / 20);
@@ -487,12 +491,12 @@
                     jq('#referColoscopy *').prop('disabled', true);
                     jq('#referToBiopsy *').prop('disabled', true);
                 }
-                else if (value === 145822 || 145802 || 145805 ){
+                else if (value === 145822 || 145802 ){
                     jq('#papsmearTreatmentNormalOption *').prop('disabled', true);
                     jq('#referColoscopy *').prop('disabled', false);
                     jq('#referToBiopsy *').prop('disabled', true);
                 }
-                else if (value === 122321 ){
+                else if (value === 122321 || 155424 ){
                     jq('#papsmearTreatmentNormalOption *').prop('disabled', true);
                     jq('#referColoscopy *').prop('disabled', true);
                     jq('#referToBiopsy *').prop('disabled', false);
@@ -638,7 +642,8 @@
                     jq('#imagingAbnormalTreatmentOptions *').prop('disabled', false);
                 }
             });
-        }function processBiopsyResponsesAndTreatment() {
+        }
+        function processBiopsyResponsesAndTreatment() {
             jq('#oralBiopsyFindings input:radio').click(function() {
                 var value = parseInt(jq(this).val());
                 if(value === 1115){
@@ -651,6 +656,77 @@
                 }
             });
         }
+        <!-- TODO  Validations -->
+        function processUltrasoundResponsesAndTreatment() {
+            jq('#ultraSoundFindings input:radio').click(function() {
+                var value = parseInt(jq(this).val());
+                /*if(value === 1000094){
+                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', false);
+                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', true);
+                }
+                else if (value === 1000093){
+                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
+                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
+                }else if (value === 1000095){
+                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
+                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
+                }else if (value === 1000096){
+                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
+                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
+                }else if (value === 1000097){
+                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
+                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
+                }else if (value === 1000098){
+                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
+                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
+                }else if (value === 1000099){
+                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
+                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
+                }*/
+            });
+        }
+
+        function processFobtResponsesAndTreatment() {
+            jq('#fobt input:radio').click(function() {
+                var value = parseInt(jq(this).val());
+                if(value === 159362){
+                    jq('#fobtNegativeTreatmentOptions *').prop('disabled', false);
+                    jq('#fobtPositiveTreatmentOptions *').prop('disabled', true);
+                }
+                else if (value === 664){
+                    jq('#fobtNegativeTreatmentOptions *').prop('disabled', true);
+                    jq('#fobtPositiveTreatmentOptions *').prop('disabled', false);
+                }
+            });
+        }
+
+        /*function processDreResponsesAndTreatment() {
+            jq('#dreFindingsOptions input:radio').click(function() {
+                var value = parseInt(jq(this).val());
+                if(value === 1115){
+                    jq('#fobtNegativeTreatmentOptions *').prop('disabled', false);
+                    jq('#fobtPositiveTreatmentOptions *').prop('disabled', true);
+                }
+                else if (value === 664){
+                    jq('#fobtNegativeTreatmentOptions *').prop('disabled', true);
+                    jq('#fobtPositiveTreatmentOptions *').prop('disabled', false);
+                }
+            });
+        }
+
+        function processPsaResponsesAndTreatment() {
+            jq('#psaFindingOptions input:radio').click(function() {
+                var value = parseInt(jq(this).val());
+                if(value === 1115){
+                    jq('#fobtNegativeTreatmentOptions *').prop('disabled', false);
+                    jq('#fobtPositiveTreatmentOptions *').prop('disabled', true);
+                }
+                else if (value === 664){
+                    jq('#fobtNegativeTreatmentOptions *').prop('disabled', true);
+                    jq('#fobtPositiveTreatmentOptions *').prop('disabled', false);
+                }
+            });
+        }*/
 
     </script>
     <style>
@@ -665,6 +741,8 @@
             text-align: left;
         }
     </style>
+    <div class="ke-form-content">
+        <div id="tab-wrap">
 
     <div class="ke-form-header">
         <table style="width: 100%" cellspacing="0" cellpadding="0">
@@ -1005,26 +1083,25 @@
                                         <includeIf velocityTest="$patient.age > 0 ">
                                         <tr id="breastUltrasound">
                                             <th>Ultrasound</th>
-                                            <td>
-                                            <obs conceptId="3cb64490-aa67-4d23-b7d2-fb29b5b894da"
-                                                     labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
+                                            <td><obs conceptId="163591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                      answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,8cc5d428-0bfd-41f0-a7fb-a239aadadb0d,2ab46b88-b87a-4321-839f-b1351410335d,deec6439-884f-4921-b9d3-cfa77666d6e6,fbfd99cf-2be1-403d-b8c3-15b686d5cc78,89683205-f2c6-45e7-824d-9db0a29ca6c8"
-                                                     answerLabels="BIRADS 1(Incomplete Need additional imaging evaluation),BIRADS 0(Negative),BIRADS 2(Benign), BIRADS 3(Probably Benign), BIRADS 4(Suspicious), BIRADS 5(Highly Suggestive of Malignancy),BIRADS 6(Known Biopsy-Proven Malignancy)"  style="radio" id="breastUltrasoundFindings" />
+                                                     answerLabels="BIRADS 1(Incomplete Need additional imaging evaluation),BIRADS 0(Negative),BIRADS 2(Benign), BIRADS 3(Probably Benign), BIRADS 4(Suspicious), BIRADS 5(Highly Suggestive of Malignancy),BIRADS 6(Known Biopsy-Proven Malignancy)"  style="radio" id="ultraSoundFindings" answerSeparator="&lt;br/&gt;" />
                                             </td>
                                             <td><obs conceptId="3cb64490-aa67-4d23-b7d2-fb29b5b894da"
                                                      labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                     answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,8cc5d428-0bfd-41f0-a7fb-a239aadadb0d,2ab46b88-b87a-4321-839f-b1351410335d,deec6439-884f-4921-b9d3-cfa77666d6e6"
-                                                     answerLabels="Recall for additional imaging,Routine Ultra sound screening, Short-interval(6 months) follow-up, Tissue Diagnosis(U/S guided biopsy), Surgical excision when clinically appropriate)"  style="radio" id="breastUltrasoundFindings" />
+                                                     answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,164080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,164689AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,deec6439-884f-4921-b9d3-cfa77666d6e6"
+                                                     answerLabels="Recall for additional imaging,Routine Ultra sound screening, Short-interval(6 months) follow-up, Tissue Diagnosis(U/S guided biopsy), Surgical excision when clinically appropriate)"  style="radio" id="breastMamogramFindings" />
                                             </td>
                                             <td>
-                                                <div id="ultrasoundNegativeResultTreatmentOption">
-                                                    <obs conceptId="89875192-b834-4525-a021-e67c24e661f2" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counsel for negative findings" style="checkbox" />
+                                                <div id="breastUltraNegativeResultTreatmentOption">
+                                                    <obs conceptId="3b806cea-505e-42bd-a5f4-660154e1f3ff" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counsel for negative findings" style="checkbox" />
                                                 </div>
                                                 <hr />
                                                 <div>
-                                                    <obs conceptId="89875192-b834-4525-a021-e67c24e661f2" answerConceptId="b4fe108d-c980-4451-99fb-6ef42e9a8dcc" answerLabel="Referred for further evaluation and management" style="checkbox" />
+                                                    <obs conceptId="3b806cea-505e-42bd-a5f4-660154e1f3ff" answerConceptId="b4fe108d-c980-4451-99fb-6ef42e9a8dcc" answerLabel="Referred for further evaluation and management" style="checkbox" />
                                                 </div>
                                             </td>
+
                                         </tr>
                                         </includeIf>
 
@@ -1033,11 +1110,11 @@
                                                 <th>Mammography</th>
                                                 <td><obs conceptId="163591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                          answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,8cc5d428-0bfd-41f0-a7fb-a239aadadb0d,2ab46b88-b87a-4321-839f-b1351410335d,deec6439-884f-4921-b9d3-cfa77666d6e6,fbfd99cf-2be1-403d-b8c3-15b686d5cc78,89683205-f2c6-45e7-824d-9db0a29ca6c8"
-                                                         answerLabels="BIRADS 1(Incomplete Need additional imaging evaluation),BIRADS 0(Negative),BIRADS 2(Benign), BIRADS 3(Probably Benign), BIRADS 4(Suspicious), BIRADS 5(Highly Suggestive of Malignancy),BIRADS 6(Known Biopsy-Proven Malignancy)"  style="radio" id="breastMamogramFindings" answerSeparator="&lt;br/&gt;" />
+                                                         answerLabels="BIRADS 1(Incomplete Need additional imaging evaluation),BIRADS 0(Negative),BIRADS 2(Benign), BIRADS 3(Probably Benign), BIRADS 4(Suspicious), BIRADS 5(Highly Suggestive of Malignancy),BIRADS 6(Known Biopsy-Proven Malignancy)"  style="radio" id="ultraSoundFindings" answerSeparator="&lt;br/&gt;" />
                                                 </td>
                                                 <td><obs conceptId="3cb64490-aa67-4d23-b7d2-fb29b5b894da"
                                                          labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                         answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,8cc5d428-0bfd-41f0-a7fb-a239aadadb0d,2ab46b88-b87a-4321-839f-b1351410335d,deec6439-884f-4921-b9d3-cfa77666d6e6"
+                                                         answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,164080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,164689AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,deec6439-884f-4921-b9d3-cfa77666d6e6"
                                                          answerLabels="Recall for additional imaging,Routine Ultra sound screening, Short-interval(6 months) follow-up, Tissue Diagnosis(U/S guided biopsy), Surgical excision when clinically appropriate)"  style="radio" id="breastMamogramFindings" />
                                                 </td>
                                                 <td>
@@ -1065,7 +1142,7 @@
                                                     <obs conceptId="1126d661-35bf-4a04-9e85-633329d6fea5" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counsel on negative findings" style="checkbox" />
                                                 </div>
                                                 <hr />
-                                                <div id="fobtpositiveTreatmentOptions">
+                                                <div id="fobtPositiveTreatmentOptions">
                                                     <obs conceptId="1126d661-35bf-4a04-9e85-633329d6fea5" answerConceptId="82021d2c-d0c8-4547-a12a-13a3512ae1ca" answerLabel="Referred for colonoscopy" style="checkbox" />
                                                 </div>
                                             </td>
@@ -1138,6 +1215,8 @@
                                         <tr id="prostateDre">
                                             <th rowspan="3">Prostate</th>
                                             <th>DRE(Digital Rectal Examination)</th>
+                                            <!-- TODO confirm concept ID: Enlarged, Lampy -->
+
                                             <td><obs conceptId="d278b0e3-53f6-4b40-9ccc-2851c4a97ac1"
                                                      answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,52c6a4d4-25d3-4064-a1f9-f25c663aa3a2,3aa47364-5a87-470b-8f10-49de703776e9"
                                                      answerLabels="Normal,Enlarged,Hard/lampy" style="radio" answerSeparator="&lt;br/&gt;" id="dreFindingsOptions"/>
@@ -1148,7 +1227,11 @@
                                                     <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="f056993d-5726-4553-8625-295a1abb5a13" answerLabel="Counseled on -ve findings, after (DRE, PSA test and TRUS)" style="checkbox" />
                                                 </div>
                                                 <hr />
-                                                <div id="enlargedhardTreatment">
+                                                <div id="enlargedHardTreatment">
+                                                    <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Perfromed/refferd for further evaluation(PSA,TRUS Biopsy)" style="checkbox" />
+                                                </div>
+                                                <hr/>
+                                                <div id="hardLampyTreatment">
                                                     <obs conceptId="68cdacd6-9fb9-4713-9cdc-8b590e152fc0" answerConceptId="8cba5f27-830a-4c87-8be1-6fd8a8ed228a" answerLabel="Perfromed/refferd for further evaluation(PSA,TRUS Biopsy)" style="checkbox" />
                                                 </div>
                                             </td>
@@ -1304,5 +1387,7 @@
     </div>
     <div class="ke-form-footer">
         <submit />
+    </div>
+        </div>
     </div>
 </htmlform>
