@@ -34,10 +34,4 @@
 		<aware_of_module>org.openmrs.module.legacyui</aware_of_module>
 	</aware_of_modules>
 
-
-    <privilege>
-        <name>App: Access Oncology</name>
-        <description>Able to access Oncology App</description>
-    </privilege>
-
 </module>
