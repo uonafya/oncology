@@ -111,12 +111,13 @@
                                      answerConceptIds="1527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,970AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,975AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,974AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159772AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,971AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                      answerLabels="Parent,Sister,Mother,Sibling,Child,Aunt,Uncle,Grandmother,Grandfather,Father,Spouce/Partner,Co-Wife" />
                             </td>
-                            <td>
-                                <obs class="Degree" conceptId="fff4b3a1-f014-41ea-a447-dc648a70ecab"
+                         <!--   <td>
+                                <obs class="Degree" conceptId=""
                                      answerConceptIds="dd3c6b9b-e1e2-4d78-8868-a66846242109,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                     answerLabels="1st Degree,Other" />
+                                     answerLabels="gi" />
                             </td>
-
+                            needs to be created as a concept
+                           -->
                             <td>
                                 <obs class="cancer-type" conceptId="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                      answerConceptIds="116023AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,146221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133350AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133318AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133304AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115195AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116331AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115354AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115357AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133328AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133709AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,136324AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -352,9 +353,12 @@
             <tr>
                 <td>Abdominal Tenderness Location:</td>
                 <td>
-                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerConceptIds="5107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160381AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160380AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5099AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                         answerLabels="RIGHT UPPER QUADRANT,RIGHT LOWER QUADRANT,LEFT UPPER QUADRANT,LEFT LOWER QUADRANT,EPIGASTRIC,SUPRAPUBIC" style="radio" /> <br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="RIGHT UPPER QUADRANT" style="checkbox" /><br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="160381AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="RIGHT LOWER QUADRANT" style="checkbox" /><br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="160380AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="LEFT UPPER QUADRANT" style="checkbox" /><br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="LEFT LOWER QUADRANT" style="checkbox" /><br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5099AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="EPIGASTRIC" style="checkbox" /><br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="SUPRAPUBIC" style="checkbox" /><br />
                 </td>
             </tr>
 
@@ -364,10 +368,13 @@
             <tr>
                 <td>Genitorinary Exam Findings</td>
                 <td>
-                    <obs conceptId="1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                    <obs conceptId="1080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="No Complaints" style="checkbox" /><br />
+                    <obs conceptId="1080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="132418AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Olyguria" style="checkbox" /><br />
+                    <obs conceptId="1080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="129510AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Polyuria" style="checkbox" /><br />
+                    <obs conceptId="1080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="118771AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Dysuria" style="checkbox" /><br />
                 </td>
             </tr>
-
+<!--
             <th colspan="2">&nbsp; Muscoskeletal Systems</th>
             <tr>
                 <td>Muscoskeletal Exam Findings</td>
@@ -379,10 +386,10 @@
             <tr>
                 <td>Skin Exam Findings</td>
                 <td>
-                    <obs conceptId="1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="RIGHT UPPER QUADRANT" style="checkbox" /><br />
                 </td>
             </tr>
-
+-->
 
             </tbody>
         </table>

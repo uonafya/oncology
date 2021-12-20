@@ -159,7 +159,7 @@
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>ehrconfigs-api</artifactId>
-				<version>1.0.9-SNAPSHOT</version>
+				<version>1.0.9</version>
 				<scope>provided</scope>
 			</dependency>
 			<!-- End OpenMRS modules -->
@@ -260,6 +260,6 @@
 		<webservices.restVersion>2.1</webservices.restVersion>
 		<logicVersion>0.5.2</logicVersion>
 		<uilibraryVersion>2.0.4</uilibraryVersion>
-		<hospitalcoreVersion>1.0.0-SNAPSHOT</hospitalcoreVersion>
+		<hospitalcoreVersion>1.0.0</hospitalcoreVersion>
     </properties>
 </project>
