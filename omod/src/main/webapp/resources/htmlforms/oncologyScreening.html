@@ -31,6 +31,8 @@
             processImagingResponsesAndTreatment();
             processBiopsyResponsesAndTreatment();
             processFobtResponsesAndTreatment();
+            processDreResponsesAndTreatment();
+            processPsaResponsesAndTreatment();
             displayTabs();
 
 
@@ -717,16 +719,22 @@
             });
         }
 
-        /*function processDreResponsesAndTreatment() {
+        function processDreResponsesAndTreatment() {
             jq('#dreFindingsOptions input:radio').click(function() {
                 var value = parseInt(jq(this).val());
                 if(value === 1115){
-                    jq('#fobtNegativeTreatmentOptions *').prop('disabled', false);
-                    jq('#fobtPositiveTreatmentOptions *').prop('disabled', true);
+                    jq('#prostateTreatmentOptions *').prop('disabled', false);
+                    jq('#enlargedHardTreatment *').prop('disabled', true);
+                    jq('#hardLampyTreatment *').prop('disabled', true);
                 }
-                else if (value === 664){
-                    jq('#fobtNegativeTreatmentOptions *').prop('disabled', true);
-                    jq('#fobtPositiveTreatmentOptions *').prop('disabled', false);
+                else if (value === 1000108){
+                    jq('#prostateTreatmentOptions *').prop('disabled', true);
+                    jq('#enlargedHardTreatment *').prop('disabled', false);
+                    jq('#hardLampyTreatment *').prop('disabled', true);
+                }else if(value === 1000109 ){
+                    jq('#prostateTreatmentOptions *').prop('disabled', true);
+                    jq('#enlargedHardTreatment *').prop('disabled', true);
+                    jq('#hardLampyTreatment *').prop('disabled', false);
                 }
             });
         }
@@ -734,16 +742,21 @@
         function processPsaResponsesAndTreatment() {
             jq('#psaFindingOptions input:radio').click(function() {
                 var value = parseInt(jq(this).val());
-                if(value === 1115){
-                    jq('#fobtNegativeTreatmentOptions *').prop('disabled', false);
-                    jq('#fobtPositiveTreatmentOptions *').prop('disabled', true);
-                }
-                else if (value === 664){
-                    jq('#fobtNegativeTreatmentOptions *').prop('disabled', true);
-                    jq('#fobtPositiveTreatmentOptions *').prop('disabled', false);
+                if(value === 1000113){
+                    jq('#psa04ngml *').prop('disabled', false);
+                    jq('#psa410ngml *').prop('disabled', true);
+                    jq('#psabove10ngml *').prop('disabled', true);
+                }else if (value === 1000114){
+                    jq('#psa04ngml *').prop('disabled', true);
+                    jq('#psa410ngml *').prop('disabled', false);
+                    jq('#psabove10ngml *').prop('disabled', true);
+                }else if (value === 1000115){
+                    jq('#psa04ngml *').prop('disabled', true);
+                    jq('#psa410ngml *').prop('disabled', true);
+                    jq('#psabove10ngml *').prop('disabled', false);
                 }
             });
-        }*/
+        }
 
     </script>
     <style>
@@ -1507,7 +1520,6 @@
                                                     <th rowspan="3">Prostate</th>
                                                     <th>DRE(Digital Rectal Examination)</th>
                                                     <!-- TODO confirm concept ID: Enlarged, Lampy -->
-
                                                     <td>
                                                         <obs conceptId="d278b0e3-53f6-4b40-9ccc-2851c4a97ac1"
                                                              answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,52c6a4d4-25d3-4064-a1f9-f25c663aa3a2,3aa47364-5a87-470b-8f10-49de703776e9"
