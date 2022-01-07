@@ -12,25 +12,391 @@
   ~ Copyright (C) OpenMRS, LLC.  All Rights Reserved.
 -->
 <htmlform>
+
+    <style type="text/css">
+        table.treatment {
+            border-collapse: collapse;
+            background-color: #F3F9FF;
+        }
+        table.treatment > tbody > tr > td, table.screening > tbody > tr > th {
+            border: 1px solid black;
+            vertical-align: baseline;
+            padding: 3.6px;
+            text-align: left;
+        }
+
+        /* The Modal  */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+        /* Modal Footer */
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #fefefe;
+            color: white;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* .Modal  */
+    </style>
+
+    <script type="text/javascript">
+    </script>
+
     <div class="ke-form-header">
         <table style="width: 100%" cellspacing="0" cellpadding="0">
             <tr>
                 <td>Date:
-                    <encounterDate id="encounter-date" showTime="true"/>
+                    <encounterDate id="encounter-date" showTime="true" />
                 </td>
                 <td>Enrolled by:
-                    <encounterProvider default="currentUser"/>
+                    <encounterProvider default="currentUser" />
                 </td>
                 <td>Location:
-                    <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" type="autocomplete"/>
+                    <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" type="autocomplete" />
                 </td>
             </tr>
         </table>
     </div>
     <div class="ke-form-content">
-        <p>Content will be built here</p>
+        <table class="treatment" width="75%" cellpadding="0" cellspacing="0" align="center">
+
+            <thead>
+            <th>&nbsp;History Of Family Members With Cancer</th>
+            <tr>
+                <th align="left">Relationship</th>
+                <th align="left">Degree</th>
+                <th align="left">Cancer type</th>
+                <th align="left">Age at diagnosed</th>
+            </tr>
+            </thead>
+            <tbody>
+            <repeat>
+                <template>
+                    <obsgroup groupingConceptId="160593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
+                        <tr>
+                            <td>
+                                <obs class="relation" conceptId="1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerConceptIds="1527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,970AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,975AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,974AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,159772AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,971AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,162221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="Parent,Sister,Mother,Sibling,Child,Aunt,Uncle,Grandmother,Grandfather,Father,Spouce/Partner,Co-Wife" />
+                            </td>
+                         <!--   <td>
+                                <obs class="Degree" conceptId=""
+                                     answerConceptIds="dd3c6b9b-e1e2-4d78-8868-a66846242109,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerLabels="gi" />
+                            </td>
+                            needs to be created as a concept
+                           -->
+                            <td>
+                                <obs class="cancer-type" conceptId="116030AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     answerConceptIds="116023AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,146221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133350AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133318AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133304AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115195AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,116331AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115354AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115357AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133328AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133709AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,136324AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,115359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,133330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                     style="dropdown" answerLabels="Cervical,Breast,Throat/Oesopahus,Prostate,Cololectaral,Ovary,Stomach,Uterus,Non-Hodgkin lymphma,Leukemia,Pancreatic,Liver,Lung,Multiple Myloma,Cancer of nassal pharynx,Oral cavity,Bladder,Caposi sarcoma,Brain cancer/central,Larynx" />
+                            </td>
+                            <td>
+                                <obs class="date-diagnosed" conceptId="160617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                            </td>
+                        </tr>
+                    </obsgroup>
+                </template>
+                <render n="1" concept=" "/>
+                <render n="2" concept=" "/>
+                <render n="3" concept=" "/>
+                <render n="4" concept=" "/>
+
+            </repeat>
+            <includeIf velocityTest="$patient.age <18 ">
+                <tr>
+                    <td>Birth certificate number</td>
+                    <td><patient id="bcn" field="identifier" identifierTypeId="6930e8ce-6ba6-11eb-9e03-6f68aa00888f" required="false" /></td>
+                </tr>
+            </includeIf>
+            <br/>
+
+
+            </tbody>
+        </table>
+    </div>
+    <div class="ke-form-content">
+        <table class="treatment" width="75%" cellpadding="0" cellspacing="0" align="center">
+            <tbody>
+            <th colspan="2">&nbsp;History of Risk Factors</th>
+            <tr>
+                <td>Do you smoke cigarattes</td>
+                <td>
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,158939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Yes,No,Stopped" style="radio" /> <br />
+                    <table id="smokingOptions">
+                        <tr>
+                            <td>Number of years smoked</td>
+                            <td><obs conceptId="159931AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+                        </tr>
+                        <tr>
+                            <td>Number of ciggaratte packets per day</td>
+                            <td><obs conceptId="1546AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Do you use other form of tobacco</td>
+                <td>
+                    <obs conceptId="163731AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,158939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Yes,No,Stopped" style="radio" />
+                </td>
+            </tr>
+            <tr>
+                <td>Do you take Alcohol</td>
+                <td>
+                    <obs conceptId="159449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,158939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Yes,No,Stopped" style="radio" />
+                </td>
+            </tr>
+            <tr>
+                <td>HIV Status</td>
+                <td>
+                    <obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Positive,Negative,Unknown" style="radio" />
+                </td>
+            </tr>
+            <tr>
+                <td>Current Cormobidity Treatment</td>
+                <td>
+
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="163464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="HIV AIDS" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="152520AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Cardiovascular Disease" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="161174AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Cancer" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="0c22e88e-f339-4b44-92a9-0c95dd91a4ff" answerLabel="TB" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="0c22e88e-f339-4b44-92a9-0c95dd91a4ff" answerLabel="Hypertension" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Other" style="checkbox" /><br />
+                    <obs conceptId="bda9951d-1b38-47e9-962f-6c85485b9331" />
+                </td>
+            </tr>
+            <includeIf velocityTest="$patient.gender == 'F' ">
+                <tr>
+                    <td>Female Client</td>
+                    <td>
+                        Parity:<obs conceptId="1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                        <br />
+                        LMP date: <obs id="lmp-date" conceptId="1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+                        <br/>
+                        Currently Breastfeeding: <obs conceptId="5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                      answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,158939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                      answerLabels="Yes,No,Stopped" style="radio" />
+                        <br/>
+                        Currently On Contraceptives: <obs conceptId="1386AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                          answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                          answerLabels="Yes,None" style="radio" />
+
+
+                    </td>
+                </tr>
+            </includeIf>
+            <tr>
+                <td>Previous Cancer Screening</td>
+                <td>
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="163464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Prostrate" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="152520AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Cervical" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="161174AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Breast" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="0c22e88e-f339-4b44-92a9-0c95dd91a4ff" answerLabel="Collorectal" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Other" style="checkbox" /><br />
+                    <obs conceptId="bda9951d-1b38-47e9-962f-6c85485b9331" />
+                </td>
+            </tr>
+            <th colspan="2">&nbsp;Physical Examination</th>
+            <tr>
+                <td>Patients Vitals</td>
+                <td>
+                    To be pulled from Triage Information
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ECOG Perfomance Index
+                </td>
+                <td>
+                    <obs conceptId="160379AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                </td>
+            </tr>
+            <th colspan="2">&nbsp;General Exam</th>
+            <tr>
+                <td>General Exams</td>
+                <td>
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                         answerLabels="Done,Not Done" style="radio" /> <br />
+
+            <tr>
+                <td>General Exams Done:</td>
+                <td>
+
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="163464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Temporal Wasting" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="152520AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Pallor" style="checkbox" /><br />
+                    <obs conceptId="162964AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Comments" style="checkbox" /><br />
+                    <obs conceptId="bda9951d-1b38-47e9-962f-6c85485b9331" />
+
+                </td>
+            </tr>
+
+
+            </td>
+            </tr>
+
+            <th colspan="2">&nbsp;Lymph Node Exam Findings</th>
+            <tr>
+                <td>Lymph Node Exam Findings</td>
+                <td>
+                    <obs conceptId="1121AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"  answerConceptId="504AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabels="SUBMANDIBULAR"  style="checkbox" /><br />
+                    <obs conceptId="1121AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"  answerConceptId="505AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabels="SUPRACLAVICULAR"  style="checkbox" /><br />
+                    <obs conceptId="1121AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"  answerConceptId="506AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabels="INGUINAL"  style="checkbox" /><br />
+                    <obs conceptId="1121AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"  answerConceptId="643AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabels="CERVICAL"  style="checkbox" /><br />
+                    <obs conceptId="1121AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"  answerConceptId="5112AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabels="AXILLARY"  style="checkbox" /><br />
+                    <obs conceptId="1121AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"  answerConceptId="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabels="NORMAL"  style="checkbox" /><br />
+                    <obs conceptId="1121AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"  answerConceptId="1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabels="ABNORMAL"  style="checkbox" /><br />
+                </td>
+            </tr>
+
+            <th colspan="2">&nbsp; Head, Eyes, Ears, Nose, and Throat Exam Findings</th>
+            <tr>
+                <td>HEENT Exam Findings</td>
+                <td>
+                    <obs conceptId="1070AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="861AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="HEARING DIFFICULTIES" style="checkbox" /><br />
+                    <obs conceptId="1070AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="873AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="OTORRHEA (Ear Discharge)" style="checkbox" /><br />
+                    <obs conceptId="1070AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5244AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="ORAL SORES" style="checkbox" /><br />
+                    <obs conceptId="1070AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="CANDIDIASIS" style="checkbox" /><br />
+                    <obs conceptId="1070AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5953AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="ORAL" style="checkbox" /><br />
+                    <obs conceptId="1070AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5954AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="VISION DIFFICULTIES" style="checkbox" /><br />
+                    <obs conceptId="1070AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5954AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="SWALLOWING DIFFICULTIES" style="checkbox" /><br />
+                    <obs conceptId="1070AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="NEGATIVE" style="checkbox" /><br />
+                    <obs conceptId="1070AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="115403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="RHINORROHEA" style="checkbox" /><br />
+                </td>
+            </tr>
+            <th colspan="2">&nbsp; Chest</th>
+            <tr>
+                <td>Chest Exam Findings</td>
+                <td>
+                    <obs conceptId="1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="NOT DONE" style="checkbox" /><br />
+                    <obs conceptId="1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="NORMAL" style="checkbox" /><br />
+                    <obs conceptId="1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="DULLNESS TO PERCUSSION" style="checkbox" /><br />
+                    <obs conceptId="1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="DIMINISHED BREATH SOUNDS" style="checkbox" /><br />
+                    <obs conceptId="1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="BRONCHIAL BREATH SOUNDS" style="checkbox" /><br />
+                    <obs conceptId="1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="122864AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="WHEEZE/RHONCHI" style="checkbox" /><br />
+                    <obs conceptId="1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5127AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="CREPITATIONS" style="checkbox" /><br />
+                </td>
+            </tr>
+            <th colspan="2">&nbsp; Cardiovascular System</th>
+            <tr>
+                <td>Cardiovascular System Exam Findings</td>
+                <td>
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="NOT DONE" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="NORMAL" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="DULLNESS TO PERCUSSION" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5158AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="EVIDENCE OF CARDIAC ENLARGEMENT" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5157AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="RIGHT VENTRICULAR LIFT" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5156AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="LEFT VENTRICULAR LIFT" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="1117AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="ABNORMAL HEART SOUNDS" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="550AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="S3 GALLOP" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="130560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="PERICARDIAL FRICTION RUB" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="139063AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Heart Murmur" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5166AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="SYSTOLIC EJECTION MURMUR" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5162AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="HOLOSYSTOLIC MURMUR" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5160AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="DIASTOLIC DECRESENDO MURMUR" style="checkbox" /><br />
+                    <obs conceptId="1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5164AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="DIASTOLIC RUMBLE" style="checkbox" /><br />
+                </td>
+            </tr>
+
+            <th colspan="2">&nbsp; Abdominal System</th>
+            <tr>
+                <td>Abdominal System Exam Findings</td>
+                <td>
+                    <obs conceptId="1125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="NOT DONE" style="checkbox" /><br />
+                    <obs conceptId="1125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="NORMAL" style="checkbox" /><br />
+                    <obs conceptId="1125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="582AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="MASS" style="checkbox" /><br />
+                    <obs conceptId="1125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="148346AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="ASCITES" style="checkbox" /><br />
+                    <obs conceptId="1125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="159447AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Hepatomegaly present below coastal margin" style="checkbox" /><br />
+                    <obs conceptId="1125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="159448AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Splenomegaly present below coastal margin" style="checkbox" /><br />
+                </td>
+            <tr>
+                <td>Abdominal Tenderness Location:</td>
+                <td>
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="RIGHT UPPER QUADRANT" style="checkbox" /><br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="160381AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="RIGHT LOWER QUADRANT" style="checkbox" /><br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="160380AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="LEFT UPPER QUADRANT" style="checkbox" /><br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="LEFT LOWER QUADRANT" style="checkbox" /><br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5099AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="EPIGASTRIC" style="checkbox" /><br />
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="SUPRAPUBIC" style="checkbox" /><br />
+                </td>
+            </tr>
+
+            </tr>
+
+            <th colspan="2">&nbsp; Genitorinary</th>
+            <tr>
+                <td>Genitorinary Exam Findings</td>
+                <td>
+                    <obs conceptId="1080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="No Complaints" style="checkbox" /><br />
+                    <obs conceptId="1080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="132418AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Olyguria" style="checkbox" /><br />
+                    <obs conceptId="1080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="129510AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Polyuria" style="checkbox" /><br />
+                    <obs conceptId="1080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="118771AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Dysuria" style="checkbox" /><br />
+                </td>
+            </tr>
+<!--
+            <th colspan="2">&nbsp; Muscoskeletal Systems</th>
+            <tr>
+                <td>Muscoskeletal Exam Findings</td>
+                <td>
+                    <obs conceptId="1123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                </td>
+            </tr>
+            <th colspan="2">&nbsp;Skin </th>
+            <tr>
+                <td>Skin Exam Findings</td>
+                <td>
+                    <obs conceptId="163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptId="5107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="RIGHT UPPER QUADRANT" style="checkbox" /><br />
+                </td>
+            </tr>
+-->
+
+            </tbody>
+        </table>
+
     </div>
     <div class="ke-form-footer">
-        <submit />
+        <submit/>
     </div>
+
 </htmlform>
