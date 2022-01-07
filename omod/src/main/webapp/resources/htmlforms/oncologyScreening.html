@@ -33,6 +33,8 @@
             processFobtResponsesAndTreatment();
             processDreResponsesAndTreatment();
             processPsaResponsesAndTreatment();
+            processUltrasoundResponsesAndTreatment();
+            processMammographResponsesAndTreatment();
             displayTabs();
 
 
@@ -514,13 +516,11 @@
                     jq('#papsmearTreatmentNormalOption *').prop('disabled', false);
                     jq('#referColoscopy *').prop('disabled', true);
                     jq('#referToBiopsy *').prop('disabled', true);
-                } else if (value === 145822 || 145802) {
+                } else if (value === 145822 || 145802 || 122321 || 145805) {
                     jq('#papsmearTreatmentNormalOption *').prop('disabled', true);
                     jq('#referColoscopy *').prop('disabled', false);
                     jq('#referToBiopsy *').prop('disabled', true);
-                } else if (value === 122321 || 155424) {
-                    jq('#papsmearTreatmentNormalOption *').prop('disabled', true);
-                    jq('#referColoscopy *').prop('disabled', true);
+                } else if (value === 155424 ) {
                     jq('#referToBiopsy *').prop('disabled', false);
                 }
             });
@@ -584,12 +584,12 @@
                     jq('#colonoscopyPolypsTreatmentOption *').prop('disabled', false);
                     jq('#colonoscopySuspeciousAndInflamationTreatmentOption *').prop('disabled', true);
                     jq('#colonoscancerOtherTreatmentOption *').prop('disabled', true);
-                } else if (value === 133350) {
+                } else if (value === 133350 || 118606) {
                     jq('#colonoscopyNoAbnomaltyTreatmentOption *').prop('disabled', true);
                     jq('#colonoscopyPolypsTreatmentOption *').prop('disabled', true);
                     jq('#colonoscopySuspeciousAndInflamationTreatmentOption *').prop('disabled', false);
                     jq('#colonoscancerOtherTreatmentOption *').prop('disabled', true);
-                } else if (value === 118606) {
+                } else if (value === 1000100) {
                     jq('#colonoscopyNoAbnomaltyTreatmentOption *').prop('disabled', true);
                     jq('#colonoscopyPolypsTreatmentOption *').prop('disabled', true);
                     jq('#colonoscopySuspeciousAndInflamationTreatmentOption *').prop('disabled', true);
@@ -676,33 +676,79 @@
             });
         }
 
-        <!-- TODO  Validations -->
         function processUltrasoundResponsesAndTreatment() {
             jq('#ultraSoundFindings input:radio').click(function () {
                 var value = parseInt(jq(this).val());
-                /*if(value === 1000094){
-                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', false);
-                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', true);
+                if(value === 1000094){
+                    jq('#birads0 *').prop('disabled', false);
+                    jq('#birads1 *').prop('disabled', true);
+                    jq('#birads3 *').prop('disabled', true);
+                    jq('#birads4 *').prop('disabled', true);
+                    jq('#birads6 *').prop('disabled', true);
                 }
-                else if (value === 1000093){
-                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
-                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
-                }else if (value === 1000095){
-                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
-                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
+                else if (value === 1000093 || 1000095){
+                    jq('#birads0 *').prop('disabled', true);
+                    jq('#birads1 *').prop('disabled', false);
+                    jq('#birads3 *').prop('disabled', true);
+                    jq('#birads4 *').prop('disabled', true);
+                    jq('#birads6 *').prop('disabled', true);
                 }else if (value === 1000096){
-                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
-                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
-                }else if (value === 1000097){
-                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
-                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
-                }else if (value === 1000098){
-                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
-                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
+                    jq('#birads0 *').prop('disabled', true);
+                    jq('#birads1 *').prop('disabled', true);
+                    jq('#birads3 *').prop('disabled', false);
+                    jq('#birads4 *').prop('disabled', true);
+                    jq('#birads6 *').prop('disabled', true);
+                }else if (value === 1000097 || 1000098){
+                    jq('#birads0 *').prop('disabled', true);
+                    jq('#birads1 *').prop('disabled', true);
+                    jq('#birads3 *').prop('disabled', true);
+                    jq('#birads4 *').prop('disabled', false);
+                    jq('#birads6 *').prop('disabled', true);
                 }else if (value === 1000099){
-                    jq('#biopsyNormalTreatmentOptions *').prop('disabled', true);
-                    jq('#biopsyAbnormalTreatmentOptions *').prop('disabled', false);
-                }*/
+                    jq('#birads0 *').prop('disabled', true);
+                    jq('#birads1 *').prop('disabled', true);
+                    jq('#birads3 *').prop('disabled', true);
+                    jq('#birads4 *').prop('disabled', true);
+                    jq('#birads6 *').prop('disabled', false);
+                }
+            });
+        }
+
+        function processMammographResponsesAndTreatment() {
+            jq('#mammoFindings input:radio').click(function () {
+                var value = parseInt(jq(this).val());
+                if(value === 1000094){
+                    jq('#biradsm0 *').prop('disabled', false);
+                    jq('#biradsm1 *').prop('disabled', true);
+                    jq('#biradsm3 *').prop('disabled', true);
+                    jq('#biradsm4 *').prop('disabled', true);
+                    jq('#biradsm6 *').prop('disabled', true);
+                }
+                else if (value === 1000093 || 1000095){
+                    jq('#biradsm0 *').prop('disabled', true);
+                    jq('#biradsm1 *').prop('disabled', false);
+                    jq('#biradsm3 *').prop('disabled', true);
+                    jq('#biradsm4 *').prop('disabled', true);
+                    jq('#biradsm6 *').prop('disabled', true);
+                }else if (value === 1000096){
+                    jq('#biradsm0 *').prop('disabled', true);
+                    jq('#biradsm1 *').prop('disabled', true);
+                    jq('#biradsm3 *').prop('disabled', false);
+                    jq('#biradsm4 *').prop('disabled', true);
+                    jq('#biradsm6 *').prop('disabled', true);
+                }else if (value === 1000097 || 1000098){
+                    jq('#biradsm0 *').prop('disabled', true);
+                    jq('#biradsm1 *').prop('disabled', true);
+                    jq('#biradsm3 *').prop('disabled', true);
+                    jq('#biradsm4 *').prop('disabled', false);
+                    jq('#biradsm6 *').prop('disabled', true);
+                }else if (value === 1000099){
+                    jq('#biradsm0 *').prop('disabled', true);
+                    jq('#biradsm1 *').prop('disabled', true);
+                    jq('#biradsm3 *').prop('disabled', true);
+                    jq('#biradsm4 *').prop('disabled', true);
+                    jq('#biradsm6 *').prop('disabled', false);
+                }
             });
         }
 
@@ -1334,24 +1380,38 @@
                                                                  answerSeparator="&lt;br/&gt;"/>
                                                         </td>
                                                         <td>
-                                                            <obs conceptId="3cb64490-aa67-4d23-b7d2-fb29b5b894da"
-                                                                 labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                                 answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,164080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,164689AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,deec6439-884f-4921-b9d3-cfa77666d6e6"
-                                                                 answerLabels="Recall for additional imaging,Routine Ultra sound screening, Short-interval(6 months) follow-up, Tissue Diagnosis(U/S guided biopsy), Surgical excision when clinically appropriate)"
-                                                                 style="radio" id="breastMamogramFindings"/>
-                                                        </td>
-                                                        <td>
-                                                            <div id="breastUltraNegativeResultTreatmentOption">
-                                                                <obs conceptId="3b806cea-505e-42bd-a5f4-660154e1f3ff"
-                                                                     answerConceptId="f056993d-5726-4553-8625-295a1abb5a13"
-                                                                     answerLabel="Counsel for negative findings"
+                                                            <div id="birads0">
+                                                                <obs conceptId="89875192-b834-4525-a021-e67c24e661f2"
+                                                                     answerConceptId="1609AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                     answerLabel="Recall for additional imaging"
                                                                      style="checkbox"/>
                                                             </div>
                                                             <hr/>
-                                                            <div>
-                                                                <obs conceptId="3b806cea-505e-42bd-a5f4-660154e1f3ff"
-                                                                     answerConceptId="b4fe108d-c980-4451-99fb-6ef42e9a8dcc"
-                                                                     answerLabel="Referred for further evaluation and management"
+                                                            <div id = "birads1">
+                                                                <obs conceptId="89875192-b834-4525-a021-e67c24e661f2"
+                                                                     answerConceptId="432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                     answerLabel="Routine Ultra sound screening"
+                                                                     style="checkbox"/>
+                                                            </div>
+                                                            <hr/>
+                                                            <div id = "birads3">
+                                                                <obs conceptId="89875192-b834-4525-a021-e67c24e661f2"
+                                                                     answerConceptId="164080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                     answerLabel="Short-interval(6 months) follow-up"
+                                                                     style="checkbox"/>
+                                                            </div>
+                                                            <hr/>
+                                                            <div id = "birads4">
+                                                                <obs conceptId="89875192-b834-4525-a021-e67c24e661f2"
+                                                                     answerConceptId="136785AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                     answerLabel="Tissue Diagnosis(U/S guided biopsy)"
+                                                                     style="checkbox"/>
+                                                            </div>
+                                                            <hr/>
+                                                            <div id = "birads6">
+                                                                <obs conceptId="89875192-b834-4525-a021-e67c24e661f2"
+                                                                     answerConceptId="159619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                     answerLabel="Surgical excision when clinically appropriate)"
                                                                      style="checkbox"/>
                                                             </div>
                                                         </td>
@@ -1366,28 +1426,42 @@
                                                             <obs conceptId="163591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                                  answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,8cc5d428-0bfd-41f0-a7fb-a239aadadb0d,2ab46b88-b87a-4321-839f-b1351410335d,deec6439-884f-4921-b9d3-cfa77666d6e6,fbfd99cf-2be1-403d-b8c3-15b686d5cc78,89683205-f2c6-45e7-824d-9db0a29ca6c8"
                                                                  answerLabels="BIRADS 1(Incomplete Need additional imaging evaluation),BIRADS 0(Negative),BIRADS 2(Benign), BIRADS 3(Probably Benign), BIRADS 4(Suspicious), BIRADS 5(Highly Suggestive of Malignancy),BIRADS 6(Known Biopsy-Proven Malignancy)"
-                                                                 style="radio" id="ultraSoundFindings"
+                                                                 style="radio" id="mammoFindings"
                                                                  answerSeparator="&lt;br/&gt;"/>
                                                         </td>
                                                         <td>
-                                                            <obs conceptId="3cb64490-aa67-4d23-b7d2-fb29b5b894da"
-                                                                 labelText="&lt;br/&gt;" answerSeparator="&lt;br/&gt;"
-                                                                 answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,164080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,164689AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,deec6439-884f-4921-b9d3-cfa77666d6e6"
-                                                                 answerLabels="Recall for additional imaging,Routine Ultra sound screening, Short-interval(6 months) follow-up, Tissue Diagnosis(U/S guided biopsy), Surgical excision when clinically appropriate)"
-                                                                 style="radio" id="breastMamogramFindings"/>
-                                                        </td>
-                                                        <td>
-                                                            <div id="mamogramNegativeResultTreatmentOption">
-                                                                <obs conceptId="3b806cea-505e-42bd-a5f4-660154e1f3ff"
-                                                                     answerConceptId="f056993d-5726-4553-8625-295a1abb5a13"
-                                                                     answerLabel="Counsel for negative findings"
+                                                            <div id="biradsm0">
+                                                                <obs conceptId="89875192-b834-4525-a021-e67c24e661f2"
+                                                                     answerConceptId="1609AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                     answerLabel="Recall for additional imaging"
                                                                      style="checkbox"/>
                                                             </div>
                                                             <hr/>
-                                                            <div>
-                                                                <obs conceptId="3b806cea-505e-42bd-a5f4-660154e1f3ff"
-                                                                     answerConceptId="b4fe108d-c980-4451-99fb-6ef42e9a8dcc"
-                                                                     answerLabel="Referred for further evaluation and management"
+                                                            <div id = "biradsm1">
+                                                                <obs conceptId="89875192-b834-4525-a021-e67c24e661f2"
+                                                                     answerConceptId="432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                     answerLabel="Routine Ultra sound screening"
+                                                                     style="checkbox"/>
+                                                            </div>
+                                                            <hr/>
+                                                            <div id = "biradsm3">
+                                                                <obs conceptId="89875192-b834-4525-a021-e67c24e661f2"
+                                                                     answerConceptId="164080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                     answerLabel="Short-interval(6 months) follow-up"
+                                                                     style="checkbox"/>
+                                                            </div>
+                                                            <hr/>
+                                                            <div id = "biradsm4">
+                                                                <obs conceptId="89875192-b834-4525-a021-e67c24e661f2"
+                                                                     answerConceptId="136785AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                     answerLabel="Tissue Diagnosis(U/S guided biopsy)"
+                                                                     style="checkbox"/>
+                                                            </div>
+                                                            <hr/>
+                                                            <div id = "biradsm6">
+                                                                <obs conceptId="89875192-b834-4525-a021-e67c24e661f2"
+                                                                     answerConceptId="159619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                     answerLabel="Surgical excision when clinically appropriate)"
                                                                      style="checkbox"/>
                                                             </div>
                                                         </td>
@@ -1447,10 +1521,9 @@
                                                         </div>
                                                         <br/>
                                                         <div id="colonoscopySuspeciousAndInflamationTreatmentOption">
-                                                            <obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a"
+                                                            <obs conceptId="a9c51ac1-7f82-4fac-8e21-2ce500fd1991"
                                                                  answerConceptId="9b892de0-0551-449c-88d1-470f6618943c"
-                                                                 answerLabel="Refer to surgical resection"
-                                                                 style="checkbox"/>
+                                                                 answerLabel="Refer for biopsy" style="checkbox"/>
                                                         </div>
                                                         <hr/>
                                                         <div id="colonoscancerOtherTreatmentOption">
@@ -1519,7 +1592,6 @@
                                                 <tr id="prostateDre">
                                                     <th rowspan="3">Prostate</th>
                                                     <th>DRE(Digital Rectal Examination)</th>
-                                                    <!-- TODO confirm concept ID: Enlarged, Lampy -->
                                                     <td>
                                                         <obs conceptId="d278b0e3-53f6-4b40-9ccc-2851c4a97ac1"
                                                              answerConceptIds="1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,52c6a4d4-25d3-4064-a1f9-f25c663aa3a2,3aa47364-5a87-470b-8f10-49de703776e9"
