@@ -50,12 +50,6 @@
 			</dependency>
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
-				<artifactId>legacyui-api</artifactId>
-				<version>${legacyuiVersion}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.openmrs.module</groupId>
 				<artifactId>htmlformentry-api</artifactId>
 				<version>${htmlformentryVersion}</version>
 				<scope>provided</scope>
@@ -247,7 +241,7 @@
 	</pluginRepositories>
 
 	<properties>
-		<openMRSVersion>2.3.3</openMRSVersion>
+		<openMRSVersion>1.12.0</openMRSVersion>
 		<appframeworkVersion>2.9</appframeworkVersion>
 		<calculationVersion>1.0</calculationVersion>
 		<htmlformentryVersion>2.3</htmlformentryVersion>
@@ -260,12 +254,11 @@
 		<uiframeworkVersion>3.8</uiframeworkVersion>
 		<kenyacoreVersion>2.4.1</kenyacoreVersion>
 		<kenyauiVersion>2.1.1</kenyauiVersion>
-		<kenyaemrVersion>18.0.0</kenyaemrVersion>
+		<kenyaemrVersion>17.0.3</kenyaemrVersion>
 		<jodaTimeVersion>2.9.1</jodaTimeVersion>
 		<webservices.restVersion>2.1</webservices.restVersion>
 		<logicVersion>0.5.2</logicVersion>
 		<uilibraryVersion>2.0.4</uilibraryVersion>
 		<hospitalcoreVersion>1.0.7-SNAPSHOT</hospitalcoreVersion>
-		<legacyuiVersion>1.10.0-SNAPSHOT</legacyuiVersion>
     </properties>
 </project>
