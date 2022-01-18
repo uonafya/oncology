@@ -30,8 +30,5 @@
 		<require_module version="${ehrconfigsVersion}">org.openmrs.module.ehrconfigs</require_module>
 		<require_module version="${metadatadeployVersion}">org.openmrs.module.metadatadeploy</require_module>
 	</require_modules>
-	<aware_of_modules>
-		<aware_of_module>org.openmrs.module.legacyui</aware_of_module>
-	</aware_of_modules>
 
 </module>
