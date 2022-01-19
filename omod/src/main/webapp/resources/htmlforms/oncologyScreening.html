@@ -980,19 +980,17 @@
                                         </td>
 
                                         <td>
-                                            <label for="parity">Parity:</label> <input type="number" id="parity"
-                                                                                       name="parity"
-                                                                                       min="0"
-                                                                                       max="15" step="1"
-                                                                                       conceptId="1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
-                                            + <input type="number" id="parity" name="parity" min="0" max="15" step="1"
-                                                     conceptId="1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
-                                            <br/>
+                                            <label>Parity:</label> <span id="parity"> <obs  conceptId="1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                                            + <obs conceptId="1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/> </span>
+                                        </td>
 
+                                        <br/>
+
+                                        <td>
                                             LMP date:
                                             <obs id="lmp-date" conceptId="1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
-
                                         </td>
+
                                     </tr>
                                 </includeIf>
                                 </tbody>
