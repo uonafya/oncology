@@ -17,6 +17,7 @@
             disableDivTagsWhenFormLoads();
             getTypeOfCancerPickedToToggleResponses();
             getClickEventOnCancerType();
+            calculateLastPacks()
             processHpvResponsesAndTreatment();
             processViaResponsesAndTreatment();
             processPapResponsesAndTreatment();
@@ -67,18 +68,28 @@
 
             }
 
-
-
-
             function calculatePacks() {
                 var result = Math.round(parseInt(getValue("smokeYears.value")) * parseInt(getValue("smokeDays.value")) / 20);
                 jq("#rValue").html(result)
                 Math.round(result)
-                console.log(result);
             }
-
             getField("smokeYears.value").change(calculatePacks);
             getField("smokeDays.value").change(calculatePacks);
+
+
+            function calculateLastPacks() {
+                var smokeYears = "<lookup expression="
+                fn.latestobs(159931).valueNumeric
+                "/>"
+
+                var smokeDays = "<lookup expression="
+                fn.latestobs(1546).valueNumeric
+                "/>"
+
+                var packYears = Math.round(smokeYears * smokeDays / 20);
+
+                jq('#lValue').html(packYears);
+            }
         });
 
         function disableDivTagsWhenFormLoads() {
@@ -888,7 +899,8 @@
                                             <tr id="packYears">
                                                 <label for="packYears"><span class="status active"></span>Pack
                                                     Years:</label>
-                                                <span id="rValue"></span>
+                                                <span id="rValue" class="value"></span>
+                                                <span id = "lValue" class = "value"></span>
                                             </tr>
                                         </table>
                                     </td>
@@ -1473,8 +1485,8 @@
                                                     <th>Fecal Occult Blood Test</th>
                                                     <td>
                                                         <obs conceptId="159362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                             answerConceptIds="664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                             answerLabels="Negative,Positive" style="radio" id="fobt"
+                                                             answerConceptIds="703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                             answerLabels="Positive,Negative" style="radio" id="fobt"
                                                              answerSeparator="&lt;br/&gt;"/>
                                                     </td>
                                                     <td>
