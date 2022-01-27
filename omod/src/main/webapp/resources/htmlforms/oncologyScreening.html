@@ -528,12 +528,14 @@
                     jq('#papsmearTreatmentNormalOption *').prop('disabled', false);
                     jq('#referColoscopy *').prop('disabled', true);
                     jq('#referToBiopsy *').prop('disabled', true);
-                } else if (value === 145822 || 145802 || 122321 || 145805) {
+                } else if (value === 155424 ) {
+                    jq('#papsmearTreatmentNormalOption *').prop('disabled', true);
+                    jq('#referColoscopy *').prop('disabled', true);
+                    jq('#referToBiopsy *').prop('disabled', false);
+                }else if (value === 145822 || 145802 || 122321 || 145805) {
                     jq('#papsmearTreatmentNormalOption *').prop('disabled', true);
                     jq('#referColoscopy *').prop('disabled', false);
                     jq('#referToBiopsy *').prop('disabled', true);
-                } else if (value === 155424 ) {
-                    jq('#referToBiopsy *').prop('disabled', false);
                 }
             });
         }
@@ -596,16 +598,16 @@
                     jq('#colonoscopyPolypsTreatmentOption *').prop('disabled', false);
                     jq('#colonoscopySuspeciousAndInflamationTreatmentOption *').prop('disabled', true);
                     jq('#colonoscancerOtherTreatmentOption *').prop('disabled', true);
-                } else if (value === 133350 || 118606) {
-                    jq('#colonoscopyNoAbnomaltyTreatmentOption *').prop('disabled', true);
-                    jq('#colonoscopyPolypsTreatmentOption *').prop('disabled', true);
-                    jq('#colonoscopySuspeciousAndInflamationTreatmentOption *').prop('disabled', false);
-                    jq('#colonoscancerOtherTreatmentOption *').prop('disabled', true);
-                } else if (value === 1000100) {
+                }  else if (value === 1000100) {
                     jq('#colonoscopyNoAbnomaltyTreatmentOption *').prop('disabled', true);
                     jq('#colonoscopyPolypsTreatmentOption *').prop('disabled', true);
                     jq('#colonoscopySuspeciousAndInflamationTreatmentOption *').prop('disabled', true);
                     jq('#colonoscancerOtherTreatmentOption *').prop('disabled', false);
+                }  else if (value === 133350 || 118606) {
+                    jq('#colonoscopyNoAbnomaltyTreatmentOption *').prop('disabled', true);
+                    jq('#colonoscopyPolypsTreatmentOption *').prop('disabled', true);
+                    jq('#colonoscopySuspeciousAndInflamationTreatmentOption *').prop('disabled', false);
+                    jq('#colonoscancerOtherTreatmentOption *').prop('disabled', true);
                 }
             });
         }
@@ -697,17 +699,29 @@
                     jq('#birads3 *').prop('disabled', true);
                     jq('#birads4 *').prop('disabled', true);
                     jq('#birads6 *').prop('disabled', true);
-                }
-                else if (value === 1000093 || 1000095){
+                }else if (value === 1000096){
+                    jq('#birads0 *').prop('disabled', true);
+                    jq('#birads1 *').prop('disabled', true);
+                    jq('#birads3 *').prop('disabled', false);
+                    jq('#birads4 *').prop('disabled', true);
+                    jq('#birads6 *').prop('disabled', true);
+                }else if (value === 1000099){
+                    jq('#birads0 *').prop('disabled', true);
+                    jq('#birads1 *').prop('disabled', true);
+                    jq('#birads3 *').prop('disabled', true);
+                    jq('#birads4 *').prop('disabled', true);
+                    jq('#birads6 *').prop('disabled', false);
+                }else if (value === 1000093){
                     jq('#birads0 *').prop('disabled', true);
                     jq('#birads1 *').prop('disabled', false);
                     jq('#birads3 *').prop('disabled', true);
                     jq('#birads4 *').prop('disabled', true);
                     jq('#birads6 *').prop('disabled', true);
-                }else if (value === 1000096){
+                }
+                else if (value === 1000095){
                     jq('#birads0 *').prop('disabled', true);
-                    jq('#birads1 *').prop('disabled', true);
-                    jq('#birads3 *').prop('disabled', false);
+                    jq('#birads1 *').prop('disabled', false);
+                    jq('#birads3 *').prop('disabled', true);
                     jq('#birads4 *').prop('disabled', true);
                     jq('#birads6 *').prop('disabled', true);
                 }else if (value === 1000097 || 1000098){
@@ -716,12 +730,6 @@
                     jq('#birads3 *').prop('disabled', true);
                     jq('#birads4 *').prop('disabled', false);
                     jq('#birads6 *').prop('disabled', true);
-                }else if (value === 1000099){
-                    jq('#birads0 *').prop('disabled', true);
-                    jq('#birads1 *').prop('disabled', true);
-                    jq('#birads3 *').prop('disabled', true);
-                    jq('#birads4 *').prop('disabled', true);
-                    jq('#birads6 *').prop('disabled', false);
                 }
             });
         }
@@ -735,24 +743,11 @@
                     jq('#biradsm3 *').prop('disabled', true);
                     jq('#biradsm4 *').prop('disabled', true);
                     jq('#biradsm6 *').prop('disabled', true);
-                }
-                else if (value === 1000093 || 1000095){
-                    jq('#biradsm0 *').prop('disabled', true);
-                    jq('#biradsm1 *').prop('disabled', false);
-                    jq('#biradsm3 *').prop('disabled', true);
-                    jq('#biradsm4 *').prop('disabled', true);
-                    jq('#biradsm6 *').prop('disabled', true);
                 }else if (value === 1000096){
                     jq('#biradsm0 *').prop('disabled', true);
                     jq('#biradsm1 *').prop('disabled', true);
                     jq('#biradsm3 *').prop('disabled', false);
                     jq('#biradsm4 *').prop('disabled', true);
-                    jq('#biradsm6 *').prop('disabled', true);
-                }else if (value === 1000097 || 1000098){
-                    jq('#biradsm0 *').prop('disabled', true);
-                    jq('#biradsm1 *').prop('disabled', true);
-                    jq('#biradsm3 *').prop('disabled', true);
-                    jq('#biradsm4 *').prop('disabled', false);
                     jq('#biradsm6 *').prop('disabled', true);
                 }else if (value === 1000099){
                     jq('#biradsm0 *').prop('disabled', true);
@@ -760,6 +755,25 @@
                     jq('#biradsm3 *').prop('disabled', true);
                     jq('#biradsm4 *').prop('disabled', true);
                     jq('#biradsm6 *').prop('disabled', false);
+                }else if (value === 1000093 ){
+                    jq('#biradsm0 *').prop('disabled', true);
+                    jq('#biradsm1 *').prop('disabled', false);
+                    jq('#biradsm3 *').prop('disabled', true);
+                    jq('#biradsm4 *').prop('disabled', true);
+                    jq('#biradsm6 *').prop('disabled', true);
+                }
+                else if (value === 1000095){
+                    jq('#biradsm0 *').prop('disabled', true);
+                    jq('#biradsm1 *').prop('disabled', false);
+                    jq('#biradsm3 *').prop('disabled', true);
+                    jq('#biradsm4 *').prop('disabled', true);
+                    jq('#biradsm6 *').prop('disabled', true);
+                } else if (value === 1000097 || 1000098){
+                    jq('#biradsm0 *').prop('disabled', true);
+                    jq('#biradsm1 *').prop('disabled', true);
+                    jq('#biradsm3 *').prop('disabled', true);
+                    jq('#biradsm4 *').prop('disabled', false);
+                    jq('#biradsm6 *').prop('disabled', true);
                 }
             });
         }
@@ -1385,8 +1399,8 @@
                                                         <th>Ultrasound</th>
                                                         <td>
                                                             <obs conceptId="163591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                                                 answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,8cc5d428-0bfd-41f0-a7fb-a239aadadb0d,2ab46b88-b87a-4321-839f-b1351410335d,deec6439-884f-4921-b9d3-cfa77666d6e6,fbfd99cf-2be1-403d-b8c3-15b686d5cc78,89683205-f2c6-45e7-824d-9db0a29ca6c8"
-                                                                 answerLabels="BIRADS 1(Incomplete Need additional imaging evaluation),BIRADS 0(Negative),BIRADS 2(Benign), BIRADS 3(Probably Benign), BIRADS 4(Suspicious), BIRADS 5(Highly Suggestive of Malignancy),BIRADS 6(Known Biopsy-Proven Malignancy)"
+                                                                 answerConceptIds="e799649c-6508-4660-9d9d-4df3449df20e,935ed682-1f42-405b-9f88-e0c47dcd519e,8cc5d428-0bfd-41f0-a7fb-a239aadadb0d,2ab46b88-b87a-4321-839f-b1351410335d,deec6439-884f-4921-b9d3-cfa77666d6e6,fbfd99cf-2be1-403d-b8c3-15b686d5cc78,89683205-f2c6-45e7-824d-9db0a29ca6c8"
+                                                                 answerLabels="BIRADS 0(Incomplete Need additional imaging evaluation),BIRADS 1(Negative),BIRADS 2(Benign), BIRADS 3(Probably Benign), BIRADS 4(Suspicious), BIRADS 5(Highly Suggestive of Malignancy),BIRADS 6(Known Biopsy-Proven Malignancy)"
                                                                  style="radio" id="ultraSoundFindings"
                                                                  answerSeparator="&lt;br/&gt;"/>
                                                         </td>
@@ -1436,7 +1450,7 @@
                                                         <td>
                                                             <obs conceptId="163591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                                                  answerConceptIds="935ed682-1f42-405b-9f88-e0c47dcd519e,e799649c-6508-4660-9d9d-4df3449df20e,8cc5d428-0bfd-41f0-a7fb-a239aadadb0d,2ab46b88-b87a-4321-839f-b1351410335d,deec6439-884f-4921-b9d3-cfa77666d6e6,fbfd99cf-2be1-403d-b8c3-15b686d5cc78,89683205-f2c6-45e7-824d-9db0a29ca6c8"
-                                                                 answerLabels="BIRADS 1(Incomplete Need additional imaging evaluation),BIRADS 0(Negative),BIRADS 2(Benign), BIRADS 3(Probably Benign), BIRADS 4(Suspicious), BIRADS 5(Highly Suggestive of Malignancy),BIRADS 6(Known Biopsy-Proven Malignancy)"
+                                                                 answerLabels="BIRADS 0(Incomplete Need additional imaging evaluation),BIRADS 1(Negative),BIRADS 2(Benign), BIRADS 3(Probably Benign), BIRADS 4(Suspicious), BIRADS 5(Highly Suggestive of Malignancy),BIRADS 6(Known Biopsy-Proven Malignancy)"
                                                                  style="radio" id="mammoFindings"
                                                                  answerSeparator="&lt;br/&gt;"/>
                                                         </td>
@@ -1532,7 +1546,7 @@
                                                         </div>
                                                         <br/>
                                                         <div id="colonoscopySuspeciousAndInflamationTreatmentOption">
-                                                            <obs conceptId="a9c51ac1-7f82-4fac-8e21-2ce500fd1991"
+                                                            <obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a"
                                                                  answerConceptId="9b892de0-0551-449c-88d1-470f6618943c"
                                                                  answerLabel="Refer for biopsy" style="checkbox"/>
                                                         </div>
@@ -1540,7 +1554,7 @@
                                                         <div id="colonoscancerOtherTreatmentOption">
                                                             <obs conceptId="4afab552-c642-45f9-b8b1-90b5f76a8c1a"
                                                                  answerConceptId="b4fe108d-c980-4451-99fb-6ef42e9a8dcc"
-                                                                 answerLabel="Refereed for further management"
+                                                                 answerLabel="Referred for further management"
                                                                  style="checkbox"/>
                                                         </div>
                                                     </td>
